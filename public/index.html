@@ -1,0 +1,48 @@
+<html>
+
+<head>
+  <style>
+    table,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+
+  A: <input type="text" id="value1"> <br> B: <input type="text" id="value2"> C: <input type="text" id="value3"> D: <input type="text" id="value4">
+  <input type="button" value="Submit" id="btn">
+  <table id="myTable">
+  </table>
+</body>
+
+<script src="//code.jquery.com/jquery-1.6.2.min.js"></script>
+<script type="text/javascript">
+  $('#btn').click(function(e) {
+    e.preventDefault();
+    console.log('button clicked');
+
+    var data = {};
+    data.emailId = $('#value1').val();
+    data.phoneNo = $('#value2').val();
+    data.otp = $('#value3').val();
+    data.userName = $('#value4').val();
+
+    console.log(data.emailId);
+    $.ajax({
+      type: 'POST',
+      data: JSON.stringify(data),
+      contentType: 'application/json',
+      url: 'http://localhost:3000/Tasks/about',
+      success: function(data) {
+        console.log('success');
+        console.log(JSON.stringify(data));
+      }
+
+    });
+
+  });
+</script>
+
+</html>
