@@ -12,36 +12,39 @@
 <body>
 
   A: <input type="text" id="value1"> <br> B: <input type="text" id="value2"> C: <input type="text" id="value3"> D: <input type="text" id="value4">
-  <input type="button" value="Submit" id="btn">
+  <input type="text" id="value5"><input type="button" value="Submit" id="btn">
   <table id="myTable">
   </table>
 </body>
 
 <script src="//code.jquery.com/jquery-1.6.2.min.js"></script>
+
 <script type="text/javascript">
   $('#btn').click(function(e) {
     e.preventDefault();
     console.log('button clicked');
-
     var data = {};
-    data.emailId = $('#value1').val();
-    data.phoneNo = $('#value2').val();
-    data.otp = $('#value3').val();
-    data.userName = $('#value4').val();
+    var emailId = $('#value1').val();
+    // var phoneNo = $('#value2').val();
+    // data.emailId = $('#value1').val();
+    // data.phoneNo = $('#value2').val();
+    // data.otp = $('#value3').val();
+    // data.username = $('#value4').val();
+    data.password = $('#value5').val();
 
-    console.log(data.emailId);
     $.ajax({
-      type: 'POST',
+      type: 'PUT',
       data: JSON.stringify(data),
       contentType: 'application/json',
-      url: 'http://localhost:3000/Tasks/about',
+      // url: 'http://localhost:4000/register/email-check?emailId=' + emailId,
+      // url: 'http://localhost:4000/register/phone-number-check?phoneNo=' + phoneNo,
+      url: 'http://localhost:4000/register/update-password/' + emailId,
+      // url: 'http://localhost:4000/register/registration-details',
       success: function(data) {
         console.log('success');
         console.log(JSON.stringify(data));
       }
-
     });
-
   });
 </script>
 
