@@ -1,0 +1,113 @@
+.bgpicture{
+width: 100%;
+    background-image: url(../asset/img/marriageImg.png);
+    position: relative;
+    margin-top: 70px;
+           height: 160px;
+background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.logoImg{
+    position: absolute;
+    top: -70px;
+    left: 160px;
+}
+.logoText{
+    position: absolute;
+    top: 12px;
+    left: 50px;
+}
+.bodycontent{
+
+}
+.registrationForm{
+    margin: 20px 10px;
+    box-sizing: border-box;
+    /* border:1px solid black; */
+/* box-shadow: 10px 10px; */
+     padding: 10px;
+}
+.profileDetails{
+overflow:hidden;
+     padding: 10px;
+    /* background-color: red; */
+    margin: 20px 10px;
+        box-sizing: border-box;
+}
+.submitButton{
+  width: 100%;
+      text-align: center;
+      background-color: red;
+          border-radius: 4px;
+          padding: 6px;
+}
+.profilePicture{
+width: 15%;
+padding-bottom: 15%;
+
+/* object-fit: cover; */
+background-image: url(../asset/img/logo.png);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+/* height: auto; */
+float: left;
+}
+.profileInfo{
+  float: left;
+margin-left: 5%;
+font-size:20px;
+}
+.OtherInfo{
+  font-size:10px;
+}
+.viewButton{
+font-size:15px;
+      text-align: center;
+      background-color: orange;
+          border-radius: 4px;
+          padding: 6px;
+          float: left;
+}
+.lock{
+      float: left;
+      margin: 5px 12px;
+font-size: 20px;
+}
+.footer{
+  height: 50px;
+  position: fixed;
+  background-color: orange;
+width: 100%;
+bottom: 0px;
+text-align: center;
+box-sizing: border-box;
+padding: 15px;
+}
+
+.allProfileDetails{
+  height: calc(100vh - 160px - 50px - 30px - 70px);
+  overflow-y: scroll;
+  padding: 10px;
+ /* background-color: red; */
+ margin: 20px 10px;
+
+}
+.searchbox{
+  position: absolute;
+bottom: -10px;
+right: 50px;
+/* opacity: 0.5; */
+background-image: url(../asset/img/search.png) !important;
+background-position: 95%;;
+background-repeat: no-repeat;
+background-size: auto 70%;
+
+
+  }
+.searchtext{
+    background-color: transparent !important;
+
+}

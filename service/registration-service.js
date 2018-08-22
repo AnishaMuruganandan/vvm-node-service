@@ -75,6 +75,20 @@ var registrationService = {
       console.log('Opps, an error occurred', err);
     }
     return msg;
+  },
+
+  updateProfileId: async function(updateProfileIdObj) {
+    console.log("registrationService");
+    var msg = "";
+    try {
+      var output = await registrationQueries.updateProfileIdByLoginId(registrationQueriesConst.updateProfileIdByLoginIdQuery, updateProfileIdObj);
+      console.log(JSON.stringify(output) + "output");
+      msg = "inserted" + output.affectedRows;
+    } catch (err) {
+      msg = err;
+      console.log('Opps, an error occurred', err);
+    }
+    return msg;
   }
 
 }

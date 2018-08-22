@@ -60,5 +60,19 @@ updatePassword : async function(emailId, registrationDetails) {
   }
 },
 
+updateProfileId : async function(loginId, registrationDetails) {
+  console.log("dlegate");
+  var updateProfileIdObj = new registrationObject.updateProfileIdObj(loginId, registrationDetails.profileId);
+  try {
+    console.log("del try");
+    var output = await registrationServiceObj.updateProfileId(updateProfileIdObj);
+    console.log(output + "out delegate");
+    return output;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+
 }
 module.exports = registrationDelegate;

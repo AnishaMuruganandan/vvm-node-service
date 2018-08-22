@@ -19,6 +19,11 @@ var registrationObj = {
   updatePasswordObj : function(emailId, password) {
     this.emailId = emailId || '0';
     this.password = password || '0';
+  },
+
+  updateProfileIdObj : function(loginId, profileId) {
+    this.loginId = loginId || '0';
+    this.profileId = profileId || '0';
   }
 
 }

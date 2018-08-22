@@ -1,7 +1,5 @@
 var express = require('express');
 var router = express.Router();
-
-var queries = require('../models/dbqueries');
 var registrationDelegateObj = require('../delegate-layer/registration-delegate');
 
 //email duplicate verification
@@ -40,29 +38,13 @@ router.put('/update-password/:emailId', async function(req, res, next) {
   res.json(result);
 });
 
-router.put('/updateCredential/:loginId', function(req, res, next) {
-  var bodyobj = req.body;
-  console.log("onj" + JSON.stringify(bodyobj) + "loginId" + req.params.loginid);
-  queries.updateCrendential(req.params.loginId, bodyobj, function(err, output) {
-    if (err) {
-      res.json(err);
-      console.log(err + "err");
-    } else {
-      res.json(output);
-    }
-  });
+//update profileId by loginId
+
+router.put('/update-profileId/:loginId', async function(req, res, next) {
+  console.log('body: ' + JSON.stringify(req.body));
+  var result = await registrationDelegateObj.updateProfileId(req.params.loginId, req.body);
+  console.log(result + "result route");
+  res.json(result);
 });
 
-router.put('/updateProfileId/:loginId', function(req, res, next) {
-  var bodyobj = req.body;
-  console.log("onj" + JSON.stringify(bodyobj) + "loginId" + req.params.loginid);
-  queries.updateProfileId(req.params.loginid, bodyobj, function(err, output) {
-    if (err) {
-      res.json(err);
-      console.log(err + "err");
-    } else {
-      res.json(output);
-    }
-  });
-});
 module.exports = router;

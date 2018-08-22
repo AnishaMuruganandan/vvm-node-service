@@ -1,5 +1,5 @@
 var dbconnection = require('../dbconnection');
-var queries = {
+var RegistrationQueries = {
   findByEmailId: function(findByEmailIdQuery, verfiyEmailIdObj) {
     return new Promise((resolve, reject) => {
       return dbconnection.query(findByEmailIdQuery, [verfiyEmailIdObj.emailId], (err, rows) => {
@@ -42,8 +42,20 @@ var queries = {
         resolve(rows);
       });
     });
+  },
+
+  updateProfileIdByLoginId: function(updateProfileIdByLoginIdQuery, updateProfileIdObj) {
+    return new Promise((resolve, reject) => {
+      return dbconnection.query(updateProfileIdByLoginIdQuery, [
+        updateProfileIdObj.profileId, updateProfileIdObj.loginId
+      ], (err, rows) => {
+        if (err)
+          return reject(err);
+        resolve(rows);
+      });
+    });
   }
 
 }
 
-module.exports = queries;
+module.exports = RegistrationQueries;
