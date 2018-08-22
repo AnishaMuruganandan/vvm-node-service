@@ -5,7 +5,6 @@ var cors = require('cors');
  var registrationRoutes = require('./routes/registration-routes');
 var loginRoutes = require('./routes/login-routes');
 
-//
 // var route = require('./routes/masterTableDetailsRoutes');
 
 var bodyParser = require('body-parser');
