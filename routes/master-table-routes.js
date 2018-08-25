@@ -1,10 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var queries = require('../models/dbqueries');
-var delegate_layer_obj = require('../delegate_layer/master_table_details_delegate');
+var masterTableDelegateObj = require('../delegate-layer/master-table-delegate');
 
 router.get('/fetchZodiacMasterTable', function(req, res, next) {
-delegate_layer_obj.
+  console.log("fetchZodiacMasterTable");
+  var result = await masterTableDelegateObj.getZodiacMasterTable();
+  console.log(result + "result route");
+  res.json(result);
 });
 
 router.get('/fetchStarMasterTable', function(req, res, next) {
