@@ -76,12 +76,17 @@ font-size:15px;
       margin: 5px 12px;
 font-size: 20px;
 }
-.footer{
-  height: 50px;
+.footerDiv{
   position: fixed;
+  bottom: 0px;
+    width: 100%;
+}
+.footer{
+
+  height: 50px;
+
   background-color: orange;
-width: 100%;
-bottom: 0px;
+
 text-align: center;
 box-sizing: border-box;
 padding: 15px;
@@ -94,6 +99,9 @@ padding: 15px;
  /* background-color: red; */
  margin: 20px 10px;
 
+}
+.bodycontent{
+    height: calc(100vh - 160px - 50px - 30px - 70px - 10rem);
 }
 .searchbox{
   position: absolute;
@@ -109,5 +117,16 @@ background-size: auto 70%;
   }
 .searchtext{
     background-color: transparent !important;
+
+}
+
+.buildingImg{
+  /* width: 50rem; */
+      margin: auto;
+          max-height: 100%;
+}
+.box{
+  height: 5rem;
+  background-color: grey;
 
 }
