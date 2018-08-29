@@ -67,9 +67,9 @@ let loginFunc = (function() {
   //
   // };
   //
-  // let finalise = function() {
-  //
-  // };
+   let finalise = function() {
+
+   };
 
 
   // /*
@@ -242,12 +242,12 @@ let loginFunc = (function() {
     construct: construct,
     complete: complete,
     finalise: finalise,
-    validatePassword: validatePassword,
-    validateUsername: validateUsername,
-    emailVerificationFlow: emailVerificationFlow,
-    validateEmailId: validateEmailId,
-    validateLoginForm: validateLoginForm,
-    navigateToEntityRegistration: navigateToEntityRegistration
+    // validatePassword: validatePassword,
+    // validateUsername: validateUsername,
+    // emailVerificationFlow: emailVerificationFlow,
+    // validateEmailId: validateEmailId,
+    // validateLoginForm: validateLoginForm,
+    // navigateToEntityRegistration: navigateToEntityRegistration
   };
 });
 

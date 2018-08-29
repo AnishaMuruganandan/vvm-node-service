@@ -109,6 +109,9 @@ bottom: -10px;
 right: 50px;
 /* opacity: 0.5; */
 background-image: url(../asset/img/search.png) !important;
+background-color: white;
+opacity: 0.5;
+
 background-position: 95%;;
 background-repeat: no-repeat;
 background-size: auto 70%;
@@ -117,6 +120,8 @@ background-size: auto 70%;
   }
 .searchtext{
     background-color: transparent !important;
+
+}
 
 }
 
@@ -129,4 +134,14 @@ background-size: auto 70%;
   height: 5rem;
   background-color: grey;
 
+}
+.profilebgpicture{
+  width: 100%;
+      background-image: url(../asset/img/marriageImg2.png);
+      position: relative;
+      margin-top: 70px;
+             height: 270px;
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
