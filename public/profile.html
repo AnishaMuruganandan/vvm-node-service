@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/profilepage.css">
 
 </head>
 
@@ -21,6 +21,7 @@
         <div class="form-group searchbox">
 
           <input type="text" class="form-control searchtext" placeholder="search">
+          <img src="asset/img/search.png" class="img-responsive searchimg">
 
         </div>
 
@@ -29,8 +30,11 @@
     <div class="bodycontent container-fluid">
       <div class="row">
         <div class="col-md-3">
+          <div class="profilepicture">
+          </div>
+
         </div>
-        <div class="col-md-3">
+        <div class="col-md-9">
         </div>
       </div>
 
@@ -43,45 +47,5 @@
   </div>
 
 </body>
-
-
-
-
-
-<script src="//code.jquery.com/jquery-1.6.2.min.js"></script>
-
-<script type="text/javascript">
-  $('#btn').click(function(e) {
-    e.preventDefault();
-    console.log('button clicked');
-    var data = {};
-    // var emailId = $('#value1').val();
-    // var phoneNo = $('#value2').val();
-    loginId = 9;
-    // data.profileId = 234;
-    // data.phoneNo = $('#value2').val();
-    // phoneNo = 9;
-    // data.otp = $('#value3').val();
-    // data.username = $('#value4').val();
-    //data.password = $('#value5').val();
-    // password = 'jj';
-    data.loginTime = '2018-07-29 14:14:30';
-
-    $.ajax({
-      type: 'PUT',
-      data: JSON.stringify(data),
-      contentType: 'application/json',
-      // url: 'http://localhost:4000/register/email-check?emailId=' + emailId,
-      // url: 'http://localhost:4000/register/phone-number-check?phoneNo=' + phoneNo,
-      // url: 'http://localhost:4100/login/login-check?phoneNo=' + phoneNo + '&password=' + password,
-      // url: 'http://localhost:4000/register/registration-details',
-      url: 'http://localhost:4100/login/update-login-time/' + loginId,
-      success: function(data) {
-        console.log('success');
-        console.log(JSON.stringify(data));
-      }
-    });
-  });
-</script>
 
 </html>
