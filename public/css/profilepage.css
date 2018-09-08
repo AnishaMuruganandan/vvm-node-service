@@ -49,6 +49,22 @@
   width: 20px;
 }
 
+.profilepicture {
+  position: absolute;
+  margin: auto;
+  width: 190px;
+  height: 190px;
+  border-radius: 100px;
+  background-color: black;
+  bottom: -90px;
+  left: 100px;
+  box-shadow: 5px 5px 10px #787777;
+  background-image: url(../asset/img/sneha.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 * {
   font-family: "Open Sans", sans-serif;
 }
@@ -65,13 +81,6 @@
   text-align: center;
   box-sizing: border-box;
   padding: 15px;
-}
-
-.profilepicture {
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  background-color: black;
 }
 
 /*# sourceMappingURL=public/css/profilepage.css.map */

@@ -1,12 +1,13 @@
-.profilebgpicture{
+.profilebgpicture {
   width: 100%;
-      background-image: url(../asset/img/marriageImg2.png);
-      position: relative;
-      margin-top: 70px;
-             height: 270px;
+  background-image: url("../asset/img/marriageImg2.png");
+  position: relative;
+  margin-top: 70px;
+  height: 270px;
   background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+
   &::before {
     position: absolute;
     content: "";
@@ -18,31 +19,49 @@
     cursor: pointer;
   }
 }
-.logoImg{
-    position: absolute;
-    top: -70px;
-    left: 160px;
-}
-.logoText{
-    position: absolute;
-    top: 30px;
-    left: 50px;
-}
-.searchbox{
-  position: absolute;
-bottom: -5px;
-right: 50px;
-  }
-.searchtext{
-  position: relative;
-    background-color: transparent !important;
 
+.logoImg {
+  position: absolute;
+  top: -70px;
+  left: 160px;
 }
-.searchimg{
+
+.logoText {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+}
+
+.searchbox {
+  position: absolute;
+  bottom: -5px;
+  right: 50px;
+}
+
+.searchtext {
+  position: relative;
+  background-color: transparent !important;
+}
+
+.searchimg {
   position: absolute;
   bottom: 7px;
   right: 5px;
   width: 20px;
+}
 
-
+.profilepicture {
+  position: absolute;
+  margin: auto;
+  width: 190px;
+  height: 190px;
+  border-radius: 100px;
+  background-color: black;
+  bottom: -90px;
+  left: 100px;
+  box-shadow: 5px 5px 10px #787777;
+  background-image: url("../asset/img/sneha.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
