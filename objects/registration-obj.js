@@ -4,11 +4,11 @@ var registrationObj = {
     this.emailId = emailId || '0';
   },
 
-  verifyPhoneNoObj : function(phoneNo) {
+  verifyPhoneNoObj: function(phoneNo) {
     this.phoneNo = phoneNo || '0';
   },
 
-  saveRegistrationDetailsObj : function(emailId, phoneNo, otp, username, password) {
+  saveRegistrationDetailsObj: function(emailId, phoneNo, otp, username, password) {
     this.emailId = emailId || '0';
     this.phoneNo = phoneNo || '0';
     this.otp = otp || '0';
@@ -16,12 +16,12 @@ var registrationObj = {
     this.password = password || '0';
   },
 
-  updatePasswordObj : function(emailId, password) {
+  updatePasswordObj: function(emailId, password) {
     this.emailId = emailId || '0';
     this.password = password || '0';
   },
 
-  updateProfileIdObj : function(loginId, profileId) {
+  updateProfileIdObj: function(loginId, profileId) {
     this.loginId = loginId || '0';
     this.profileId = profileId || '0';
   }

@@ -5,7 +5,7 @@ var registrationDelegateObj = require('../delegate-layer/registration-delegate')
 //email duplicate verification
 
 router.get('/email-check', async function(req, res, next) {
-  console.log("emailcheck"+req.query.emailId);
+  console.log("emailcheck" + req.query.emailId);
   var result = await registrationDelegateObj.verifyEmailId(req.query.emailId);
   console.log(result + "result route");
   res.json(result);
@@ -14,7 +14,7 @@ router.get('/email-check', async function(req, res, next) {
 //phone duplicate verification
 
 router.get('/phone-number-check', async function(req, res, next) {
-  console.log("phonenumber check"+req.query.phoneNo);
+  console.log("phonenumber check" + req.query.phoneNo);
   var result = await registrationDelegateObj.verifyPhoneNo(req.query.phoneNo);
   console.log(result + "result route");
   res.json(result);

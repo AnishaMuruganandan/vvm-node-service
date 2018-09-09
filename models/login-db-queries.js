@@ -12,7 +12,7 @@ var loginQueries = {
     });
   },
 
-  updateLoginTimeByLoginId : function(updateLoginTimeByLoginIdQuery, updateLoginTimeObj) {
+  updateLoginTimeByLoginId: function(updateLoginTimeByLoginIdQuery, updateLoginTimeObj) {
     return new Promise((resolve, reject) => {
       return dbconnection.query(updateLoginTimeByLoginIdQuery, [updateLoginTimeObj.loginTime, updateLoginTimeObj.loginId], (err, rows) => {
         if (err)

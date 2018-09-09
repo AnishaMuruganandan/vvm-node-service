@@ -18,5 +18,3 @@ function connectDatabase() {
   return connection;
 }
 module.exports = connectDatabase();
-
-//hello

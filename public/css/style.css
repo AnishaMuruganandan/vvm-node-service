@@ -1,160 +1,168 @@
-*{
+* {
   font-family: 'Open Sans', sans-serif;
-  }
-  .bgpicture{
-width: 100%;
-    background-image: url(../asset/img/marriageImg.png);
-    position: relative;
-    margin-top: 70px;
-           height: 160px;
-background-position: center;
+}
+
+.bgpicture {
+  width: 100%;
+  background-image: url(../asset/img/marriageImg.png);
+  position: relative;
+  margin-top: 70px;
+  height: 160px;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .bgpicture::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Black background with opacity */
+  cursor: pointer;
+  /* Add a pointer on hover */
+}
 
-    cursor: pointer; /* Add a pointer on hover */
+.logoImg {
+  position: absolute;
+  top: -70px;
+  left: 160px;
 }
-.logoImg{
-    position: absolute;
-    top: -70px;
-    left: 160px;
-}
-.logoText{
-    position: absolute;
-    top: 12px;
-    left: 50px;
-}
-.bodycontent{
 
+.logoText {
+  position: absolute;
+  top: 12px;
+  left: 50px;
 }
-.registrationForm{
-    margin: 20px 10px;
-    box-sizing: border-box;
-    /* border:1px solid black; */
-/* box-shadow: 10px 10px; */
-     padding: 10px;
+
+.bodycontent {}
+
+.registrationForm {
+  margin: 20px 10px;
+  box-sizing: border-box;
+  /* border:1px solid black; */
+  /* box-shadow: 10px 10px; */
+  padding: 10px;
 }
-.profileDetails{
-overflow:hidden;
-     padding: 10px;
-    /* background-color: red; */
-    margin: 20px 10px;
-        box-sizing: border-box;
+
+.profileDetails {
+  overflow: hidden;
+  padding: 10px;
+  /* background-color: red; */
+  margin: 20px 10px;
+  box-sizing: border-box;
 }
-.submitButton{
+
+.submitButton {
   width: 100%;
-      text-align: center;
-      background-color: red;
-          border-radius: 4px;
-          padding: 6px;
+  text-align: center;
+  background-color: red;
+  border-radius: 4px;
+  padding: 6px;
 }
-.profilePicture{
-width: 15%;
-padding-bottom: 15%;
 
-/* object-fit: cover; */
-background-image: url(../asset/img/logo.png);
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-/* height: auto; */
-float: left;
-}
-.profileInfo{
+.profilePicture {
+  width: 15%;
+  padding-bottom: 15%;
+  /* object-fit: cover; */
+  background-image: url(../asset/img/logo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* height: auto; */
   float: left;
-margin-left: 5%;
-font-size:20px;
 }
-.OtherInfo{
-  font-size:10px;
+
+.profileInfo {
+  float: left;
+  margin-left: 5%;
+  font-size: 20px;
 }
-.viewButton{
-font-size:15px;
-      text-align: center;
-      background-color: orange;
-          border-radius: 4px;
-          padding: 6px;
-          float: left;
+
+.OtherInfo {
+  font-size: 10px;
 }
-.lock{
-      float: left;
-      margin: 5px 12px;
-font-size: 20px;
+
+.viewButton {
+  font-size: 15px;
+  text-align: center;
+  background-color: orange;
+  border-radius: 4px;
+  padding: 6px;
+  float: left;
 }
-.footerDiv{
+
+.lock {
+  float: left;
+  margin: 5px 12px;
+  font-size: 20px;
+}
+
+.footerDiv {
   position: fixed;
   bottom: 0px;
-    width: 100%;
+  width: 100%;
 }
-.footer{
 
+.footer {
   height: 50px;
-
   background-color: orange;
-
-text-align: center;
-box-sizing: border-box;
-padding: 15px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 15px;
 }
 
-.allProfileDetails{
+.allProfileDetails {
   height: calc(100vh - 160px - 50px - 30px - 70px);
   overflow-y: scroll;
   padding: 10px;
- /* background-color: red; */
- margin: 20px 10px;
+  /* background-color: red; */
+  margin: 20px 10px;
+}
 
+.bodycontent {
+  height: calc(100vh - 160px - 50px - 30px - 70px - 10rem);
 }
-.bodycontent{
-    height: calc(100vh - 160px - 50px - 30px - 70px - 10rem);
-}
-.searchbox{
+
+.searchbox {
   position: absolute;
-bottom: -10px;
-right: 50px;
-/* opacity: 0.5; */
-background-image: url(../asset/img/search.png) !important;
-background-color: white;
-opacity: 0.5;
-
-background-position: 95%;;
-background-repeat: no-repeat;
-background-size: auto 70%;
-
-
-  }
-.searchtext{
-    background-color: transparent !important;
-
+  bottom: -10px;
+  right: 50px;
+  /* opacity: 0.5; */
+  background-image: url(../asset/img/search.png) !important;
+  background-color: white;
+  opacity: 0.5;
+  background-position: 95%;
+  ;
+  background-repeat: no-repeat;
+  background-size: auto 70%;
 }
 
+.searchtext {
+  background-color: transparent !important;
+}
 
-
-.buildingImg{
+.buildingImg {
   /* width: 50rem; */
-      margin: auto;
-          max-height: 100%;
+  margin: auto;
+  max-height: 100%;
 }
-.box{
-  height: 5rem;
-    background-color: #FBFBFB;
 
+.box {
+  height: 5rem;
+  background-color: #FBFBFB;
 }
-.profilebgpicture{
+
+.profilebgpicture {
   width: 100%;
-      background-image: url(../asset/img/marriageImg2.png);
-      position: relative;
-      margin-top: 70px;
-             height: 270px;
+  background-image: url(../asset/img/marriageImg2.png);
+  position: relative;
+  margin-top: 70px;
+  height: 270px;
   background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
