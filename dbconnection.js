@@ -1,20 +1,31 @@
 var settings = require('./dbconnectiondetails.json');
 var mysql = require('mysql');
-var connection;
 
-function connectDatabase() {
-  if (!connection) {
+var mysqlConnect = {
 
-    connection = mysql.createConnection(settings);
+  connection: null,
 
-    connection.connect(function(err) {
-      if (!err) {
-        console.log('Database is connected!');
-      } else {
-        console.log('Error connecting database!');
-      }
-    });
+  connectDatabase: function() {
+    if (!this.connection) {
+      this.connection = mysql.createConnection(settings);
+      this.connection.connect(function(err) {
+        if (!err) {
+          console.log('Database is connected!');
+        } else {
+          console.log('Error connecting database!');
+        }
+      });
+    }
+    return this.connection;
+  },
+
+
+  disconnectDatabase: function() {
+    if (this.connection) {
+      this.connection.destroy();
+    }
   }
-  return connection;
-}
-module.exports = connectDatabase();
+
+};
+
+module.exports = mysqlConnect;

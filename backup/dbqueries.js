@@ -1,10 +1,16 @@
-var dbconnection = require('../dbconnection');
+var mysqlConnect = require('../dbconnection');
+
+
+
 var queries = {
 
   addLoginDetails: function(loginDetails, callback) {
-    return dbconnection.query("INSERT INTO login_details (email_id, phone_no, otp, username) VALUES (?, ?, ?, ?)", [
+    var dbconnection = mysqlConnect.connectDatabase();
+    var result = dbconnection.query("INSERT INTO login_details (email_id, phone_no, otp, username) VALUES (?, ?, ?, ?)", [
       loginDetails.emailId, loginDetails.phoneNo, loginDetails.otp, loginDetails.userName
     ], callback);
+    dbconnection.disconnectDatabase();
+    return result;
   },
 
   getLoginDetailsByEmailId: function(emailId, callback) {
@@ -150,4 +156,6 @@ var queries = {
     return dbconnection.query("select * from additional_pic_details where profile_id=?", [profileId], callback);
   }
 };
+
 module.exports = queries;
+mysqlConnect.disconnectDatabase();
