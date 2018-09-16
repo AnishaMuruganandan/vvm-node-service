@@ -20,6 +20,22 @@
   }
 }
 
+.profilepicture {
+  margin: auto;
+  position: absolute;
+  margin: auto;
+  width: 190px;
+  height: 190px;
+  border-radius: 100px;
+  bottom: -90px;
+  left: 100px;
+  box-shadow: 0 2px 4px 0 #000000;
+  background-image: url("../asset/img/sneha.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .logoImg {
   position: absolute;
   top: -70px;
@@ -43,25 +59,17 @@
   background-color: transparent !important;
 }
 
+.linebar {
+  position: absolute;
+  bottom: 3px;
+  right: 27px;
+  font-size: 1.5em;
+  color: white;
+}
+
 .searchimg {
   position: absolute;
   bottom: 7px;
   right: 5px;
   width: 20px;
-}
-
-.profilepicture {
-  position: absolute;
-  margin: auto;
-  width: 190px;
-  height: 190px;
-  border-radius: 100px;
-  background-color: black;
-  bottom: -90px;
-  left: 100px;
-  box-shadow: 5px 5px 10px #787777;
-  background-image: url("../asset/img/sneha.jpg");
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
