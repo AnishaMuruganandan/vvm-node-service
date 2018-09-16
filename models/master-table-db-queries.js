@@ -2,7 +2,7 @@ var dbconnection = require('../dbconnection');
 
 var masterTableQueries = {
 
-  getZodiacMasterTableDetails : function(getZodiacMasterTableDetailsQuery) {
+  getZodiacMasterTableDetails: function(getZodiacMasterTableDetailsQuery) {
     return new Promise((resolve, reject) => {
       return dbconnection.query(getZodiacMasterTableDetailsQuery, (err, rows) => {
         if (err)

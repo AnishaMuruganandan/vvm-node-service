@@ -1,13 +1,15 @@
 var express = require('express');
 var loginQueries = require('../models/login-db-queries');
 var loginQueriesConst = require('../query-constants/login-query-constant');
-var loginService = {
+var async = require('async');
 
-  verifyLoginDetails: async function(verifyLoginDetailsObj) {
+var loginService = (function() {
+
+  let verifyLoginDetails = async function(verifyLoginDetailsObj) {
     console.log("verifyLoginDetails");
     var msg = "";
     try {
-      var output = await loginQueries.findByPhoneNoAndPassword(loginQueriesConst.findByPhoneNoAndPasswordQuery, verifyLoginDetailsObj);
+      var output = await (loginQueries.findByPhoneNoAndPassword(loginQueriesConst.findByPhoneNoAndPasswordQuery, verifyLoginDetailsObj));
       console.log(JSON.stringify(output) + "output");
       var count = Object.keys(output).length;
       console.log(count);
@@ -24,13 +26,13 @@ var loginService = {
       console.log('Opps, an error occurred', err);
     }
     return msg;
-  },
+  };
 
-  updateLoginTime : async function(updateLoginTimeObj) {
+  let updateLoginTime = async function(updateLoginTimeObj) {
     console.log("updateLoginTime");
     var msg = "";
     try {
-      var output = await loginQueries.updateLoginTimeByLoginId(loginQueriesConst.updateLoginTimeByLoginIdQuery, updateLoginTimeObj);
+      var output = await (loginQueries.updateLoginTimeByLoginId(loginQueriesConst.updateLoginTimeByLoginIdQuery, updateLoginTimeObj));
       console.log(JSON.stringify(output) + "output");
       msg = "inserted" + output.affectedRows;
     } catch (err) {
@@ -38,8 +40,14 @@ var loginService = {
       console.log('Opps, an error occurred', err);
     }
     return msg;
-  }
+  };
 
-}
+  return {
+    verifyLoginDetails: verifyLoginDetails,
+    updateLoginTime: updateLoginTime
+  };
+
+
+})();
 
 module.exports = loginService;

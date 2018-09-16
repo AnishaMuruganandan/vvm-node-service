@@ -1,12 +1,14 @@
 var registrationQueryConst = {
-findByEmailIdQuery : "select * from login_details where email_id=?",
 
-findByPhoneNoQuery : "select * from login_details where phone_no=?",
+  findByEmailIdQuery: "select * from login_details where email_id=?",
 
-saveAllQuery : "INSERT INTO login_details (email_id, phone_no, otp, username, password) VALUES (?, ?, ?, ?, ?)",
+  findByPhoneNoQuery: "select * from login_details where phone_no=?",
 
-updatePasswordByEmailIdQuery : "update login_details set password=? where email_id=?",
+  saveAllQuery: "INSERT INTO login_details (email_id, phone_no, otp, username, password) VALUES (?, ?, ?, ?, ?)",
 
-updateProfileIdByLoginIdQuery : "update login_details set profile_id=? where login_id=?"
-}
+  updatePasswordByEmailIdQuery: "update login_details set password=? where email_id=?",
+
+  updateProfileIdByLoginIdQuery: "update login_details set profile_id=? where login_id=?"
+};
+
 module.exports = registrationQueryConst;

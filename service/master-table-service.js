@@ -3,7 +3,7 @@ var masterTableQueries = require('../models/master-table-db-queries');
 var masterTableQueriesConst = require('../query-constants/master-table-query-constant');
 var masterTableService = {
 
-  getZodiacMasterTable : async function() {
+  getZodiacMasterTable: async function() {
     console.log("getZodiacMasterTable");
     var msg = {};
     try {
