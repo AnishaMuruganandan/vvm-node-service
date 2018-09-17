@@ -47,7 +47,7 @@
   box-sizing: border-box;
   /* border:1px solid black; */
   /* box-shadow: 10px 10px; */
-  padding: 30px 20PX 10PX;
+  padding: 30px 20px 20px;
 }
 
 .profileDetails {
@@ -256,4 +256,19 @@ vertical-align: middle;
 .copyrightsytle{
   color:white;
       margin: 0px 5px;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+.logintextStyle{
+  position: absolute;
+  top: -45px;
+  right: 50px;
+}
+#registrationUsingEmailPwd{
+  display: none;
+}
+#registrationForm{
+  display: none;
 }
