@@ -74,7 +74,7 @@
 
 .profilePicture {
   width: 160px;
-      height: 150px;
+  height: 150px;
   padding-bottom: 15%;
   position: relative;
   /* object-fit: cover; */
@@ -103,14 +103,13 @@
 }
 
 .viewButton {
-
   text-align: center;
   background-image: linear-gradient(#FFA105, #FF6C12);
   border-radius: 4px;
   padding: 7px 20px;
   float: left;
   font-weight: 300;
-    font-size: 0.6em;
+  font-size: 0.6em;
 }
 
 .lock {
@@ -151,27 +150,25 @@
 .searchbox {
   position: absolute;
   bottom: -5px;
-    right: 25px;
-  background-color: rgba(255,255,255,0.2);
-    border: 0px !important;
-    border-radius: 4px;
+  right: 25px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 0px !important;
+  border-radius: 4px;
 }
 
 .searchtext {
-  border:0px !important;
+  border: 0px !important;
   color: white !important;
   position: relative;
   background-color: transparent !important;
-      padding: 0px 20px 0px 10px !important;
-          font-weight: 300;
+  padding: 0px 20px 0px 10px !important;
+  font-weight: 300;
 }
 
 .searchtext::placeholder {
-      font-weight: 300;
-
+  font-weight: 300;
   color: white;
   font-size: 0.8em;
-
 }
 
 .linebar {
@@ -186,8 +183,7 @@
   position: absolute;
   bottom: 7px;
   right: 5px;
-
-      width: 18px;
+  width: 18px;
 }
 
 .buildingImg {
@@ -233,57 +229,79 @@
 .blurstyle {
   filter: blur(5px);
 }
-.overlay{
-  position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
-    height: 100%; /* Full height (cover the whole page) */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-    z-index: 2;
-  }
-.tickMark{
-  color:#417505;
-    margin: 0 0 0 10px;
+
+.overlay {
+  position: fixed;
+  /* Sit on top of the page content */
+  display: none;
+  /* Hidden by default */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Black background with opacity */
+  z-index: 2;
 }
-.verifiedText{
+
+.tickMark {
+  color: #417505;
+  margin: 0 0 0 10px;
+}
+
+.verifiedText {
   font-size: 0.6em;
-vertical-align: middle;
+  vertical-align: middle;
 }
-.copyrightsytle{
-  color:white;
-      margin: 0px 5px;
+
+.copyrightsytle {
+  color: white;
+  margin: 0px 5px;
 }
+
 ::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent */
+  width: 0px;
+  background: transparent;
+  /* make scrollbar transparent */
 }
-.logintextStyle{
+
+.logintextStyle {
   position: absolute;
   top: -45px;
-      right: 25px;
+  right: 25px;
 }
-#registrationUsingEmailPwd{
-  /* display: none; */
-}
-#registrationForm{
-  /* display: none; */
-}
-#registrationUsingPhoneOtp{
+
+#registrationUsingEmailPwd {
   display: none;
 }
-#LoginForm{
+
+#registrationForm {
+  /* display: none; */
+}
+
+#OtpGeneration {
+  /* display: none; */
+}
+
+#OtpVerification {
   display: none;
 }
-.verifyotpButton{
-      margin-top: 30px;
+
+#LoginForm {
+  display: none;
 }
-.resendtextStyle{
+
+.verifyotpButton {
+  margin-top: 30px;
+}
+
+.resendtextStyle {
   margin-top: -10px;
-    float: right;
-    font-size: 0.8em;
-    color:#4A90E2 !important;
+  float: right;
+  font-size: 0.8em;
+  color: #4A90E2 !important;
 }
