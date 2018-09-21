@@ -17,6 +17,7 @@ let loginFunc = (function() {
     $OtpVerification = $('#OtpVerification');
     $registrationUsingEmailPwd = $('#registrationUsingEmailPwd');
     $register = $('#register');
+    $LoginForm = $('#LoginForm');
     var generatedOTP;
   };
 
@@ -29,9 +30,10 @@ let loginFunc = (function() {
      */
     $generateandSendOTP.click(function(e) {
       generateandSendOTPService();
+      $OtpGeneration.hide();
+      $OtpVerification.show();
     });
-    $OtpGeneration.hide();
-    $OtpVerification.show();
+
 
     $verifyOTP.click(function(e) {
       verifyOTPService();
@@ -39,6 +41,9 @@ let loginFunc = (function() {
 
     $register.click(function(e){
       saveAllDetailsService();
+       $registrationUsingEmailPwd.hide();
+       $registrationForm.hide();
+$LoginForm.show();
     });
   };
 

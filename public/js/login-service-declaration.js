@@ -1,28 +1,17 @@
-var registraionServiceDeclaration = {
+var loginServiceDeclaration = {
 
-  generateandSendOTPService: function(data) {
+verifyLoginDetailsService: function(data) {
 
-    const AJAX_INPUT_OBJ = {
-      "METHOD": "POST",
-      "data": data,
-      "URL": "http://localhost:3000/registration/generatingandSendingOTP",
-    };
+  const AJAX_INPUT_OBJ = {
+    "METHOD": "POST",
+    "data": data,
+    "URL": "http://localhost:3000/login/verifyLoginDetails",
+  };
 
-    var response =  registraionServiceDeclaration.ajaxService(obj);
-    return response;
-  },
+  var response =  loginServiceDeclaration.ajaxService(obj);
+  return response;
+},
 
-  saveAllDetailsService: function(data) {
-
-    const AJAX_INPUT_OBJ = {
-      "METHOD": "POST",
-      "data": data,
-      "URL": "http://localhost:3000/registration/saveAllDetails",
-    };
-
-    var response =  registraionServiceDeclaration.ajaxService(obj);
-    return response;
-  },
   ajaxService: function(obj) {
     $.ajax({
       type: obj.METHOD,

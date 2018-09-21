@@ -6,18 +6,11 @@ let loginFunc = (function() {
 
   let init = function() {
 
-    $emailId = $('#emailId');
-    $password = $('#password');
-    $phoneNo = $('#phoneNo');
-    $otp = $('#otp');
-    $generateandSendOTP = $('#generateandSendOTP');
-    $verifyOTP = $('#verifyOTP');
-    $registrationForm = $('#registrationForm');
-    $OtpGeneration = $('#OtpGeneration');
-    $OtpVerification = $('#OtpVerification');
-    $registrationUsingEmailPwd = $('#registrationUsingEmailPwd');
-    $register = $('#register');
-    var generatedOTP;
+    $loginPhoneNo = $('#loginPhoneNo');
+  $loginPassword = $('#loginPassword');
+  $LoginForm = $('#LoginForm');
+    $LoginForm = $('#LoginForm');
+    $loginButton = $('#loginButton');
   };
 
   let construct = function() {};
@@ -27,51 +20,26 @@ let loginFunc = (function() {
     /*
      * Registraion Form submit listener
      */
-    $generateandSendOTP.click(function(e) {
-      generateandSendOTPService();
-    });
-    $OtpGeneration.hide();
-    $OtpVerification.show();
-
-    $verifyOTP.click(function(e) {
-      verifyOTPService();
+    $loginButton.click(function(e) {
+      loginService();
     });
 
-    $register.click(function(e){
-      saveAllDetailsService();
-    });
+
+
   };
 
   let finalise = function() {};
 
-  let generateandSendOTPService = function() {
 
-    var data = {};
-    data.phoneNo = $phoneNo.val();
-    var result = registraionServiceDeclaration.generateandSendOTPService(data);
-    generatedOTP = result;
-
-  };
-
-  let verifyOTPService = function(){
-   var userEnteredOTP = $otp.val();
-   if(userEnteredOTP == generatedOTP){
-     $OtpVerification.hide();
-     $registrationUsingEmailPwd.show();
-   }
-   else {
-     alert("wrong otp");
-   }
-  };
-
-  let saveAllDetailsService = function(){
+  let loginService = function(){
     var data = {
-    "phoneNo" = $phoneNo.val();
-    "emailId" = $emailId.val();
-    "password" = $password.val();
-    var result = registraionServiceDeclaration.saveAllDetailsService(data);
+    "loginPhoneNo" = $loginPhoneNo.val();
+    "loginPassword" = $loginPassword.val();
+    var result = loginServiceDeclaration.verifyLoginDetailsService(data);
   }
   };
+
+
   return {
     init: init,
     construct: construct,
