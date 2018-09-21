@@ -1,5 +1,5 @@
 /* FILE_NAME : registration.js FOLDER : public/js/registration DESCRIPTION : AUTHOR : ANN NOTES : */
-let loginFunc = (function() {
+let registrationFunc = (function() {
   let FILE_NAME = "registrationJS";
 
   let $registrationForm;
@@ -71,11 +71,11 @@ $LoginForm.show();
 
   let saveAllDetailsService = function(){
     var data = {
-    "phoneNo" = $phoneNo.val();
-    "emailId" = $emailId.val();
-    "password" = $password.val();
-    var result = registraionServiceDeclaration.saveAllDetailsService(data);
+    "phoneNo" : $phoneNo.val(),
+    "emailId" : $emailId.val(),
+    "password" : $password.val()
   }
+    var result = registraionServiceDeclaration.saveAllDetailsService(data);
   };
   return {
     init: init,
@@ -85,7 +85,7 @@ $LoginForm.show();
   };
 });
 
-var loginJS = {
+var registrationJS = {
 
   /*
    * METHOD_NAME : init
@@ -94,8 +94,8 @@ var loginJS = {
    */
   _init: function() {
 
-    loginObj = loginFunc();
-    loginObj.init();
+    registrationFunc = registrationFunc();
+    registrationFunc.init();
 
   },
 
@@ -112,7 +112,7 @@ var loginJS = {
    * DESCRIPTION : Complete
    */
   _complete: function() {
-    loginObj.complete();
+    registrationFunc.complete();
   },
 
   /*

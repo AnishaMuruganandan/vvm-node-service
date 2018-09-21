@@ -1,8 +1,7 @@
 /* FILE_NAME : registration.js FOLDER : public/js/registration DESCRIPTION : AUTHOR : ANN NOTES : */
 let loginFunc = (function() {
-  let FILE_NAME = "registrationJS";
+  let FILE_NAME = "loginJS";
 
-  let $registrationForm;
 
   let init = function() {
 
@@ -33,10 +32,11 @@ let loginFunc = (function() {
 
   let loginService = function(){
     var data = {
-    "loginPhoneNo" = $loginPhoneNo.val();
-    "loginPassword" = $loginPassword.val();
-    var result = loginServiceDeclaration.verifyLoginDetailsService(data);
+    "loginPhoneNo" : $loginPhoneNo.val(),
+    "loginPassword" : $loginPassword.val()
   }
+    var result = loginServiceDeclaration.verifyLoginDetailsService(data);
+
   };
 
 
