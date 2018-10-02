@@ -6,8 +6,8 @@ let loginFunc = (function() {
   let init = function() {
 
     $loginPhoneNo = $('#loginPhoneNo');
-  $loginPassword = $('#loginPassword');
-  $LoginForm = $('#LoginForm');
+    $loginPassword = $('#loginPassword');
+    $LoginForm = $('#LoginForm');
     $LoginForm = $('#LoginForm');
     $loginButton = $('#loginButton');
   };
@@ -30,13 +30,13 @@ let loginFunc = (function() {
   let finalise = function() {};
 
 
-  let loginService = function(){
+  let loginService = function() {
     var data = {
-    "loginPhoneNo" : $loginPhoneNo.val(),
-    "loginPassword" : $loginPassword.val()
-  }
+      "loginPhoneNo": $loginPhoneNo.val(),
+      "loginPassword": $loginPassword.val()
+    }
     var result = loginServiceDeclaration.verifyLoginDetailsService(data);
-
+    alert(result);
   };
 
 
@@ -84,7 +84,7 @@ var loginJS = {
    * DESCRIPTION : Finalize
    */
   _finalise: function() {
-    utilsJS.toggleLoader();
+
   }
 
 };

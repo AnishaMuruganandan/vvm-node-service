@@ -1,13 +1,14 @@
 var express = require('express');
 var loginServiceObj = require('../service/login-service');
-var loginObject = require('../objects/login-obj');
+var loginObj = require('../objects/login-obj');
+
 
 var loginDelegate = (function() {
 
 
   let verifyLoginDetails = async function(phoneNo, password) {
     console.log("dlegate");
-    var verifyLoginDetailsObj = new loginObject.verifyLoginDetailsObj(phoneNo, password);
+    var verifyLoginDetailsObj = new loginObj.verifyLoginDetailsObj(phoneNo, password);
     try {
       console.log("del try");
       var output = await (loginServiceObj.verifyLoginDetails(verifyLoginDetailsObj));
@@ -21,7 +22,7 @@ var loginDelegate = (function() {
 
   let updateLoginTime = async function(loginId, loginDetails) {
     console.log("dlegate");
-    var updateLoginTimeObj = new loginObject.updateLoginTimeObj(loginId, loginDetails.loginTime);
+    var updateLoginTimeObj = new loginObj.updateLoginTimeObj(loginId, loginDetails.loginTime);
     try {
       console.log("del try");
       var output = await (loginServiceObj.updateLoginTime(updateLoginTimeObj));

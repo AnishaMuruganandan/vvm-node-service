@@ -12,14 +12,14 @@ var errorPg = path.join(__dirname, "./public/404.html");
 var bodyParser = require('body-parser');
 app.use(express.static(path.join(__dirname, 'public')));
 
-var port = process.env.PORT || 4100;
+var port = process.env.PORT || 4200;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-app.use('/register', registrationRoutes);
+app.use('/registration', registrationRoutes);
 app.use('/login', loginRoutes);
 
 // app.use(function(req, res, next) {

@@ -5,7 +5,7 @@ verifyLoginDetailsService: function(data) {
   const AJAX_INPUT_OBJ = {
     "METHOD": "POST",
     "data": data,
-    "URL": "http://localhost:3000/login/verifyLoginDetails",
+    "URL": "http://localhost:4200/login/login-check",
   };
 
   var response =  loginServiceDeclaration.ajaxService(obj);

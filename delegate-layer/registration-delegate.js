@@ -1,6 +1,7 @@
 var express = require('express');
 var registrationServiceObj = require('../service/registration-service');
-var registrationObject = require('../objects/registration-obj')
+var registrationObject = require('../objects/registration-obj');
+var OtpObj = require('../util/otp');
 
 var registrationDelegate = {
 
@@ -34,7 +35,8 @@ var registrationDelegate = {
 
       saveRegistrationDetails: async function(registrationDetails) {
           console.log("dlegate");
-          var saveRegistrationDetailsObj = new registrationObject.saveRegistrationDetailsObj(registrationDetails.emailId, registrationDetails.phoneNo, registrationDetails.otp, registrationDetails.username, registrationDetails.password);
+          var otp=0;
+          var saveRegistrationDetailsObj = new registrationObject.saveRegistrationDetailsObj(registrationDetails.emailId, registrationDetails.phoneNo, otp , registrationDetails.username, registrationDetails.password);
           try {
             console.log("del try");
             var output = await registrationServiceObj.saveRegistrationDetails(saveRegistrationDetailsObj);
@@ -68,6 +70,24 @@ var registrationDelegate = {
               var output = await registrationServiceObj.updateProfileId(updateProfileIdObj);
               console.log(output + "out delegate");
               return output;
+            } catch (error) {
+              console.log(error);
+              return error;
+            }
+          },
+
+          sendOTP: function(contactDetails) {
+            console.log("dlegate");
+
+            try {
+              console.log("del try");
+               var generatedOTP = OtpObj.OTPGeneration();
+               console.log(generatedOTP + "generatedOTP");
+               // var messageStatus = OtpObj.SendingOTP(generatedOTP, contactDetails.phoneNo);
+              // console.log(messageStatus + "messageStatus");
+
+              return generatedOTP;
+
             } catch (error) {
               console.log(error);
               return error;

@@ -18,7 +18,7 @@ var loginService = (function() {
         msg = "no entry found";
         console.log(msg + "msg");
       } else {
-        msg = "duplicate found";
+        msg = "found";
         console.log(msg + "msg");
       }
     } catch (err) {

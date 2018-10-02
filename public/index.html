@@ -45,20 +45,20 @@
                     <div class="form-group">
                       <input type="password" class="smallfont form-control textboxstyle" id="password" placeholder="Password">
               </div>
-                      <div class="regsiterButton" id="register"> <a class="smallfont regsiterButtonStyle">
-            REGISTER NOW
+                      <a class="smallfont regsiterButtonStyle" id="register">
+                         <div class="regsiterButton">REGISTER NOW</div>
           </a>
-                      </div>
+
                     </div>
 
                     <div id="OtpGeneration">
                       <div class="form-group">
                         <input type="text" class="smallfont form-control textboxstyle" id="phoneNo" placeholder="Phone Number">
                   </div>
-                        <div class="regsiterButton" id="generateandSendOTP"> <a class="smallfont regsiterButtonStyle">
-                GENERATE OTP
+                        <a class="smallfont regsiterButtonStyle" id="generateandSendOTP">
+                        <div class="regsiterButton">  GENERATE OTP</div>
               </a>
-                        </div>
+
                       </div>
 
                       <div id="OtpVerification">
@@ -66,8 +66,8 @@
                         <div class="form-group">
                           <input type="password" class="smallfont form-control textboxstyle" id="otp" placeholder="OTP">
                       </div>
-                          <a class="resendtextStyle">Resend</a>
-                          <div class="regsiterButton verifyotpButton" id="verifyOTP"> <a class="smallfont regsiterButtonStyle">
+                          <a class="resendtextStyle" id="generateandSendOTP">Resend</a>
+                          <div class="regsiterButton verifyotpButton"> <a class="smallfont regsiterButtonStyle" id="verifyOTP">
                     VERIFY OTP
                   </a>
                           </div>
@@ -88,8 +88,8 @@
                       </div>
                             <div class="form-group">
                               <input type="password" class="smallfont form-control textboxstyle" id="loginPassword" placeholder="Password">
-                      </div>"
-                              <div class="regsiterButton" id="loginButton"> <a class="smallfont regsiterButtonStyle">
+                      </div>
+                              <div class="regsiterButton"> <a class="smallfont regsiterButtonStyle" id="loginButton">
                     LOGIN
                   </a>
                               </div>
@@ -240,8 +240,13 @@
 
 
 <script src="//code.jquery.com/jquery-1.6.2.min.js"></script>
+<script src="../js/registration-service-declaration.js"></script>
 <script src="../js/registration.js"></script>
+<script src="../js/login-service-declaration.js"></script>
 <script src="../js/login.js"></script>
+
+<script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+<script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
 
 
 </html>

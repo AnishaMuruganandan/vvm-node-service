@@ -39,43 +39,45 @@ let registrationFunc = (function() {
       verifyOTPService();
     });
 
-    $register.click(function(e){
+    $register.click(function(e) {
       saveAllDetailsService();
-       $registrationUsingEmailPwd.hide();
-       $registrationForm.hide();
-$LoginForm.show();
+      $registrationUsingEmailPwd.hide();
+      $registrationForm.hide();
+      $LoginForm.show();
     });
   };
 
   let finalise = function() {};
 
-  let generateandSendOTPService = function() {
+  let generateandSendOTPService = async function() {
 
     var data = {};
     data.phoneNo = $phoneNo.val();
-    var result = registraionServiceDeclaration.generateandSendOTPService(data);
+    var result = await registrationServiceDeclaration.generateandSendOTPService(data);
     generatedOTP = result;
+    console.log("generatedOTP client" + generatedOTP);
 
   };
 
-  let verifyOTPService = function(){
-   var userEnteredOTP = $otp.val();
-   if(userEnteredOTP == generatedOTP){
-     $OtpVerification.hide();
-     $registrationUsingEmailPwd.show();
-   }
-   else {
-     alert("wrong otp");
-   }
+  let verifyOTPService = function() {
+    var userEnteredOTP = $otp.val();
+    console.log(generatedOTP+"gen otp");
+    console.log(userEnteredOTP+"user otp");
+    if (userEnteredOTP == generatedOTP) {
+      $OtpVerification.hide();
+      $registrationUsingEmailPwd.show();
+    } else {
+      alert("wrong otp");
+    }
   };
 
-  let saveAllDetailsService = function(){
+  let saveAllDetailsService = function() {
     var data = {
-    "phoneNo" : $phoneNo.val(),
-    "emailId" : $emailId.val(),
-    "password" : $password.val()
-  }
-    var result = registraionServiceDeclaration.saveAllDetailsService(data);
+      "phoneNo": $phoneNo.val(),
+      "emailId": $emailId.val(),
+      "password": $password.val()
+    }
+    var result = registrationServiceDeclaration.saveAllDetailsService(data);
   };
   return {
     init: init,
@@ -94,8 +96,8 @@ var registrationJS = {
    */
   _init: function() {
 
-    registrationFunc = registrationFunc();
-    registrationFunc.init();
+    registrationObj = new registrationFunc();
+    registrationObj.init();
 
   },
 
@@ -112,7 +114,7 @@ var registrationJS = {
    * DESCRIPTION : Complete
    */
   _complete: function() {
-    registrationFunc.complete();
+    registrationObj.complete();
   },
 
   /*
@@ -120,9 +122,7 @@ var registrationJS = {
    * AUTHOR : AV
    * DESCRIPTION : Finalize
    */
-  _finalise: function() {
-    utilsJS.toggleLoader();
-  }
+  _finalise: function() {}
 
 };
 
@@ -130,9 +130,9 @@ var registrationJS = {
 
 $(function() {
 
-  loginJS._init();
-  loginJS._construct();
-  loginJS._complete();
-  loginJS._finalise();
+  registrationJS._init();
+  registrationJS._construct();
+  registrationJS._complete();
+  registrationJS._finalise();
 
 });
