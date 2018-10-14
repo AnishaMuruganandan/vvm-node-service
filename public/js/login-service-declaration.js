@@ -5,7 +5,7 @@ verifyLoginDetailsService: async function(data) {
   const AJAX_INPUT_OBJ = {
     "METHOD": "GET",
     "data": data,
-    "URL": "http://localhost:4300/login/login-check?phoneNo=" + data.loginPhoneNo + "&password="+ data.loginPassword
+    "URL": URL_Domain+"login/login-check?phoneNo=" + data.loginPhoneNo + "&password="+ data.loginPassword
   };
 
   var response =  await this.ajaxService(AJAX_INPUT_OBJ);

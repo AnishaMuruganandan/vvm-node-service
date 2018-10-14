@@ -65,6 +65,7 @@
   background-image: linear-gradient(#F5515F, #9F041B);
   border-radius: 4px;
   padding: 12px;
+      color: white;
 }
 
 .regsiterButtonStyle {
@@ -220,6 +221,7 @@
 .textboxstyle {
   border: 1px solid #979797;
   padding: 10px;
+   outline: none !important;
 }
 
 .smallfont {
@@ -304,4 +306,7 @@
   float: right;
   font-size: 0.8em;
   color: #4A90E2 !important;
+}
+.input:focus, .textboxstyle:focus{
+ outline: none !important;
 }
