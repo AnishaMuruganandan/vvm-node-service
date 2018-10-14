@@ -5,25 +5,27 @@ var registrationServiceDeclaration = {
       const AJAX_INPUT_OBJ = {
         "METHOD": "POST",
         "data": data,
-        "URL": "http://localhost:4200/registration/send-otp",
+        "URL": "http://localhost:4300/registration/send-otp"
       };
 
       var response = await this.ajaxService(AJAX_INPUT_OBJ);
       console.log(JSON.stringify(response) + "response");
-      var res= JSON.stringify(response)
-      return res;
+      // var res= JSON.stringify(response)
+      return response;
     },
 
-    saveAllDetailsService: function(data) {
+    saveAllDetailsService: async function(data) {
 
       const AJAX_INPUT_OBJ = {
         "METHOD": "POST",
         "data": data,
-        "URL": "http://localhost:4200/registration/registration-details",
+        "URL": "http://localhost:4300/registration/registration-details"
       };
 
-      var response = this.ajaxService(AJAX_INPUT_OBJ);
+      var response = await this.ajaxService(AJAX_INPUT_OBJ);
+      console.log(JSON.stringify(response)+"save response");
       return response;
+
     },
     ajaxService: function(obj) {
       return new Promise((resolve, reject) => {

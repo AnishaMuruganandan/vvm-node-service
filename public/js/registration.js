@@ -18,6 +18,7 @@ let registrationFunc = (function() {
     $registrationUsingEmailPwd = $('#registrationUsingEmailPwd');
     $register = $('#register');
     $LoginForm = $('#LoginForm');
+    $loginBtn = $('#loginBtn');
     var generatedOTP;
   };
 
@@ -42,6 +43,11 @@ let registrationFunc = (function() {
     $register.click(function(e) {
       saveAllDetailsService();
       $registrationUsingEmailPwd.hide();
+      $registrationForm.hide();
+      $LoginForm.show();
+    });
+
+    $loginBtn.click(function(e){
       $registrationForm.hide();
       $LoginForm.show();
     });
@@ -71,13 +77,14 @@ let registrationFunc = (function() {
     }
   };
 
-  let saveAllDetailsService = function() {
+  let saveAllDetailsService = async function() {
     var data = {
       "phoneNo": $phoneNo.val(),
       "emailId": $emailId.val(),
       "password": $password.val()
     }
-    var result = registrationServiceDeclaration.saveAllDetailsService(data);
+    var result = await registrationServiceDeclaration.saveAllDetailsService(data);
+    console.log(result+"fearesult");
   };
   return {
     init: init,

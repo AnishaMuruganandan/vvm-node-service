@@ -1,8 +1,9 @@
-var dbconnection = require('../dbconnection');
-var RegistrationQueries = {
+var dbconnectionConst = require('../dbconnection');
+var registrationQueries = {
   findByEmailId: function(findByEmailIdQuery, verfiyEmailIdObj) {
+    // var dbconnectionObj =dbconnectionConst.connectDatabase();
     return new Promise((resolve, reject) => {
-      return dbconnection.query(findByEmailIdQuery, [verfiyEmailIdObj.emailId], (err, rows) => {
+      return dbconnectionObj.query(findByEmailIdQuery, [verfiyEmailIdObj.emailId], (err, rows) => {
         if (err)
           return reject(err);
         resolve(rows);
@@ -12,7 +13,7 @@ var RegistrationQueries = {
 
   findByPhoneNumber: function(findByPhoneNoQuery, verifyPhoneNoObj) {
     return new Promise((resolve, reject) => {
-      return dbconnection.query(findByPhoneNoQuery, [verifyPhoneNoObj.phoneNo], (err, rows) => {
+      return dbconnectionObj.query(findByPhoneNoQuery, [verifyPhoneNoObj.phoneNo], (err, rows) => {
         if (err)
           return reject(err);
         resolve(rows);
@@ -22,19 +23,26 @@ var RegistrationQueries = {
 
   saveAll: function(saveAllQuery, saveRegistrationDetailsObj) {
     return new Promise((resolve, reject) => {
-      return dbconnection.query(saveAllQuery, [
+
+        let dbconnectionObj = dbconnectionConst.connectDatabase();
+      return dbconnectionObj.query(saveAllQuery, [
         saveRegistrationDetailsObj.emailId, saveRegistrationDetailsObj.phoneNo, saveRegistrationDetailsObj.otp, saveRegistrationDetailsObj.username, saveRegistrationDetailsObj.password
       ], (err, rows) => {
+
+                        dbconnectionConst.disconnectDatabase();
         if (err)
           return reject(err);
+          console.log("rowsDb"+rows);
+
         resolve(rows);
+
       });
     });
   },
 
   updatePasswordByEmailId: function(updatePasswordByEmailIdQuery, updatePasswordObj) {
     return new Promise((resolve, reject) => {
-      return dbconnection.query(updatePasswordByEmailIdQuery, [
+      return dbconnectionObj.query(updatePasswordByEmailIdQuery, [
         updatePasswordObj.password, updatePasswordObj.emailId
       ], (err, rows) => {
         if (err)
@@ -46,7 +54,7 @@ var RegistrationQueries = {
 
   updateProfileIdByLoginId: function(updateProfileIdByLoginIdQuery, updateProfileIdObj) {
     return new Promise((resolve, reject) => {
-      return dbconnection.query(updateProfileIdByLoginIdQuery, [
+      return dbconnectionObj.query(updateProfileIdByLoginIdQuery, [
         updateProfileIdObj.profileId, updateProfileIdObj.loginId
       ], (err, rows) => {
         if (err)
@@ -58,4 +66,4 @@ var RegistrationQueries = {
 
 }
 
-module.exports = RegistrationQueries;
+module.exports = registrationQueries;

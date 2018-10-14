@@ -104,3 +104,42 @@
 .TabContent {
   padding: 15px;
 }
+
+.profileInput {
+  position: relative;
+}
+
+.profileInputBox {
+  border: 1px solid #CDCDCD;
+  box-shadow: 1px 1px 5px #CDCDCD;
+  width: 100%;
+  padding: 10px 5px;
+}
+
+.profileInputBox + label {
+  position: absolute;
+  top: 10px;
+  justify-content: center;
+  left: 20px;
+  // width: 100%;
+  // transition: 0.2s;
+}
+
+.profileLabel{
+  font-weight: 400;
+      font-family: "Open Sans", sans-serif;
+//       z-index: 1;
+// position: absolute;
+
+}
+.profileInputBox:focus{
+ outline: none;
+}
+
+.profileInput:valid +label,
+.profileInputBox:valid +label
+{
+    top: -11px;
+  background-color: white;
+  margin: 0;
+}

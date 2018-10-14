@@ -1,21 +1,22 @@
 var express = require('express');
 var router = express.Router();
-var queries = require('../models/dbqueries');
+// var queries = require('../models/dbqueries');
+var profileDelegateObj = require('../delegate-layer/profile-delegate');
 
-router.post('/profileCreation', function(req, res, next) {
+router.post('/profile-details', async function(req, res, next) {
   console.log('body: ' + JSON.stringify(req.body));
-  var bodyobj = req.body;
-  // obj.otp=//method call
-  console.log("onj" + JSON.stringify(bodyobj));
-  queries.addProfileDetails(bodyobj, function(err, output) {
-    if (err) {
-      res.json(err);
-      console.log(err + "err");
-    } else {
-      res.json(output.insertId);
-      // res.json(count);
-    }
-  });
+  var result = await profileDelegateObj.saveprofileDetails(req.body);
+  console.log(result + "result route");
+  res.json(result);
+  // queries.addProfileDetails(bodyobj, function(err, output) {
+  //   if (err) {
+  //     res.json(err);
+  //     console.log(err + "err");
+  //   } else {
+  //     res.json(output.insertId);
+  //
+  //   }
+  // });
 });
 
 router.get('/fetchProfileDetailsByProfileId/:profileId', function(req, res, next) {

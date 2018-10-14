@@ -1,13 +1,14 @@
-var mysqlConnect = require('../dbconnection');
+let mysqlConnect = require('../dbconnection');
 
 
 
 var loginQueries = {
 
   findByPhoneNoAndPassword: function(findByPhoneNoAndPasswordQuery, verifyLoginDetailsObj) {
-    var dbconnection = mysqlConnect.connectDatabase();
+
 
     return new Promise((resolve, reject) => {
+        let dbconnection = mysqlConnect.connectDatabase();
       dbconnection.query(findByPhoneNoAndPasswordQuery, [verifyLoginDetailsObj.phoneNo, verifyLoginDetailsObj.password], (err, rows) => {
         mysqlConnect.disconnectDatabase();
         if (err)
@@ -18,7 +19,7 @@ var loginQueries = {
   },
 
   updateLoginTimeByLoginId: function(updateLoginTimeByLoginIdQuery, updateLoginTimeObj) {
-    var dbconnection = mysqlConnect.connectDatabase();
+    let dbconnection = mysqlConnect.connectDatabase();
     var result;
 
     return new Promise((resolve, reject) => {

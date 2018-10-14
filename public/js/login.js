@@ -30,12 +30,12 @@ let loginFunc = (function() {
   let finalise = function() {};
 
 
-  let loginService = function() {
-    var data = {
-      "loginPhoneNo": $loginPhoneNo.val(),
-      "loginPassword": $loginPassword.val()
-    }
-    var result = loginServiceDeclaration.verifyLoginDetailsService(data);
+  let loginService = async function() {
+    var data = {};
+      data.loginPhoneNo = $loginPhoneNo.val();
+      data.loginPassword = $loginPassword.val();
+
+    var result = await loginServiceDeclaration.verifyLoginDetailsService(data);
     alert(result);
   };
 

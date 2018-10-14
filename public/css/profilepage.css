@@ -8,7 +8,6 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 .profilebgpicture::before {
   position: absolute;
   content: "";
@@ -180,6 +179,40 @@
 
 .TabContent {
   padding: 15px;
+}
+
+.profileInput {
+  position: relative;
+}
+
+.profileInputBox {
+  border: 1px solid #CDCDCD;
+  box-shadow: 1px 1px 5px #CDCDCD;
+  width: 100%;
+  padding: 10px 5px;
+}
+
+.profileInputBox + label {
+  position: absolute;
+  top: 10px;
+  justify-content: center;
+  left: 20px;
+}
+
+.profileLabel {
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+}
+
+.profileInputBox:focus {
+  outline: none;
+}
+
+.profileInput:valid + label,
+.profileInputBox:valid + label {
+  top: -11px;
+  background-color: white;
+  margin: 0;
 }
 
 /*# sourceMappingURL=public/css/profilepage.css.map */

@@ -16,6 +16,9 @@ var mysqlConnect = {
         }
       });
     }
+    else{
+  console.log('Error connecting database!');
+    }
     return this.connection;
   },
 
@@ -23,9 +26,10 @@ var mysqlConnect = {
   disconnectDatabase: function() {
     if (this.connection) {
       this.connection.destroy();
+        connection: null;
     }
   }
 
-};
+}
 
 module.exports = mysqlConnect;
