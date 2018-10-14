@@ -21,6 +21,7 @@ app.use(bodyParser.urlencoded({
 
 app.use('/registration', registrationRoutes);
 app.use('/login', loginRoutes);
+// app.use('/profile', "./public/profile.html");
 
 // app.use(function(req, res, next) {
 //   var err = new Error('Not Found');

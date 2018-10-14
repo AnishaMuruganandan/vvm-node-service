@@ -1,3 +1,8 @@
+* {
+  font-family: "Open Sans", sans-serif;
+  cursor: default;
+}
+
 .profilebgpicture {
   width: 100%;
   background-image: url("../asset/img/marriageImg2.png");
@@ -56,6 +61,17 @@
 .searchtext {
   position: relative;
   background-color: transparent !important;
+  color: white;
+}
+
+.searchtext:focus {
+  border: 1px solid #ccc !important;
+  ackground-color: transparent !important;
+  color: white !important;
+}
+
+.searchtext::placeholder {
+  color: white !important;
 }
 
 .linebar {
@@ -75,6 +91,7 @@
 
 * {
   font-family: "Open Sans", sans-serif;
+  cursor: default;
 }
 
 .footerDiv {
@@ -91,6 +108,7 @@
 
 * {
   font-family: "Open Sans", sans-serif;
+  cursor: default;
 }
 
 .bodycontent {
@@ -244,8 +262,14 @@
   width: 100% !important;
 }
 
-.select2-selection--single:focus {
+.select2-selection--single:focus, input:focus, textarea:focus {
   outline: none !important;
+}
+
+.logout {
+  float: right;
+  margin-top: -45px;
+  margin-right: 50px;
 }
 
 /*# sourceMappingURL=public/css/profilepage.css.map */

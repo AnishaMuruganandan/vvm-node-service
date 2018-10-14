@@ -20,6 +20,7 @@ let registrationFunc = (function() {
     $LoginForm = $('#LoginForm');
     $loginBtn = $('#loginBtn');
     $resendOTP = $('#resendOTP');
+    $registerBn = $('#registerBn');
     var generatedOTP;
   };
 
@@ -56,6 +57,15 @@ let registrationFunc = (function() {
     $loginBtn.click(function(e) {
       $registrationForm.hide();
       $LoginForm.show();
+        $loginBtn.hide();
+      $registerBn.show();
+    });
+
+    $registerBn.click(function(e) {
+      $LoginForm.hide();
+      $registrationForm.show();
+      $registerBn.hide();
+      $loginBtn.show();
     });
   };
 

@@ -13,6 +13,7 @@ verifyLoginDetailsService: async function(data) {
   return response;
 },
 
+
   ajaxService: function(obj) {
     return new Promise((resolve, reject) => {
     $.ajax({

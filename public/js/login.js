@@ -36,7 +36,13 @@ let loginFunc = (function() {
       data.loginPassword = $loginPassword.val();
 
     var result = await loginServiceDeclaration.verifyLoginDetailsService(data);
-    alert(result);
+    if(result == "found"){
+window.location.href = "./profile.html";
+
+    
+    }
+    else
+    alert("Invalid Phone Number or Password");
   };
 
 
