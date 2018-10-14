@@ -19,12 +19,12 @@ var OTPUtil = (function() {
   };
 
   let SendingOTP = function(OTP, phoneNo) {
-    // var result;
-    // tl.sendSMS(phoneNo,  OTP + " is the OTP for Crop Per Drop App.", 'TeamBF', function(err, data) {
-    //   console.log("err" + err + "data" + data);
-    //    result = data;
-    // });
-    // return result;
+    var result;
+    tl.sendSMS(phoneNo,  OTP + " is the OTP for Crop Per Drop App.", 'TeamBF', function(err, data) {
+      console.log("err" + err + "data" + data);
+       result = data;
+    });
+    return result;
     const TEXT_LOCAL_HOST = 'https://api.textlocal.in/send/';
     var MSG_TEMPLATE = OTP + " is the OTP for Crop Per Drop App.";
     var TEXT_LOCAL_SENDER = 'TeamBF';
