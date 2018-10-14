@@ -15,7 +15,7 @@ var registrationQueries = {
     return new Promise((resolve, reject) => {
       return dbconnectionObj.query(findByPhoneNoQuery, [verifyPhoneNoObj.phoneNo], (err, rows) => {
         if (err)
-          return reject(err);
+           reject(err);
         resolve(rows);
       });
     });
@@ -31,7 +31,7 @@ var registrationQueries = {
 
                         dbconnectionConst.disconnectDatabase();
         if (err)
-          return reject(err);
+           reject(err);
           console.log("rowsDb"+rows);
 
         resolve(rows);
