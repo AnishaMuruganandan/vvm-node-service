@@ -6,7 +6,7 @@ var mysqlConnect = {
   connection: null,
 
   connectDatabase: function() {
-    if (!this.connection) {
+
       this.connection = mysql.createConnection(settings);
       this.connection.connect(function(err) {
         if (!err) {
@@ -15,19 +15,16 @@ var mysqlConnect = {
           console.log('Error connecting database!');
         }
       });
-    }
-    else{
-  console.log('Error connecting database!');
-    }
+
     return this.connection;
   },
 
 
   disconnectDatabase: function() {
-    if (this.connection) {
+
       this.connection.destroy();
         connection: null;
-    }
+    
   }
 
 }
