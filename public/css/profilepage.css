@@ -222,4 +222,30 @@
   background-color: white;
 }
 
+.select2-selection__rendered {
+  height: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.select2-selection__arrow {
+  top: 7px !important;
+}
+
+.select2-selection--single {
+  width: 100% !important;
+  height: 42px !important;
+  border: 1px solid #CDCDCD !important;
+  box-shadow: 1px 1px 5px #CDCDCD !important;
+  border-radius: 0px !important;
+}
+
+.select2-container {
+  width: 100% !important;
+}
+
+.select2-selection--single:focus {
+  outline: none !important;
+}
+
 /*# sourceMappingURL=public/css/profilepage.css.map */
