@@ -19,6 +19,7 @@ let registrationFunc = (function() {
     $register = $('#register');
     $LoginForm = $('#LoginForm');
     $loginBtn = $('#loginBtn');
+    $resendOTP = $('#resendOTP');
     var generatedOTP;
   };
 
@@ -35,6 +36,11 @@ let registrationFunc = (function() {
       $OtpVerification.show();
     });
 
+    $resendOTP.click(function(e) {
+      generateandSendOTPService();
+      $OtpGeneration.hide();
+      $OtpVerification.show();
+    });
 
     $verifyOTP.click(function(e) {
       verifyOTPService();
@@ -47,7 +53,7 @@ let registrationFunc = (function() {
       $LoginForm.show();
     });
 
-    $loginBtn.click(function(e){
+    $loginBtn.click(function(e) {
       $registrationForm.hide();
       $LoginForm.show();
     });
@@ -67,8 +73,8 @@ let registrationFunc = (function() {
 
   let verifyOTPService = function() {
     var userEnteredOTP = $otp.val();
-    console.log(generatedOTP+"gen otp");
-    console.log(userEnteredOTP+"user otp");
+    console.log(generatedOTP + "gen otp");
+    console.log(userEnteredOTP + "user otp");
     if (userEnteredOTP == generatedOTP) {
       $OtpVerification.hide();
       $registrationUsingEmailPwd.show();
@@ -84,7 +90,7 @@ let registrationFunc = (function() {
       "password": $password.val()
     }
     var result = await registrationServiceDeclaration.saveAllDetailsService(data);
-    console.log(result+"fearesult");
+    console.log(result + "fearesult");
   };
   return {
     init: init,
