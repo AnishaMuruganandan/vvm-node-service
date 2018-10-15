@@ -52,6 +52,8 @@ let registrationFunc = (function() {
       $registrationUsingEmailPwd.hide();
       $registrationForm.hide();
       $LoginForm.show();
+      $loginBtn.hide();
+    $registerBn.show();
     });
 
     $loginBtn.click(function(e) {
@@ -66,6 +68,7 @@ let registrationFunc = (function() {
       $registrationForm.show();
       $registerBn.hide();
       $loginBtn.show();
+        $OtpGeneration.show();
     });
   };
 
