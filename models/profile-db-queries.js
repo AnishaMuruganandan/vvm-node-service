@@ -4,6 +4,7 @@ var profileQueries = {
 
 saveAll: function(saveAllQuery, saveProfileDetailsObj) {
   return new Promise((resolve, reject) => {
+        let dbconnection = mysqlConnect.connectDatabase();
     return dbconnection.query(saveAllQuery, [
       saveProfileDetailsObj.name,
       saveProfileDetailsObj.dateOfBirth,
@@ -20,8 +21,21 @@ saveAll: function(saveAllQuery, saveProfileDetailsObj) {
       saveProfileDetailsObj.physicalDisablity,
       saveProfileDetailsObj.profilePicture
     ], (err, rows) => {
+        mysqlConnect.disconnectDatabase();
       if (err)
-        return reject(err);
+         reject(err);
+      resolve(rows);
+    });
+  });
+},
+
+getProfileDetails: function(getProfileDetailsQuery) {
+  return new Promise((resolve, reject) => {
+    let dbconnection = mysqlConnect.connectDatabase();
+    return dbconnection.query(getProfileDetailsQuery, (err, rows) => {
+      mysqlConnect.disconnectDatabase();
+      if (err)
+         reject(err);
       resolve(rows);
     });
   });

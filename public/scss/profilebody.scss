@@ -176,4 +176,12 @@ border-radius: 0px !important
 float: right;
 margin-top: -45px;
 margin-right: 50px
-};
+}
+
+.optionbtn{
+  float: right;
+}
+
+#savebtn,#cancelbtn{
+  display: none;
+}

@@ -272,4 +272,12 @@
   margin-right: 50px;
 }
 
+.optionbtn {
+  float: right;
+}
+
+#savebtn, #cancelbtn {
+  display: none;
+}
+
 /*# sourceMappingURL=public/css/profilepage.css.map */

@@ -6,12 +6,50 @@ let profileFunc = (function() {
   let init = function() {
 
     $logoutid = $('#logoutid');
+    $editbtn = $('#editbtn');
+    $savebtn = $('#savebtn');
+    $cancelbtn = $('#cancelbtn');
+    
+$inputbox=$('.inputbox');
 
   };
 
   let construct = function() {};
 
   let complete = function() {
+
+    $editbtn.click(function(e) {
+    $inputbox.attr('readonly', false);
+      $editbtn.css("display", "none");
+      $savebtn.css("display", "block");
+      $cancelbtn.css("display", "block");
+    });
+
+    $savebtn.click(function(e) {
+      $inputbox.attr('readonly', true);
+      $editbtn.css("display", "block");
+      $savebtn.css("display", "none");
+      $cancelbtn.css("display", "none");
+    });
+
+    $cancelbtn.click(function(e) {
+      $inputbox.attr('readonly', true);
+      $editbtn.css("display", "block");
+      $savebtn.css("display", "none");
+      $cancelbtn.css("display", "none");
+    });
+
+
+
+
+  //   angular.module('myApp', []).controller('personCtrl', function($scope) {
+  //   $scope.firstName = ""
+  //   $scope.fullName = function() {
+  //       return $scope.firstName;
+  //   }
+  //
+  // });
+
 
     /*
      * Registraion Form submit listener

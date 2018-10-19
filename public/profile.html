@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
   <link rel="stylesheet" href="css/profilepage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <a href="http://www.justwebcode.com" rel="index,follow">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> -->
 </head>
 
 <body>
@@ -38,7 +40,7 @@
       <div class="col-lg-3 leftcol">
 
         <div class="namecard">
-          <div class="name semiboldFont">SNEHA RAJARAM
+          <div class="name semiboldFont">{{firstName}}
           </div>
           <div class="areaIDfontStyle semiboldFont">Chennai, India
           </div>
@@ -106,6 +108,12 @@
                 <li class="tabList"><a class="tabTextStyle" href="#">PHOTOS</a></li> -->
                 <!-- <li class="tabList"><a class="tabTextStyle" href="#">HOBBIES & INTEREST</a></li>
                 <li class="tabList"><a class="tabTextStyle" href="#">PHOTOS</a></li> -->
+                <li class="tabList optionbtn"><a class="tabTextStyle" href="#"><i class="fa fa-edit" id="editbtn"></i></a></li>
+                <li class="tabList optionbtn"><a class="tabTextStyle" href="#"><i class="fa fa-check" id="savebtn"></i></a></li>
+                <li class="tabList optionbtn"><a class="tabTextStyle" href="#"><i class="fa fa-times" id="cancelbtn"></i></a></li>
+
+
+
               </ul>
             </div>
             <div class="profileTabContent TabContent">
@@ -119,15 +127,15 @@
                 <div class="row mb-5">
 
                   <div class="col-md-4">
-                    <div class="profileInput">
-                      <input id="name" name="name" type="text" required class="profileInputBox">
+                    <div class="profileInput" ng-app="myApp" ng-controller="myCtrl">
+                      <input id="name" name="name" disabled type="text" required class="profileInputBox inputbox" ng-model="firstName">
                       <label for="name" class="profileLabel">Name</label>
                     </div>
                   </div>
 
                   <div class="col-md-4">
                     <div class="profileInput">
-                      <input id="name" name="name" type="text" required class="profileInputBox">
+                      <input id="name" name="name"readonly type="text" required class="profileInputBox inputbox">
                       <label for="name" class="profileLabel">Date Of Birth</label>
                     </div>
                   </div>
@@ -154,21 +162,21 @@
 
                   <div class="col-md-4">
                     <div class="profileInput">
-                      <input id="name" name="name" type="text" required class="profileInputBox">
+                      <input id="name" name="name" type="text" required readonly class="inputbox profileInputBox">
                       <label for="name" class="profileLabel">Gender</label>
                     </div>
                   </div>
 
                   <div class="col-md-4">
                     <div class="profileInput">
-                      <input id="name" name="name" type="text" required class="profileInputBox">
+                      <input id="name" name="name" type="text" required readonly class="inputbox profileInputBox">
                       <label for="name" class="profileLabel">Height</label>
                     </div>
                   </div>
 
                   <div class="col-md-4">
                     <div class="profileInput">
-                      <input id="name" name="name" type="text" required class="profileInputBox">
+                      <input id="name" name="name" type="text" required readonly class="inputbox profileInputBox">
                       <label for="name" class="profileLabel">Complexion</label>
                     </div>
                   </div>
@@ -180,22 +188,37 @@
 
                   <div class="col-md-4">
                     <div class="profileInput">
-                      <input id="name" name="name" type="text" required class="profileInputBox">
-                      <label for="name" class="profileLabel">Education</label>
+
+                      <select class="js-example-basic-single select2me" name="Language">
+  <option value="">Graduate</option>
+    ...
+  <option value="WY">Professional</option>
+</select>
+                      <label for="name" class="profileLabel select2ProfileInputBox">Education</label>
                     </div>
                   </div>
 
                   <div class="col-md-4">
                     <div class="profileInput">
-                      <input id="name" name="name" type="text" required class="profileInputBox">
-                      <label for="name" class="profileLabel">Profession</label>
+
+                      <select class="js-example-basic-single select2me" name="Language">
+  <option value="">Private</option>
+    ...
+  <option value="WY">Government</option>
+</select>
+                      <label for="name" class="profileLabel select2ProfileInputBox">Profiession</label>
                     </div>
                   </div>
 
                   <div class="col-md-4">
                     <div class="profileInput">
-                      <input id="name" name="name" type="text" required class="profileInputBox">
-                      <label for="name" class="profileLabel">Salary</label>
+
+                      <select class="js-example-basic-single select2me" name="Language">
+  <option value="">Less than 50k</option>
+    ...
+  <option value="WY">More than 50k</option>
+  </select>
+                      <label for="name" class="profileLabel select2ProfileInputBox">Salary</label>
                     </div>
                   </div>
 
@@ -206,22 +229,31 @@
 
                   <div class="col-md-4">
                     <div class="profileInput">
-                      <input id="name" name="name" type="text" required class="profileInputBox">
-                      <label for="name" class="profileLabel">City</label>
+
+                      <select class="js-example-basic-single select2me" name="Language">
+  <option value="">Chennai</option>
+    ...
+  <option value="WY">Coimbatore</option>
+  ...
+<option value="WY">Kanchipuram</option>
+...
+<option value="WY">Thanjavur</option>
+  </select>
+                      <label for="name" class="profileLabel select2ProfileInputBox">City</label>
                     </div>
                   </div>
 
                   <div class="col-md-4">
                     <div class="profileInput">
-                      <input id="name" name="name" type="text" required class="profileInputBox">
+                      <input id="name" name="name" type="text" required readonly class="inputbox profileInputBox">
                       <label for="name" class="profileLabel">Address</label>
                     </div>
                   </div>
 
                   <div class="col-md-4">
                     <div class="profileInput">
-                      <input id="name" name="name" type="text" required class="profileInputBox">
-                      <label for="name" class="profileLabel">State</label>
+                      <input id="name" name="name" type="text" required readonly class="inputbox profileInputBox">
+                      <label for="name" class="profileLabel">Physical Disablity</label>
                     </div>
                   </div>
 
@@ -229,11 +261,10 @@
 
                 <!-- fifth row -->
                 <div class="row">
-
+                  <!--
                   <div class="col-md-4">
                     <div class="profileInput">
 
-                      <!-- <label class="form_control_1 head_ctrl_label" style="padding-top: 2px;">Type</label> -->
                       <select class="js-example-basic-single select2me" name="Language">
   <option value="">English</option>
     ...
@@ -245,22 +276,22 @@
 
                   <div class="col-md-4">
                     <div class="profileInput">
-                      <input id="name" name="name" type="text" required class="profileInputBox">
+                      <input id="name" name="name" type="text" required readonly class="inputbox profileInputBox">
                       <label for="name" class="profileLabel">Physical Disablity</label>
                     </div>
                   </div>
 
                   <div class="col-md-4">
                     <div class="profileInput">
-                      <input id="name" name="name" type="text" required class="profileInputBox">
+                      <input id="name" name="name" type="text" required readonly class="inputbox profileInputBox">
                       <label for="name" class="profileLabel">Salary</label>
                     </div>
                   </div>
 
-                </div>
+                </div> -->
 
-                <!-- sixth row -->
-                <!-- <div class="row">
+                  <!-- sixth row -->
+                  <!-- <div class="row">
 
                       <div class="col-md-4">
                         <div class="profileInput">
@@ -285,47 +316,48 @@
 
                     </div> -->
 
-              </div>
+                </div>
 
+              </div>
             </div>
           </div>
+
         </div>
-
-      </div>
-      <div class="footerDiv">
-        <div class="footer">
-          vivahahvizhamatrimony 2018
+        <div class="footerDiv">
+          <div class="footer">
+            vivahahvizhamatrimony 2018
+          </div>
         </div>
       </div>
-    </div>
 
-    </body>
+      </body>
 
-    <!-- <script src="https://code.jquery.com/jquery-1.6.2.min.js"></script>
+      <!-- <script src="https://code.jquery.com/jquery-1.6.2.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/i18n/ar.js"></script> -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
-    <script src="../js/constants.js"></script>
-    <script src="../js/profile.js"></script>
-    <script>
-      $(document).ready(function() {
-        $('.js-example-basic-single').select2();
-      });
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css" rel="stylesheet" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
+      <script src="../js/constants.js"></script>
+      <script src="../js/profile.js"></script>
+      <script>
+        $(document).ready(function() {
+          $('.js-example-basic-single').select2();
 
-      // $('.select2me').click(function(e) {
-      //   if ($(this).find('select2-dropdown-open')) {
-      //     $(this).next('.head_ctrl_label').css('margin-top', '-25px');
-      //   }
-      //   e.preventDefault();
-      // });
-    </script>
-    <script>
-      history.pushState(null, null, location.href);
-      window.onpopstate = function() {
-        history.go(1);
-      };
-    </script>
+        });
+
+        // $('.select2me').click(function(e) {
+        //   if ($(this).find('select2-dropdown-open')) {
+        //     $(this).next('.head_ctrl_label').css('margin-top', '-25px');
+        //   }
+        //   e.preventDefault();
+        // });
+      </script>
+      <script>
+        history.pushState(null, null, location.href);
+        window.onpopstate = function() {
+          history.go(1);
+        };
+      </script>
 
 </html>

@@ -8,27 +8,15 @@ router.post('/profile-details', async function(req, res, next) {
   var result = await profileDelegateObj.saveprofileDetails(req.body);
   console.log(result + "result route");
   res.json(result);
-  // queries.addProfileDetails(bodyobj, function(err, output) {
-  //   if (err) {
-  //     res.json(err);
-  //     console.log(err + "err");
-  //   } else {
-  //     res.json(output.insertId);
-  //
-  //   }
-  // });
 });
 
-router.get('/fetchProfileDetailsByProfileId/:profileId', function(req, res, next) {
-  console.log("profileId" + req.params.profileId);
-  queries.getProfileDetailsByProfileId(req.params.profileId, function(err, rows) {
-    if (err) {
-      res.json(err);
-    } else {
-      res.json(rows);
-    }
-  });
+router.get('/fetch-profile-details/:profileId', function(req, res, next) {
+  console.log('body: ' + JSON.stringify(req.body));
+  var result = await profileDelegateObj.getProfileDetailsByProfileId(req.body);
+  console.log(result + "result route");
+  res.json(result);
 });
+
 
 // router.get('/:id?', function(req, res, next) {
 //   if (req.params.id) {

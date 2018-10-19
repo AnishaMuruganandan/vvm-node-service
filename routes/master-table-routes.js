@@ -2,167 +2,104 @@ var express = require('express');
 var router = express.Router();
 var masterTableDelegateObj = require('../delegate-layer/master-table-delegate');
 
-router.get('/fetchZodiacMasterTable', function(req, res, next) {
+router.get('/fetch-zodiac', function(req, res, next) {
   console.log("fetchZodiacMasterTable");
   var result = await masterTableDelegateObj.getZodiacMasterTable();
   console.log(result + "result route");
   res.json(result);
 });
 
-router.get('/fetchStarMasterTable', function(req, res, next) {
-  queries.getStarMasterTable(function(err, rows) {
-    if (err) {
-      res.json(err);
-    } else {
-      var output = {};
-      output.starId = rows[0].star_id;
-      output.starName = rows[0].star_name;
-      res.json(output);
-    }
-  });
+router.get('/fetch-star', function(req, res, next) {
+  console.log("fetchStarMasterTable");
+  var result = await masterTableDelegateObj.getStarMasterTable();
+  console.log(result + "result route");
+  res.json(result);
 });
 
-router.get('/fetchSalaryRangeMasterTable', function(req, res, next) {
-  queries.getSalaryRangeMasterTable(function(err, rows) {
-    if (err) {
-      res.json(err);
-    } else {
-      var output = {};
-      output.salaryId = rows[0].salary_id;
-      output.salaryRange = rows[0].salary_range;
-      res.json(output);
-    }
-  });
+router.get('/fetch-salary-range', function(req, res, next) {
+  console.log("fetchSalaryRangeMasterTable");
+  var result = await masterTableDelegateObj.getSalaryMasterTable();
+  console.log(result + "result route");
+  res.json(result);
 });
 
-router.get('/fetchReligionsMasterTable', function(req, res, next) {
-  queries.getReligionsMasterTable(function(err, rows) {
-    if (err) {
-      res.json(err);
-    } else {
-      var output = {};
-      output.religionId = rows[0].religion_id;
-      output.religionName = rows[0].religion_name;
-      res.json(output);
-    }
-  });
+router.get('/fetch-religions', function(req, res, next) {
+  console.log("fetchReligionsMasterTable");
+  var result = await masterTableDelegateObj.getReligionsMasterTable();
+  console.log(result + "result route");
+  res.json(result);
 });
 
-router.get('/fetchRelativeTypeMasterTable', function(req, res, next) {
-  queries.getRelativeTypeMasterTable(function(err, rows) {
-    if (err) {
-      res.json(err);
-    } else {
-      var output = {};
-      output.relativeTypeId = rows[0].relative_type_id;
-      output.relativeTypeName = rows[0].relative_type_name;
-      res.json(output);
-    }
-  });
+router.get('/fetch-relative-type', function(req, res, next) {
+  console.log("fetchRelativeTypeMasterTable");
+  var result = await masterTableDelegateObj.getRelativeTypeMasterTable();
+  console.log(result + "result route");
+  res.json(result);
 });
 
-router.get('/fetchProfessionDetailsMasterTable', function(req, res, next) {
-  queries.getProfessionDetailsMasterTable(function(err, rows) {
-    if (err) {
-      res.json(err);
-    } else {
-      var output = {};
-      output.professionId = rows[0].profession_id;
-      output.professionName = rows[0].profession_name;
-      res.json(output);
-    }
-  });
+
+router.get('/fetch-profession-details', function(req, res, next) {
+  console.log("fetchProfessionDetailsMasterTable");
+  var result = await masterTableDelegateObj.getProfessionDetailsMasterTable();
+  console.log(result + "result route");
+  res.json(result);
 });
 
-router.get('/fetchMotherTongueMasterTable', function(req, res, next) {
-  queries.getMotherTongueMasterTable(function(err, rows) {
-    if (err) {
-      res.json(err);
-    } else {
-      var output = {};
-      output.motherTongueId = rows[0].mother_tongue_id;
-      output.motherTongueName = rows[0].mother_tongue_name;
-      res.json(output);
-    }
-  });
+
+router.get('/fetch-mother-tongue', function(req, res, next) {
+  console.log("fetchMotherTongueMasterTable");
+  var result = await masterTableDelegateObj.getMotherTongueMasterTable();
+  console.log(result + "result route");
+  res.json(result);
 });
 
-router.get('/fetchLanguagesMasterTable', function(req, res, next) {
-  queries.getLanguagesMasterTable(function(err, rows) {
-    if (err) {
-      res.json(err);
-    } else {
-      var output = {};
-      output.languageId = rows[0].language_id;
-      output.languageName = rows[0].language_name;
-      res.json(output);
-    }
-  });
+
+router.get('/fetch-languages', function(req, res, next) {
+  console.log("fetchLanguagesMasterTable");
+  var result = await masterTableDelegateObj.getLanguagesMasterTable();
+  console.log(result + "result route");
+  res.json(result);
 });
 
-router.get('/fetchLagnaMasterTable', function(req, res, next) {
-  queries.getLagnaMasterTable(function(err, rows) {
-    if (err) {
-      res.json(err);
-    } else {
-      var output = {};
-      output.lagnaId = rows[0].lagna_id;
-      output.lagnaName = rows[0].lagna_name;
-      res.json(output);
-    }
-  });
+
+router.get('/fetch-lagna', function(req, res, next) {
+  console.log("fetchLagnaMasterTable");
+  var result = await masterTableDelegateObj.getLagnaMasterTable();
+  console.log(result + "result route");
+  res.json(result);
 });
 
-router.get('/fetchGothramMasterTable', function(req, res, next) {
-  queries.getGothramMasterTable(function(err, rows) {
-    if (err) {
-      res.json(err);
-    } else {
-      var output = {};
-      output.gothramId = rows[0].gothram_id;
-      output.gothramName = rows[0].gothram_name;
-      res.json(output);
-    }
-  });
+
+router.get('/fetch-gothram', function(req, res, next) {
+  console.log("fetchGothramMasterTable");
+  var result = await masterTableDelegateObj.getGothramMasterTable();
+  console.log(result + "result route");
+  res.json(result);
 });
 
-router.get('/fetchEducationalQualificationMasterTable', function(req, res, next) {
-  queries.getEducationalQualificationMasterTable(function(err, rows) {
-    if (err) {
-      res.json(err);
-    } else {
-      var output = {};
-      output.educationId = rows[0].education_id;
-      output.degreeQualified = rows[0].degree_qualified;
-      res.json(output);
-    }
-  });
+
+router.get('/fetch-educational-qualification', function(req, res, next) {
+  console.log("fetchEducationalQualificationMasterTable");
+  var result = await masterTableDelegateObj.getEducationalQualificationMasterTable();
+  console.log(result + "result route");
+  res.json(result);
 });
 
-router.get('/fetchCityMasterTable', function(req, res, next) {
-  queries.getCityMasterTable(function(err, rows) {
-    if (err) {
-      res.json(err);
-    } else {
-      var output = {};
-      output.cityId = rows[0].city_id;
-      output.cityName = rows[0].city_name;
-      res.json(output);
-    }
-  });
+
+router.get('/fetch-city', function(req, res, next) {
+  console.log("fetchCityMasterTable");
+  var result = await masterTableDelegateObj.getCityMasterTable();
+  console.log(result + "result route");
+  res.json(result);
 });
 
-router.get('/fetchCasteMasterTable', function(req, res, next) {
-  queries.getCasteMasterTable(function(err, rows) {
-    if (err) {
-      res.json(err);
-    } else {
-      var output = {};
-      output.casteId = rows[0].caste_id;
-      output.casteName = rows[0].caste_name;
-      res.json(output);
-    }
-  });
+
+router.get('/fetch-caste', function(req, res, next) {
+  console.log("fetchCasteMasterTable");
+  var result = await masterTableDelegateObj.getCasteMasterTable();
+  console.log(result + "result route");
+  res.json(result);
 });
+
 
 module.exports = router;
