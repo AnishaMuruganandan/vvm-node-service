@@ -2,18 +2,36 @@
 
 <head>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
-  <link rel="stylesheet" href="css/profilepage.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <a href="http://www.justwebcode.com" rel="index,follow">
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> -->
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800"
+        rel="stylesheet">
+  <link rel="stylesheet"
+        href="css/profilepage.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
   <div class="registrationPage">
+    <div class="menu row m-0">
+      <div class="col-12 p-3">
+        <div class="menu-nav float-right pt-4 mr-5">
+          <a class=""
+             id="profileView">Profile</a>
+          <span class="">|</span>
+          <a class=""
+             id="findMatch">My Match</a>
+          <span class="">|</span>
+          <a class=""
+             id="logoutAct">Logout</a>
+        </div>
+      </div>
+    </div>
 
     <div class="header">
 
@@ -21,42 +39,50 @@
         <div class="profilepicture">
         </div>
 
-        <img src="asset/img/logo.png" class="img-responsive logoImg">
-        <a class="logout" id="logoutid">Logout</a>
-  <img src="asset/img/logoWords.png" class="img-responsive logoText">
-  <div class="form-group searchbox">
+        <img src="asset/img/logo.png"
+             class="img-responsive logoImg">
 
-    <input type="text" class="form-control searchtext" placeholder="Search">
-    <span class="linebar">|</span>
-    <img src="asset/img/search.png" class="img-responsive searchimg">
+
+        <img src="asset/img/logoWords.png"
+             class="img-responsive logoText">
+
+        <div class="form-group searchbox">
+
+          <input type="text"
+                 class="form-control searchtext"
+                 placeholder="Search">
+          <span class="linebar">|</span>
+          <img src="asset/img/search.png"
+               class="img-responsive searchimg">
 
         </div>
 
+      </div>
+    </div>
+    <div class="bodycontent container-fluid">
+      <div class="row">
+        <div class="col-lg-3 leftcol">
 
-  </div>
-  </div>
-  <div class="bodycontent container-fluid">
-    <div class="row">
-      <div class="col-lg-3 leftcol">
-
-        <div class="namecard">
-          <div class="name semiboldFont">{{firstName}}
+          <div class="namecard">
+            <div class="name semiboldFont">{{firstName}}
+            </div>
+            <div class="areaIDfontStyle semiboldFont">Chennai, India
+            </div>
+            <hr class="nameendLine">
+            <div class="areaIDfontStyle semiboldFont">VVM 001
+            </div>
           </div>
-          <div class="areaIDfontStyle semiboldFont">Chennai, India
-          </div>
-          <hr class="nameendLine">
-          <div class="areaIDfontStyle semiboldFont">VVM 001
-          </div>
-        </div>
 
-        <hr class="cardEndLine">
+          <hr class="cardEndLine">
 
-        <!-- profession card -->
-        <div class="bodycontent__row__leftcol__professionCard">
+          <!-- profession card -->
+          <div class="bodycontent__row__leftcol__professionCard">
 
-          <div class="form-group">
-            <label class="titleLabel">PROFESSION</label>
-            <input type="text" class="InfoTextbox" id="">
+            <div class="form-group">
+              <label class="titleLabel">PROFESSION</label>
+              <input type="text"
+                     class="InfoTextbox"
+                     id="">
             </div>
 
           </div>
@@ -68,200 +94,274 @@
 
             <div class="form-group">
               <label class="titleLabel">EDUCATION</label>
-              <input type="text" class="InfoTextbox" id="">
-            </div>
-
-            </div>
-
-            <hr class="cardEndLine">
-
-            <!-- interest card -->
-            <div class="interestCard">
-
-              <div class="form-group">
-                <label class="titleLabel">INTEREST & TAGS</label>
-                <textarea class="InfoTextbox" id=""></textarea>
-              </div>
-
-            </div>
-            <hr class="cardEndLine">
-
-            <!-- pictures -->
-
-            <div class="photosblock">
-
-              <div class="titleLabel">More Pictures of me</div>
-              <div class="photosList">
-                <div class="firstpicture pictureppty"></div>
-                <div class="morepicture pictureppty">...</div>
-              </div>
-
-
+              <input type="text"
+                     class="InfoTextbox"
+                     id="">
             </div>
 
           </div>
-          <div class="col-lg-9">
-            <div class="tabs">
-              <ul class="list-inline">
-                <li class="tabList"><a class="tabTextStyle" href="#">PROFILE</a></li>
-                <!-- <li class="tabList"><a class="tabTextStyle" href="#">HOBBIES & INTEREST</a></li>
-                <li class="tabList"><a class="tabTextStyle" href="#">PHOTOS</a></li> -->
-                <!-- <li class="tabList"><a class="tabTextStyle" href="#">HOBBIES & INTEREST</a></li>
-                <li class="tabList"><a class="tabTextStyle" href="#">PHOTOS</a></li> -->
-                <li class="tabList optionbtn"><a class="tabTextStyle" href="#"><i class="fa fa-edit" id="editbtn"></i></a></li>
-                <li class="tabList optionbtn"><a class="tabTextStyle" href="#"><i class="fa fa-check" id="savebtn"></i></a></li>
-                <li class="tabList optionbtn"><a class="tabTextStyle" href="#"><i class="fa fa-times" id="cancelbtn"></i></a></li>
 
+          <hr class="cardEndLine">
 
-
-              </ul>
+          <!-- interest card -->
+          <div class="interestCard">
+            <!--
+            <div class="form-group">
+              <label class="titleLabel">INTEREST & TAGS</label>
+              <textarea class="InfoTextbox"
+                        id=""></textarea>
             </div>
-            <div class="profileTabContent TabContent">
-              <div>BASIC & LIFE STYLE
+
+          </div> -->
+            <div class="form-group">
+              <label class="titleLabel">RELIGION & CASTE</label>
+              <input type="text"
+                     class="InfoTextbox"
+                     id="">
+            </div>
+
+          </div>
+
+          <hr class="cardEndLine">
+
+          <!-- pictures -->
+          <!--
+          <div class="photosblock">
+
+            <div class="titleLabel">More Pictures of me</div>
+            <div class="photosList">
+              <div class="firstpicture pictureppty"></div>
+              <div class="morepicture pictureppty">...</div>
+            </div>
+
+
+          </div> -->
+
+        </div>
+        <div class="col-lg-9">
+          <div class="tabs">
+            <ul class="list-inline">
+              <li class="tabList"><a class="tabTextStyle"
+                   href="#">PROFILE</a></li>
+              <!-- <li class="tabList"><a class="tabTextStyle" href="#">HOBBIES & INTEREST</a></li>
+                <li class="tabList"><a class="tabTextStyle" href="#">PHOTOS</a></li> -->
+              <!-- <li class="tabList"><a class="tabTextStyle" href="#">HOBBIES & INTEREST</a></li>
+                <li class="tabList"><a class="tabTextStyle" href="#">PHOTOS</a></li> -->
+              <li class="tabList optionbtn"><a class="tabTextStyle"
+                   href="#"><i class="fa fa-edit"
+                     id="editbtn"></i></a></li>
+              <li class="tabList optionbtn"><a class="tabTextStyle"
+                   href="#"><i class="fa fa-check"
+                     id="savebtn"></i></a></li>
+              <li class="tabList optionbtn"><a class="tabTextStyle"
+                   href="#"><i class="fa fa-times"
+                     id="cancelbtn"></i></a></li>
+
+
+
+            </ul>
+          </div>
+          <div class="profileTabContent TabContent">
+            <div>BASIC & LIFE STYLE
+            </div>
+            <hr class="lifeStyleLine">
+            <div class="container-fluid">
+
+              <!-- first row -->
+
+              <div class="row mb-5">
+
+                <div class="col-md-4">
+                  <div class="profileInput"
+                       ng-app="myApp"
+                       ng-controller="myCtrl">
+                    <input id="name"
+                           name="name"
+                           disabled
+                           type="text"
+                           required
+                           class="profileInputBox inputbox"
+                           ng-model="firstName">
+                    <label for="name"
+                           class="profileLabel">Name</label>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="profileInput">
+                    <input id="name"
+                           name="name"
+                           readonly
+                           type="text"
+                           required
+                           class="profileInputBox inputbox">
+                    <label for="name"
+                           class="profileLabel">Date Of Birth</label>
+                  </div>
+                </div>
+
+
+                <div class="col-md-4">
+                  <div class="profileInput">
+                    <!-- <input id="name" name="name" type="text" required class="profileInputBox"> -->
+
+                    <select class="js-example-basic-single select2me"
+                            name="religion">
+                      <option value="H">Hinduism</option>
+                      ...
+                      <option value="C">Christianity</option>
+                      ...
+                      <option value="I">Islam</option>
+                    </select>
+                    <label for="name"
+                           class="profileLabel select2ProfileInputBox">Religion</label>
+                  </div>
+                </div>
+
               </div>
-              <hr class="lifeStyleLine">
-              <div class="container-fluid">
+              <!-- second row -->
+              <div class="row mb-5">
 
-                <!-- first row -->
-
-                <div class="row mb-5">
-
-                  <div class="col-md-4">
-                    <div class="profileInput" ng-app="myApp" ng-controller="myCtrl">
-                      <input id="name" name="name" disabled type="text" required class="profileInputBox inputbox" ng-model="firstName">
-                      <label for="name" class="profileLabel">Name</label>
-                    </div>
+                <div class="col-md-4">
+                  <div class="profileInput">
+                    <input id="name"
+                           name="name"
+                           type="text"
+                           required
+                           readonly
+                           class="inputbox profileInputBox">
+                    <label for="name"
+                           class="profileLabel">Gender</label>
                   </div>
-
-                  <div class="col-md-4">
-                    <div class="profileInput">
-                      <input id="name" name="name"readonly type="text" required class="profileInputBox inputbox">
-                      <label for="name" class="profileLabel">Date Of Birth</label>
-                    </div>
-                  </div>
-
-
-                  <div class="col-md-4">
-                    <div class="profileInput">
-                      <!-- <input id="name" name="name" type="text" required class="profileInputBox"> -->
-
-                      <select class="js-example-basic-single select2me" name="religion">
-  <option value="H">Hinduism</option>
-    ...
-  <option value="C">Christianity</option>
-  ...
-<option value="I">Islam</option>
-</select>
-                      <label for="name" class="profileLabel select2ProfileInputBox">Religion</label>
-                    </div>
-                  </div>
-
-                </div>
-                <!-- second row -->
-                <div class="row mb-5">
-
-                  <div class="col-md-4">
-                    <div class="profileInput">
-                      <input id="name" name="name" type="text" required readonly class="inputbox profileInputBox">
-                      <label for="name" class="profileLabel">Gender</label>
-                    </div>
-                  </div>
-
-                  <div class="col-md-4">
-                    <div class="profileInput">
-                      <input id="name" name="name" type="text" required readonly class="inputbox profileInputBox">
-                      <label for="name" class="profileLabel">Height</label>
-                    </div>
-                  </div>
-
-                  <div class="col-md-4">
-                    <div class="profileInput">
-                      <input id="name" name="name" type="text" required readonly class="inputbox profileInputBox">
-                      <label for="name" class="profileLabel">Complexion</label>
-                    </div>
-                  </div>
-
                 </div>
 
-                <!-- third row -->
-                <div class="row mb-5">
-
-                  <div class="col-md-4">
-                    <div class="profileInput">
-
-                      <select class="js-example-basic-single select2me" name="Language">
-  <option value="">Graduate</option>
-    ...
-  <option value="WY">Professional</option>
-</select>
-                      <label for="name" class="profileLabel select2ProfileInputBox">Education</label>
-                    </div>
+                <div class="col-md-4">
+                  <div class="profileInput">
+                    <input id="name"
+                           name="name"
+                           type="text"
+                           required
+                           readonly
+                           class="inputbox profileInputBox">
+                    <label for="name"
+                           class="profileLabel">Height</label>
                   </div>
-
-                  <div class="col-md-4">
-                    <div class="profileInput">
-
-                      <select class="js-example-basic-single select2me" name="Language">
-  <option value="">Private</option>
-    ...
-  <option value="WY">Government</option>
-</select>
-                      <label for="name" class="profileLabel select2ProfileInputBox">Profiession</label>
-                    </div>
-                  </div>
-
-                  <div class="col-md-4">
-                    <div class="profileInput">
-
-                      <select class="js-example-basic-single select2me" name="Language">
-  <option value="">Less than 50k</option>
-    ...
-  <option value="WY">More than 50k</option>
-  </select>
-                      <label for="name" class="profileLabel select2ProfileInputBox">Salary</label>
-                    </div>
-                  </div>
-
                 </div>
 
-                <!-- fourth row -->
-                <div class="row mb-5">
-
-                  <div class="col-md-4">
-                    <div class="profileInput">
-
-                      <select class="js-example-basic-single select2me" name="Language">
-  <option value="">Chennai</option>
-    ...
-  <option value="WY">Coimbatore</option>
-  ...
-<option value="WY">Kanchipuram</option>
-...
-<option value="WY">Thanjavur</option>
-  </select>
-                      <label for="name" class="profileLabel select2ProfileInputBox">City</label>
-                    </div>
+                <div class="col-md-4">
+                  <div class="profileInput">
+                    <input id="name"
+                           name="name"
+                           type="text"
+                           required
+                           readonly
+                           class="inputbox profileInputBox">
+                    <label for="name"
+                           class="profileLabel">Complexion</label>
                   </div>
-
-                  <div class="col-md-4">
-                    <div class="profileInput">
-                      <input id="name" name="name" type="text" required readonly class="inputbox profileInputBox">
-                      <label for="name" class="profileLabel">Address</label>
-                    </div>
-                  </div>
-
-                  <div class="col-md-4">
-                    <div class="profileInput">
-                      <input id="name" name="name" type="text" required readonly class="inputbox profileInputBox">
-                      <label for="name" class="profileLabel">Physical Disablity</label>
-                    </div>
-                  </div>
-
                 </div>
 
-                <!-- fifth row -->
-                <div class="row">
-                  <!--
+              </div>
+
+              <!-- third row -->
+              <div class="row mb-5">
+
+                <div class="col-md-4">
+                  <div class="profileInput">
+
+                    <select class="js-example-basic-single select2me"
+                            name="Language">
+                      <option value="">Graduate</option>
+                      ...
+                      <option value="WY">Professional</option>
+                    </select>
+                    <label for="name"
+                           class="profileLabel select2ProfileInputBox">Education</label>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="profileInput">
+
+                    <select class="js-example-basic-single select2me"
+                            name="Language">
+                      <option value="">Private</option>
+                      ...
+                      <option value="WY">Government</option>
+                    </select>
+                    <label for="name"
+                           class="profileLabel select2ProfileInputBox">Profiession</label>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="profileInput">
+
+                    <select class="js-example-basic-single select2me"
+                            name="Language">
+                      <option value="">Less than 50k</option>
+                      ...
+                      <option value="WY">More than 50k</option>
+                    </select>
+                    <label for="name"
+                           class="profileLabel select2ProfileInputBox">Salary</label>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- fourth row -->
+              <div class="row mb-5">
+
+                <div class="col-md-4">
+                  <div class="profileInput">
+
+                    <select class="js-example-basic-single select2me"
+                            name="Language">
+                      <option value="">Chennai</option>
+                      ...
+                      <option value="WY">Coimbatore</option>
+                      ...
+                      <option value="WY">Kanchipuram</option>
+                      ...
+                      <option value="WY">Thanjavur</option>
+                    </select>
+                    <label for="name"
+                           class="profileLabel select2ProfileInputBox">City</label>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="profileInput">
+                    <input id="name"
+                           name="name"
+                           type="text"
+                           required
+                           readonly
+                           class="inputbox profileInputBox">
+                    <label for="name"
+                           class="profileLabel">Address</label>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="profileInput">
+                    <input id="name"
+                           name="name"
+                           type="text"
+                           required
+                           readonly
+                           class="inputbox profileInputBox">
+                    <label for="name"
+                           class="profileLabel">Physical Disablity</label>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- fifth row -->
+              <div class="row">
+                <!--
                   <div class="col-md-4">
                     <div class="profileInput">
 
@@ -290,8 +390,8 @@
 
                 </div> -->
 
-                  <!-- sixth row -->
-                  <!-- <div class="row">
+                <!-- sixth row -->
+                <!-- <div class="row">
 
                       <div class="col-md-4">
                         <div class="profileInput">
@@ -316,48 +416,50 @@
 
                     </div> -->
 
-                </div>
-
               </div>
+
             </div>
           </div>
+        </div>
 
-        </div>
-        <div class="footerDiv">
-          <div class="footer">
-            vivahahvizhamatrimony 2018
-          </div>
-        </div>
       </div>
 
-      </body>
+    </div>
+    <div class="footerDiv">
+      <div class="footer">
+        vivahahvizhamatrimony 2018
+      </div>
+    </div>
+</body>
 
-      <!-- <script src="https://code.jquery.com/jquery-1.6.2.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-1.6.2.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/i18n/ar.js"></script> -->
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css" rel="stylesheet" />
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
-      <script src="../js/constants.js"></script>
-      <script src="../js/profile.js"></script>
-      <script>
-        $(document).ready(function() {
-          $('.js-example-basic-single').select2();
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css"
+      rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
+<script src="js/constants.js"></script>
+<script src="js/profile.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.js-example-basic-single').select2();
 
-        });
+  });
 
-        // $('.select2me').click(function(e) {
-        //   if ($(this).find('select2-dropdown-open')) {
-        //     $(this).next('.head_ctrl_label').css('margin-top', '-25px');
-        //   }
-        //   e.preventDefault();
-        // });
-      </script>
-      <script>
-        history.pushState(null, null, location.href);
-        window.onpopstate = function() {
-          history.go(1);
-        };
-      </script>
+  // $('.select2me').click(function(e) {
+  //   if ($(this).find('select2-dropdown-open')) {
+  //     $(this).next('.head_ctrl_label').css('margin-top', '-25px');
+  //   }
+  //   e.preventDefault();
+  // });
+  //
+</script>
+<script>
+  history.pushState(null, null, location.href);
+  window.onpopstate = function() {
+    history.go(1);
+  };
+</script>
 
 </html>

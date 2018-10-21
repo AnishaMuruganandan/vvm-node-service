@@ -5,12 +5,12 @@ let profileFunc = (function() {
 
   let init = function() {
 
-    $logoutid = $('#logoutid');
+    $logoutAct = $('#logoutAct');
     $editbtn = $('#editbtn');
     $savebtn = $('#savebtn');
     $cancelbtn = $('#cancelbtn');
-    
-$inputbox=$('.inputbox');
+
+    $inputbox = $('.inputbox');
 
   };
 
@@ -19,7 +19,7 @@ $inputbox=$('.inputbox');
   let complete = function() {
 
     $editbtn.click(function(e) {
-    $inputbox.attr('readonly', false);
+      $inputbox.attr('readonly', false);
       $editbtn.css("display", "none");
       $savebtn.css("display", "block");
       $cancelbtn.css("display", "block");
@@ -42,19 +42,11 @@ $inputbox=$('.inputbox');
 
 
 
-  //   angular.module('myApp', []).controller('personCtrl', function($scope) {
-  //   $scope.firstName = ""
-  //   $scope.fullName = function() {
-  //       return $scope.firstName;
-  //   }
-  //
-  // });
-
 
     /*
      * Registraion Form submit listener
      */
-    $logoutid.click(function(e) {
+    $logoutAct.click(function(e) {
       logoutService();
     });
 
@@ -67,7 +59,7 @@ $inputbox=$('.inputbox');
 
   let logoutService = function() {
 
-window.location.href = "./index.html";
+    window.location.href = "./index.html";
 
   };
 
