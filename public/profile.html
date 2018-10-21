@@ -14,6 +14,13 @@
         href="css/profilepage.css">
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/clockpicker/0.0.7/bootstrap-clockpicker.min.css">
+
+
+
 </head>
 
 <body>
@@ -177,7 +184,6 @@
                        ng-controller="myCtrl">
                     <input id="name"
                            name="name"
-                           disabled
                            type="text"
                            required
                            class="profileInputBox inputbox"
@@ -189,12 +195,11 @@
 
                 <div class="col-md-4">
                   <div class="profileInput">
-                    <input id="name"
+                    <input id=""
                            name="name"
-                           readonly
                            type="text"
                            required
-                           class="profileInputBox inputbox">
+                           class="profileInputBox inputbox clock-input">
                     <label for="name"
                            class="profileLabel">Date Of Birth</label>
                   </div>
@@ -228,7 +233,6 @@
                            name="name"
                            type="text"
                            required
-                           readonly
                            class="inputbox profileInputBox">
                     <label for="name"
                            class="profileLabel">Gender</label>
@@ -241,7 +245,6 @@
                            name="name"
                            type="text"
                            required
-                           readonly
                            class="inputbox profileInputBox">
                     <label for="name"
                            class="profileLabel">Height</label>
@@ -254,7 +257,6 @@
                            name="name"
                            type="text"
                            required
-                           readonly
                            class="inputbox profileInputBox">
                     <label for="name"
                            class="profileLabel">Complexion</label>
@@ -337,7 +339,6 @@
                            name="name"
                            type="text"
                            required
-                           readonly
                            class="inputbox profileInputBox">
                     <label for="name"
                            class="profileLabel">Address</label>
@@ -350,7 +351,6 @@
                            name="name"
                            type="text"
                            required
-                           readonly
                            class="inputbox profileInputBox">
                     <label for="name"
                            class="profileLabel">Physical Disablity</label>
@@ -376,14 +376,14 @@
 
                   <div class="col-md-4">
                     <div class="profileInput">
-                      <input id="name" name="name" type="text" required readonly class="inputbox profileInputBox">
+                      <input id="name" name="name" type="text" required    class="inputbox profileInputBox">
                       <label for="name" class="profileLabel">Physical Disablity</label>
                     </div>
                   </div>
 
                   <div class="col-md-4">
                     <div class="profileInput">
-                      <input id="name" name="name" type="text" required readonly class="inputbox profileInputBox">
+                      <input id="name" name="name" type="text" required    class="inputbox profileInputBox">
                       <label for="name" class="profileLabel">Salary</label>
                     </div>
                   </div>
@@ -417,6 +417,123 @@
                     </div> -->
 
               </div>
+            </div>
+
+            <div> HOROSCOPE & ZODIAC DETAILS
+            </div>
+            <hr class="lifeStyleLine">
+            <div class="container-fluid">
+
+              <!-- first row -->
+
+              <div class="row mb-5">
+
+                <div class="col-md-4">
+                  <div class="profileInput"
+                       ng-app="myApp"
+                       ng-controller="myCtrl">
+                    <input id="name"
+                           name="name"
+                           type="text"
+                           required
+                           class="profileInputBox inputbox"
+                           ng-model="firstName">
+                    <label for="name"
+                           class="profileLabel">Name</label>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="profileInput">
+                    <input id="name"
+                           name="name"
+                           type="text"
+                           required
+                           class="profileInputBox inputbox">
+                    <label for="name"
+                           class="profileLabel">Date Of Birth</label>
+                  </div>
+                </div>
+
+
+                <div class="col-md-4">
+                  <div class="profileInput">
+                    <!-- <input id="name" name="name" type="text" required class="profileInputBox"> -->
+
+                    <select class="js-example-basic-single select2me"
+                            name="religion">
+                      <option value="H">Hinduism</option>
+                      ...
+                      <option value="C">Christianity</option>
+                      ...
+                      <option value="I">Islam</option>
+                    </select>
+                    <label for="name"
+                           class="profileLabel select2ProfileInputBox">Religion</label>
+                  </div>
+                </div>
+
+              </div>
+              <!-- second row -->
+
+            </div>
+
+            <div> FAMILY DETAILS
+            </div>
+            <hr class="lifeStyleLine">
+            <div class="container-fluid">
+
+              <!-- first row -->
+
+              <div class="row mb-5">
+
+                <div class="col-md-4">
+                  <div class="profileInput"
+                       ng-app="myApp"
+                       ng-controller="myCtrl">
+                    <input id="name"
+                           name="name"
+                           type="text"
+                           required
+                           class="profileInputBox inputbox"
+                           ng-model="firstName">
+                    <label for="name"
+                           class="profileLabel">Name</label>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="profileInput">
+                    <input id="name"
+                           name="name"
+                           type="text"
+                           required
+                           class="profileInputBox inputbox">
+                    <label for="name"
+                           class="profileLabel">Date Of Birth</label>
+                  </div>
+                </div>
+
+
+                <div class="col-md-4">
+                  <div class="profileInput">
+                    <!-- <input id="name" name="name" type="text" required class="profileInputBox"> -->
+
+                    <select class="js-example-basic-single select2me"
+                            name="religion">
+                      <option value="H">Hinduism</option>
+                      ...
+                      <option value="C">Christianity</option>
+                      ...
+                      <option value="I">Islam</option>
+                    </select>
+                    <label for="name"
+                           class="profileLabel select2ProfileInputBox">Religion</label>
+                  </div>
+                </div>
+
+              </div>
+              <!-- second row -->
 
             </div>
           </div>
@@ -439,8 +556,13 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css"
       rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clockpicker/0.0.7/bootstrap-clockpicker.min.js"></script>
 <script src="js/constants.js"></script>
-<script src="js/profile.js"></script>
+<script defer
+        src="js/profile.js"></script>
+
 <script>
   $(document).ready(function() {
     $('.js-example-basic-single').select2();
