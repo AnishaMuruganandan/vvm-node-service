@@ -1,18 +1,28 @@
 * {
   font-family: "Open Sans", sans-serif;
-  cursor: default;
 }
+
+a {
+  cursor: pointer;
+}
+
+.menu {
+  height: 70px;
+  background: white;
+}
+
+.menu-nav {}
 
 .profilebgpicture {
   width: 100%;
   background-image: url("../asset/img/marriageImg2.png");
   position: relative;
-  margin-top: 70px;
   height: 270px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .profilebgpicture::before {
   position: absolute;
   content: "";
@@ -89,26 +99,17 @@
   width: 20px;
 }
 
-* {
-  font-family: "Open Sans", sans-serif;
-  cursor: default;
-}
-
 .footerDiv {
   width: 100%;
 }
 
 .footer {
-  height: 50px;
-  background-color: orange;
+  background-color: #FF9400;
   text-align: center;
   box-sizing: border-box;
-  padding: 15px;
-}
-
-* {
-  font-family: "Open Sans", sans-serif;
-  cursor: default;
+  padding: 20px;
+  color: white;
+  margin: 10px 0;
 }
 
 .bodycontent {
@@ -130,14 +131,17 @@
   text-align: center;
   padding: 15px;
 }
+
 .namecard .name {
   font-size: 1.5em;
 }
+
 .namecard .areaIDfontStyle {
   font-weight: 600;
   color: #9E9D9D;
   font-size: 0.7em;
 }
+
 .namecard .nameendLine {
   color: #CDCDCD;
   width: 200px;
@@ -166,12 +170,14 @@
   border-radius: 100px;
   box-shadow: 0 2px 4px 0 #000000;
 }
+
 .photosblock .photosList .firstpicture {
   background-image: url("../asset/img/sneha.jpg");
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .photosblock .photosList .morepicture {
   text-align: center;
   box-sizing: border-box;
@@ -180,17 +186,18 @@
 }
 
 .profileTabContent {
-  height: 100%;
   background-color: #FFFFFF;
 }
 
 .list-inline {
   margin: 30px 10px 30px 0 !important;
 }
+
 .list-inline .tabList {
   padding: 0 !important;
   margin-right: 30px !important;
 }
+
 .list-inline .tabTextStyle {
   color: #000000 !important;
 }
@@ -205,16 +212,16 @@
 
 .profileInputBox {
   border: 1px solid #CDCDCD;
-  box-shadow: 1px 1px 5px #CDCDCD;
+  box-shadow: rgba(205, 205, 205, 0.36) 1px 1px 5px;
   width: 100%;
   padding: 10px 5px;
 }
 
-.profileInputBox + label {
+.profileInputBox+label {
   position: absolute;
   top: 10px;
   justify-content: center;
-  left: 20px;
+  left: 10px;
 }
 
 .profileLabel {
@@ -226,11 +233,13 @@
   outline: none;
 }
 
-.profileInput:valid + label,
-.profileInputBox:valid + label {
+.profileInput:valid+label,
+.profileInputBox:valid+label,
+.profileInputBox:focus+label {
   top: -11px;
   background-color: white;
   margin: 0;
+  padding: 0 2px;
 }
 
 .select2ProfileInputBox {
@@ -238,6 +247,7 @@
   left: 10px;
   top: -10px;
   background-color: white;
+  padding: 0 2px;
 }
 
 .select2-selection__rendered {
@@ -254,7 +264,7 @@
   width: 100% !important;
   height: 42px !important;
   border: 1px solid #CDCDCD !important;
-  box-shadow: 1px 1px 5px #CDCDCD !important;
+  box-shadow: rgba(205, 205, 205, 0.36) 1px 1px 5px !important;
   border-radius: 0px !important;
 }
 
@@ -279,5 +289,3 @@
 #savebtn, #cancelbtn {
   display: none;
 }
-
-/*# sourceMappingURL=public/css/profilepage.css.map */

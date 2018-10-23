@@ -5,10 +5,11 @@ let profileFunc = (function() {
 
   let init = function() {
 
-    $logoutid = $('#logoutid');
+    $logoutAct = $('#logoutAct');
     $editbtn = $('#editbtn');
     $savebtn = $('#savebtn');
     $cancelbtn = $('#cancelbtn');
+    $clockInput = $('#clock-input');
     $inputbox = $('.inputbox');
 
   };
@@ -18,21 +19,21 @@ let profileFunc = (function() {
   let complete = function() {
 
     $editbtn.click(function(e) {
-      $inputbox.attr('readonly', false);
+      $inputbox.attr('  ', false);
       $editbtn.css("display", "none");
       $savebtn.css("display", "block");
       $cancelbtn.css("display", "block");
     });
 
     $savebtn.click(function(e) {
-      $inputbox.attr('readonly', true);
+      $inputbox.attr('  ', true);
       $editbtn.css("display", "block");
       $savebtn.css("display", "none");
       $cancelbtn.css("display", "none");
     });
 
     $cancelbtn.click(function(e) {
-      $inputbox.attr('readonly', true);
+      $inputbox.attr('  ', true);
       $editbtn.css("display", "block");
       $savebtn.css("display", "none");
       $cancelbtn.css("display", "none");
@@ -41,27 +42,31 @@ let profileFunc = (function() {
 
 
 
-    //   angular.module('myApp', []).controller('personCtrl', function($scope) {
-    //   $scope.firstName = ""
-    //   $scope.fullName = function() {
-    //       return $scope.firstName;
-    //   }
-    //
-    // });
-
 
     /*
      * Registraion Form submit listener
      */
-    $logoutid.click(function(e) {
+    $logoutAct.click(function(e) {
       logoutService();
     });
 
+    $clockInput.click(function(e) {
+
+      // Manual operations (after clockpicker is initialized).
+      this.clockpicker('show') // Or hide, remove ...
+        .clockpicker('toggleView', 'minutes');
+
+    });
 
 
   };
 
-  let finalise = function() {};
+  let finalise = function() {
+
+    $('.clock-input').clockpicker({
+      autoclose: true
+    });
+  };
 
 
   let logoutService = function() {
@@ -115,6 +120,8 @@ var profileJS = {
    * DESCRIPTION : Finalize
    */
   _finalise: function() {
+
+    profileObj.finalise();
 
   }
 
