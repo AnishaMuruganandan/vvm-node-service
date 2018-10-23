@@ -69,30 +69,49 @@
 
       </div>
     </div>
+
     <div class="bodycontent container-fluid">
       <div class="row">
         <div class="col-lg-3 leftcol">
 
           <div class="namecard">
-            <div class="name semiboldFont">{{firstName}}
+            <div class="name semiboldFont">SNEHA MOHAN
             </div>
             <div class="areaIDfontStyle semiboldFont">Chennai, India
             </div>
             <hr class="">
-            <div class="areaIDfontStyle semiboldFont">VVM 001
+            <div class="areaIDfontStyle semiboldFont">VVM 001, <span>24</span>yrs
             </div>
           </div>
 
           <hr class="cardEndLine">
+
+
+          <!-- Contact card -->
+          <div class="bodycontent__row__leftcol__professionCard">
+            <div class="form-group">
+              <label class="titleLabel">CONTACT NUMBER</label>
+              <input type="text"
+                     class="InfoTextbox"
+                     placeholder="Registerd Phone Number"
+                     id="">
+            </div>
+
+          </div>
+
+          <hr class="cardEndLine" />
 
           <!-- profession card -->
           <div class="bodycontent__row__leftcol__professionCard">
 
             <div class="form-group">
               <label class="titleLabel">PROFESSION</label>
-              <input type="text"
-                     class="InfoTextbox"
-                     id="">
+              <select class="InfoTextbox js-example-basic-single select2me"
+                      id="">
+                <option>
+                  Doctor
+                </option>
+              </select>
             </div>
 
           </div>
@@ -104,9 +123,15 @@
 
             <div class="form-group">
               <label class="titleLabel">EDUCATION</label>
-              <input type="text"
-                     class="InfoTextbox"
-                     id="">
+              <select class="InfoTextbox js-example-basic-single select2me"
+                      id="">
+                <option>
+                  B.E
+                </option>
+                <option>
+                  B.COM
+                </option>
+              </select>
             </div>
 
           </div>
@@ -117,15 +142,36 @@
           <div class="interestCard">
 
             <div class="form-group">
-              <label class="titleLabel">RELIGION & CASTE</label>
-              <input type="text"
-                     class="InfoTextbox"
-                     id="">
+              <label class="titleLabel">RELIGION</label>
+              <select class="InfoTextbox js-example-basic-single select2me"
+                      id="">
+                <option>
+                  Hindu
+                </option>
+              </select>
             </div>
 
           </div>
 
           <hr class="cardEndLine">
+
+          <!-- interest card -->
+          <div class="interestCard">
+
+            <div class="form-group">
+              <label class="titleLabel">CASTE</label>
+              <select class="InfoTextbox js-example-basic-single select2me"
+                      id="">
+                <option>
+                  Hindu
+                </option>
+              </select>
+            </div>
+
+          </div>
+
+          <hr class="cardEndLine">
+
 
           <!-- pictures -->
           <!--
@@ -151,14 +197,13 @@
               <li class="tabList"><a class="tabTextStyle"
                    href="#">PHOTOS</a></li>
               <li class="tabList optionbtn"><a class="tabTextStyle"
-                   href="#"><i class="fa fa-edit"
-                     id="editbtn"></i></a></li>
+                   href="#"
+                   id="editbtn">EDIT</a></li>
               <li class="tabList optionbtn"><a class="tabTextStyle"
-                   href="#"><i class="fa fa-check"
-                     id="savebtn"></i></a></li>
+                   href="#"
+                   id="savebtn">SAVE</a></li>
               <li class="tabList optionbtn"><a class="tabTextStyle"
-                   href="#"><i class="fa fa-times"
-                     id="cancelbtn"></i></a></li>
+                   href="#"  id="cancelbtn">CANCEL</a></li>
 
 
 
@@ -185,9 +230,10 @@
                            class="profileInputBox inputbox"
                            ng-model="firstName">
                     <label for="name"
-                           class="profileLabel">Name</label>
+                           class="profileLabel">Full Name</label>
                   </div>
                 </div>
+
 
                 <div class="col-md-4">
                   <div class="profileInput">
@@ -195,29 +241,27 @@
                            name="name"
                            type="text"
                            required
-                           class="profileInputBox inputbox clock-input">
+                           class="profileInputBox inputbox ">
                     <label for="name"
                            class="profileLabel">Date Of Birth</label>
                   </div>
                 </div>
 
-
                 <div class="col-md-4">
-                  <div class="profileInput">
-                    <!-- <input id="name" name="name" type="text" required class="profileInputBox"> -->
-
-                    <select class="js-example-basic-single select2me"
-                            name="religion">
-                      <option value="H">Hinduism</option>
-                      ...
-                      <option value="C">Christianity</option>
-                      ...
-                      <option value="I">Islam</option>
-                    </select>
+                  <div class="profileInput"
+                       ng-app="myApp"
+                       ng-controller="myCtrl">
+                    <input id="name"
+                           name="name"
+                           type="text"
+                           required
+                           class="profileInputBox inputbox"
+                           ng-model="firstName">
                     <label for="name"
-                           class="profileLabel select2ProfileInputBox">Religion</label>
+                           class="profileLabel">Email Id</label>
                   </div>
                 </div>
+
 
               </div>
               <!-- second row -->
@@ -255,7 +299,7 @@
                            required
                            class="inputbox profileInputBox">
                     <label for="name"
-                           class="profileLabel">Complexion</label>
+                           class="profileLabel">Skin Complexion</label>
                   </div>
                 </div>
 
@@ -263,34 +307,6 @@
 
               <!-- third row -->
               <div class="row mb-5">
-
-                <div class="col-md-4">
-                  <div class="profileInput">
-
-                    <select class="js-example-basic-single select2me"
-                            name="Language">
-                      <option value="">Graduate</option>
-                      ...
-                      <option value="WY">Professional</option>
-                    </select>
-                    <label for="name"
-                           class="profileLabel select2ProfileInputBox">Education</label>
-                  </div>
-                </div>
-
-                <div class="col-md-4">
-                  <div class="profileInput">
-
-                    <select class="js-example-basic-single select2me"
-                            name="Language">
-                      <option value="">Private</option>
-                      ...
-                      <option value="WY">Government</option>
-                    </select>
-                    <label for="name"
-                           class="profileLabel select2ProfileInputBox">Profiession</label>
-                  </div>
-                </div>
 
                 <div class="col-md-4">
                   <div class="profileInput">
@@ -306,6 +322,32 @@
                   </div>
                 </div>
 
+                <div class="col-md-4">
+                  <div class="profileInput">
+                    <input id="name"
+                           name="name"
+                           type="text"
+                           required
+                           class="inputbox profileInputBox">
+                    <label for="name"
+                           class="profileLabel">City Living</label>
+                  </div>
+                </div>
+
+
+                <div class="col-md-4">
+                  <div class="profileInput">
+                    <input id="name"
+                           name="name"
+                           type="text"
+                           required
+                           class="inputbox profileInputBox">
+                    <label for="name"
+                           class="profileLabel">Native Place</label>
+                  </div>
+                </div>
+
+
               </div>
 
               <!-- fourth row -->
@@ -317,41 +359,46 @@
                     <select class="js-example-basic-single select2me"
                             name="Language">
                       <option value="">Chennai</option>
-                      ...
                       <option value="WY">Coimbatore</option>
-                      ...
                       <option value="WY">Kanchipuram</option>
-                      ...
                       <option value="WY">Thanjavur</option>
                     </select>
                     <label for="name"
-                           class="profileLabel select2ProfileInputBox">City</label>
+                           class="profileLabel select2ProfileInputBox">Physically Disabled</label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="profileInput">
+
+                    <select class="js-example-basic-single select2me"
+                            name="Language">
+                      <option value="">Chennai</option>
+                      <option value="WY">Coimbatore</option>
+                      <option value="WY">Kanchipuram</option>
+                      <option value="WY">Thanjavur</option>
+                    </select>
+                    <label for="name"
+                           class="profileLabel select2ProfileInputBox">Mother Tongue</label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="profileInput">
+
+                    <select class="js-example-basic-single select2me"
+                            name="Language"
+                            multiple="multiple">
+                      <option value="">Chennai</option>
+                      <option value="WY">Coimbatore</option>
+                      <option value="WY">Kanchipuram</option>
+                      <option value="WY">Thanjavur</option>
+                    </select>
+                    <label for="name"
+                           class="profileLabel select2ProfileInputBox">Language known</label>
                   </div>
                 </div>
 
-                <div class="col-md-4">
-                  <div class="profileInput">
-                    <input id="name"
-                           name="name"
-                           type="text"
-                           required
-                           class="inputbox profileInputBox">
-                    <label for="name"
-                           class="profileLabel">Address</label>
-                  </div>
-                </div>
 
-                <div class="col-md-4">
-                  <div class="profileInput">
-                    <input id="name"
-                           name="name"
-                           type="text"
-                           required
-                           class="inputbox profileInputBox">
-                    <label for="name"
-                           class="profileLabel">Physical Disablity</label>
-                  </div>
-                </div>
+
 
               </div>
 
@@ -428,26 +475,28 @@
                   <div class="profileInput"
                        ng-app="myApp"
                        ng-controller="myCtrl">
-                    <input id="name"
-                           name="name"
-                           type="text"
-                           required
-                           class="profileInputBox inputbox"
-                           ng-model="firstName">
+                    <select class="js-example-basic-single select2me"
+                            name="religion">
+                      <option value="H">Hinduism</option>
+                      <option value="C">Christianity</option>
+                      <option value="I">Islam</option>
+                    </select>
                     <label for="name"
-                           class="profileLabel">Name</label>
+                           class="profileLabel select2ProfileInputBox">Rasi</label>
                   </div>
                 </div>
 
                 <div class="col-md-4">
                   <div class="profileInput">
-                    <input id="name"
-                           name="name"
-                           type="text"
-                           required
-                           class="profileInputBox inputbox">
+
+                    <select class="js-example-basic-single select2me"
+                            name="religion">
+                      <option value="H">Hinduism</option>
+                      <option value="C">Christianity</option>
+                      <option value="I">Islam</option>
+                    </select>
                     <label for="name"
-                           class="profileLabel">Date Of Birth</label>
+                           class="profileLabel select2ProfileInputBox">Nakshatra</label>
                   </div>
                 </div>
 
@@ -459,18 +508,49 @@
                     <select class="js-example-basic-single select2me"
                             name="religion">
                       <option value="H">Hinduism</option>
-                      ...
                       <option value="C">Christianity</option>
-                      ...
                       <option value="I">Islam</option>
                     </select>
                     <label for="name"
-                           class="profileLabel select2ProfileInputBox">Religion</label>
+                           class="profileLabel select2ProfileInputBox">Lagna</label>
+                  </div>
+                </div>
+
+
+
+              </div>
+              <!-- second row -->
+
+
+              <div class="row mb-5">
+                <div class="col-md-4">
+                  <div class="profileInput"
+                       ng-app="myApp"
+                       ng-controller="myCtrl">
+                    <input id="name"
+                           name="name"
+                           type="text"
+                           required
+                           class="profileInputBox inputbox"
+                           ng-model="firstName">
+                    <label for="name"
+                           class="profileLabel">Place of birth</label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="profileInput">
+                    <input id=""
+                           name="name"
+                           type="text"
+                           required
+                           class="profileInputBox inputbox clock-input">
+                    <label for="name"
+                           class="profileLabel">Time Of Birth</label>
                   </div>
                 </div>
 
               </div>
-              <!-- second row -->
+
 
             </div>
 
@@ -494,7 +574,7 @@
                            class="profileInputBox inputbox"
                            ng-model="firstName">
                     <label for="name"
-                           class="profileLabel">Name</label>
+                           class="profileLabel">Father Name</label>
                   </div>
                 </div>
 
@@ -506,7 +586,7 @@
                            required
                            class="profileInputBox inputbox">
                     <label for="name"
-                           class="profileLabel">Date Of Birth</label>
+                           class="profileLabel">Mother Name</label>
                   </div>
                 </div>
 
@@ -518,18 +598,40 @@
                     <select class="js-example-basic-single select2me"
                             name="religion">
                       <option value="H">Hinduism</option>
-                      ...
                       <option value="C">Christianity</option>
-                      ...
                       <option value="I">Islam</option>
                     </select>
                     <label for="name"
-                           class="profileLabel select2ProfileInputBox">Religion</label>
+                           class="profileLabel select2ProfileInputBox">Number of Siblings</label>
                   </div>
                 </div>
 
               </div>
               <!-- second row -->
+
+
+              <div class="row mb-5">
+
+                <div class="col-md-12">
+                  <div class="profileInput"
+                       ng-app="myApp"
+                       ng-controller="myCtrl">
+                    <input id="name"
+                           name="name"
+                           type="text"
+                           required
+                           class="profileInputBox inputbox"
+                           ng-model="firstName">
+                    <label for="name"
+                           class="profileLabel">Address</label>
+                  </div>
+                </div>
+
+
+
+
+
+              </div>
 
             </div>
           </div>

@@ -10,7 +10,7 @@ let profileFunc = (function() {
     $savebtn = $('#savebtn');
     $cancelbtn = $('#cancelbtn');
     $clockInput = $('#clock-input');
-    $inputbox = $('.inputbox');
+    $fieldbox = $('.bodycontent input ,.bodycontent select');
     $uploadWidgetOpener = $('#upload_widget_opener');
 
   };
@@ -20,21 +20,23 @@ let profileFunc = (function() {
   let complete = function() {
 
     $editbtn.click(function(e) {
-      $inputbox.attr('  ', false);
+      $fieldbox.attr('disabled', false);
       $editbtn.css("display", "none");
       $savebtn.css("display", "block");
       $cancelbtn.css("display", "block");
     });
 
     $savebtn.click(function(e) {
-      $inputbox.attr('  ', true);
+
+      $fieldbox.attr('disabled', true);
       $editbtn.css("display", "block");
       $savebtn.css("display", "none");
       $cancelbtn.css("display", "none");
     });
 
     $cancelbtn.click(function(e) {
-      $inputbox.attr('  ', true);
+
+      $fieldbox.attr('disabled', true);
       $editbtn.css("display", "block");
       $savebtn.css("display", "none");
       $cancelbtn.css("display", "none");
@@ -86,6 +88,7 @@ let profileFunc = (function() {
     $('.clock-input').clockpicker({
       autoclose: true
     });
+    $fieldbox.attr('disabled', true);
   };
 
 

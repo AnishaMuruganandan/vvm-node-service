@@ -139,7 +139,7 @@ a {
 .namecard .areaIDfontStyle {
   font-weight: 600;
   color: #9E9D9D;
-  font-size: 0.7em;
+  /* font-size: 0.7em; */
 }
 
 .namecard .nameendLine {
@@ -235,11 +235,18 @@ a {
 
 .profileInput:valid+label,
 .profileInputBox:valid+label,
-.profileInputBox:focus+label {
+.profileInputBox:focus+label,
+.profileInputBox:disabled+label {
   top: -11px;
   background-color: white;
   margin: 0;
   padding: 0 2px;
+}
+
+.profileInputBox:disabled+label ,
+.select2-container--disabled .select2-selection__rendered,
+.select2-container--disabled ~ label{
+  color: #686868 !important
 }
 
 .select2ProfileInputBox {
@@ -260,12 +267,16 @@ a {
   top: 7px !important;
 }
 
-.select2-selection--single {
+.select2-selection--single, .select2-selection--multiple {
   width: 100% !important;
   height: 42px !important;
   border: 1px solid #CDCDCD !important;
   box-shadow: rgba(205, 205, 205, 0.36) 1px 1px 5px !important;
   border-radius: 0px !important;
+}
+
+.select2-selection--multiple ul {
+  padding-top: 5px !important;
 }
 
 .select2-container {
@@ -308,4 +319,16 @@ a {
 #upload_widget_opener:hover .addImage {
   display: block;
   cursor: pointer;
+}
+
+.leftcol .select2-selection--single {
+  border: 1px solid #ffffff !important;
+}
+
+.btn-outline-primary:hover {
+  color: white !important;
+}
+
+.select2-container--default.select2-container--disabled .select2-selection--single, .select2-container--default.select2-container--disabled .select2-selection--multiple {
+  background-color: white !important;
 }
