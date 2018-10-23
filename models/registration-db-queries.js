@@ -26,7 +26,7 @@ var registrationQueries = {
 
         let dbconnectionObj = dbconnectionConst.connectDatabase();
       return dbconnectionObj.query(saveAllQuery, [
-        saveRegistrationDetailsObj.emailId, saveRegistrationDetailsObj.phoneNo, saveRegistrationDetailsObj.otp, saveRegistrationDetailsObj.username, saveRegistrationDetailsObj.password
+        saveRegistrationDetailsObj.profileBasicId, saveRegistrationDetailsObj.emailId, saveRegistrationDetailsObj.phoneNo, saveRegistrationDetailsObj.otp, saveRegistrationDetailsObj.username, saveRegistrationDetailsObj.password
       ], (err, rows) => {
 
                         dbconnectionConst.disconnectDatabase();

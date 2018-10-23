@@ -8,7 +8,8 @@ var registrationObj = {
     this.phoneNo = phoneNo || '0';
   },
 
-  saveRegistrationDetailsObj: function(emailId, phoneNo, otp, username, password) {
+  saveRegistrationDetailsObj: function(profileBasicId, emailId, phoneNo, otp, username, password) {
+    this.profileBasicId = profileBasicId || '0';
     this.emailId = emailId || '0';
     this.phoneNo = phoneNo || '0';
     this.otp = otp || '0';

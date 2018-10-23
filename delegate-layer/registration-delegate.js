@@ -36,7 +36,7 @@ var registrationDelegate = {
       saveRegistrationDetails: async function(registrationDetails) {
           console.log("dlegate");
           var otp=0;
-          var saveRegistrationDetailsObj = new registrationObject.saveRegistrationDetailsObj(registrationDetails.emailId, registrationDetails.phoneNo, otp , registrationDetails.username, registrationDetails.password);
+          var saveRegistrationDetailsObj = new registrationObject.saveRegistrationDetailsObj(registrationDetails.profileBasicId, registrationDetails.emailId, registrationDetails.phoneNo, otp , registrationDetails.emailId, registrationDetails.password);
           try {
             console.log("del try");
             var output = await registrationServiceObj.saveRegistrationDetails(saveRegistrationDetailsObj);

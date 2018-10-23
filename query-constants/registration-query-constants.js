@@ -4,7 +4,7 @@ var registrationQueryConst = {
 
   findByPhoneNoQuery: "select * from login_details where phone_no=?",
 
-  saveAllQuery: "INSERT INTO login_details (email_id, phone_no, otp, username, password) VALUES (?, ?, ?, ?, ?)",
+  saveAllQuery: "INSERT INTO login_details (profile_basic_id, email_id, phone_no, otp, username, password) VALUES (?, ?, ?, ?, ?, ?)",
 
   updatePasswordByEmailIdQuery: "update login_details set password=? where email_id=?",
 

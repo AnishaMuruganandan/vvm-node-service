@@ -6,9 +6,17 @@ let registrationFunc = (function() {
 
   let init = function() {
 
+    $name = $('#name');
     $emailId = $('#emailId');
     $password = $('#password');
     $phoneNo = $('#phoneNo');
+    $dob = $('#dob');
+    $height = $('#height');
+    $city = $('#city');
+    $educationalQualification = $('#educationalQualification');
+    $profession = $('#profession');
+    $religion = $('#religion');
+    $caste = $('#caste');
     $otp = $('#otp');
     $generateandSendOTP = $('#generateandSendOTP');
     $verifyOTP = $('#verifyOTP');
@@ -53,13 +61,13 @@ let registrationFunc = (function() {
       $registrationForm.hide();
       $LoginForm.show();
       $loginBtn.hide();
-    $registerBn.show();
+      $registerBn.show();
     });
 
     $loginBtn.click(function(e) {
       $registrationForm.hide();
       $LoginForm.show();
-        $loginBtn.hide();
+      $loginBtn.hide();
       $registerBn.show();
     });
 
@@ -68,7 +76,7 @@ let registrationFunc = (function() {
       $registrationForm.show();
       $registerBn.hide();
       $loginBtn.show();
-        $OtpGeneration.show();
+      $OtpGeneration.show();
     });
   };
 
@@ -98,9 +106,18 @@ let registrationFunc = (function() {
 
   let saveAllDetailsService = async function() {
     var data = {
-      "phoneNo": $phoneNo.val(),
+      "name": $name.val(),
       "emailId": $emailId.val(),
-      "password": $password.val()
+      "phoneNo": $phoneNo.val(),
+      "password": $password.val(),
+      "dob": $dob.val(),
+      "height": $height.val(),
+      "city": $city.val(),
+      "educationalQualification": $educationalQualification.val(),
+      "profession": $profession.val(),
+      "religion": $religion.val(),
+      "caste": $caste.val()
+      "profile_picture": "www.adf.com";
     }
     var result = await registrationServiceDeclaration.saveAllDetailsService(data);
     console.log(result + "fearesult");
