@@ -11,6 +11,7 @@ let profileFunc = (function() {
     $cancelbtn = $('#cancelbtn');
     $clockInput = $('#clock-input');
     $inputbox = $('.inputbox');
+    $uploadWidgetOpener = $('#upload_widget_opener');
 
   };
 
@@ -57,6 +58,25 @@ let profileFunc = (function() {
         .clockpicker('toggleView', 'minutes');
 
     });
+
+    $uploadWidgetOpener.click(function(e) {
+      cloudinary.openUploadWidget({
+          cloud_name: 'the-corp-india',
+          upload_preset: 'rvg5voir'
+        },
+        function(error, result) {
+
+          resultFromURL = result;
+
+          $uploadWidgetOpener.css('background-image', "url(" + result[0].secure_url + ")");
+
+          $('#image-url').val(result[0].secure_url);
+          $('#image-thumbnail-url').val(result[0].thumbnail_url);
+
+
+        });
+    });
+
 
 
   };

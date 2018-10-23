@@ -289,3 +289,23 @@ a {
 #savebtn, #cancelbtn {
   display: none;
 }
+
+.addImage {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  background: #000000a1;
+  padding-top: 50%;
+  padding-left: 25%;
+  border-radius: 103px;
+  width: 100%;
+  height: 100%;
+}
+
+#upload_widget_opener:hover .addImage {
+  display: block;
+  cursor: pointer;
+}
