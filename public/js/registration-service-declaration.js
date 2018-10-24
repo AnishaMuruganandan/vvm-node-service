@@ -5,7 +5,7 @@ var registrationServiceDeclaration = {
       const AJAX_INPUT_OBJ = {
         "METHOD": "POST",
         "data": data,
-        "URL": URL_Domain+"registration/send-otp"
+        "URL": "/registration/send-otp"
       };
 
       var response = await this.ajaxService(AJAX_INPUT_OBJ);
@@ -19,7 +19,7 @@ var registrationServiceDeclaration = {
       const AJAX_INPUT_OBJ = {
         "METHOD": "POST",
         "data": data,
-        "URL": URL_Domain+"registration/registration-details"
+        "URL": "/registration/registration-details"
       };
 
       var response = await this.ajaxService(AJAX_INPUT_OBJ);
