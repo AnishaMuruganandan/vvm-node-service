@@ -65,7 +65,7 @@
   background-image: linear-gradient(#F5515F, #9F041B);
   border-radius: 4px;
   padding: 12px;
-      color: white;
+  color: white;
 }
 
 .regsiterButtonStyle {
@@ -221,7 +221,7 @@
 .textboxstyle {
   border: 1px solid #979797;
   padding: 10px;
-   outline: none !important;
+  outline: none !important;
 }
 
 .smallfont {
@@ -275,6 +275,7 @@
   position: absolute;
   top: -45px;
   right: 25px;
+  cursor: pointer;
 }
 
 #registrationUsingEmailPwd {
@@ -307,15 +308,18 @@
   font-size: 0.8em;
   color: #4A90E2 !important;
 }
-.input:focus, .textboxstyle:focus{
- outline: none !important;
-border: 1px solid #979797 !important;
-box-shadow: none !important;
-}
-.searchtext:focus{
+
+.input:focus, .textboxstyle:focus {
   outline: none !important;
- box-shadow: none !important;
+  border: 1px solid #979797 !important;
+  box-shadow: none !important;
 }
-.distance{
+
+.searchtext:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.distance {
   margin-bottom: 13px !important;
 }

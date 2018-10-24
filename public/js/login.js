@@ -32,17 +32,16 @@ let loginFunc = (function() {
 
   let loginService = async function() {
     var data = {};
-      data.loginPhoneNo = $loginPhoneNo.val();
-      data.loginPassword = $loginPassword.val();
+    data.loginPhoneNo = $loginPhoneNo.val();
+    data.loginPassword = $loginPassword.val();
 
     var result = await loginServiceDeclaration.verifyLoginDetailsService(data);
-    if(result == "found"){
-window.location.href = "./profile.html";
+    if (result == "found") {
+      window.location.href = "./profile.html";
 
-    
-    }
-    else
-    alert("Invalid Phone Number or Password");
+
+    } else
+      alert("Invalid Phone Number or Password");
   };
 
 
@@ -91,6 +90,7 @@ var loginJS = {
    */
   _finalise: function() {
 
+    securityJS.validateLogin();
   }
 
 };

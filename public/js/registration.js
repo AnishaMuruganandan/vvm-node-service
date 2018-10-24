@@ -116,8 +116,8 @@ let registrationFunc = (function() {
       "educationalQualification": $educationalQualification.val(),
       "profession": $profession.val(),
       "religion": $religion.val(),
-      "caste": $caste.val()
-      "profile_picture": "www.adf.com";
+      "caste": $caste.val(),
+      "profile_picture": "www.adf.com"
     }
     var result = await registrationServiceDeclaration.saveAllDetailsService(data);
     console.log(result + "fearesult");
@@ -165,7 +165,9 @@ var registrationJS = {
    * AUTHOR : AV
    * DESCRIPTION : Finalize
    */
-  _finalise: function() {}
+  _finalise: function() {
+    securityJS.validateLogin();
+  }
 
 };
 

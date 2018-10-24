@@ -146,6 +146,8 @@ var profileJS = {
 
     profileObj.finalise();
 
+    securityJS.validateLogin();
+
   }
 
 };
