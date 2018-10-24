@@ -29,6 +29,7 @@ var registrationServiceDeclaration = {
     },
     ajaxService: function(obj) {
       return new Promise((resolve, reject) => {
+        console.log("he am in reg ajax");
         $.ajax({
           type: obj.METHOD,
           data: JSON.stringify(obj.data),

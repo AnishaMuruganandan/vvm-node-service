@@ -27,10 +27,11 @@ router.post('/registration-details', async function(req, res, next) {
   var result;
   console.log('body: ' + JSON.stringify(req.body));
   var profileInsertion = await profileDelegateObj.saveBasicProfileDetails(req.body);
-  console.log(profileInsertion + "profileInsertion");
-  if(registrationInsertion.insertId > 0){
+  var response= JSON.stringify(profileInsertion);
+  console.log(profileInsertion.insertId + "profileInsertion");
+  if(profileInsertion.insertId > 0){
 var data = req.body;
-data.profileId = registrationInsertion.insertId;
+data.profileBasicId = profileInsertion.insertId;
   result =await registrationDelegateObj.saveRegistrationDetails(data);
   }
   res.json(result);

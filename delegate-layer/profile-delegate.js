@@ -4,7 +4,7 @@ var profileObject = require('../objects/profile-obj');
 
 var profileDelegate = (function() {
 
-  saveBasicProfileDetails: async function(profileDetails) {
+  saveBasicProfileDetails = async function(profileDetails) {
     console.log("dlegate");
     var saveBasicProfileDetailsObj = new profileObject.saveBasicProfileDetailsObj(profileDetails.name,
       profileDetails.dob,
@@ -18,7 +18,7 @@ var profileDelegate = (function() {
     try {
       console.log("del try");
       var output = await profileServiceObj.saveBasicProfileDetails(saveBasicProfileDetailsObj);
-      console.log(output + "out delegate");
+      console.log(JSON.stringify(output) + "out delegate");
       return output;
     } catch (error) {
       console.log(error);
@@ -27,7 +27,7 @@ var profileDelegate = (function() {
   };
 
 
-  saveMoreProfileDetails: async function(profileDetails) {
+  saveMoreProfileDetails = async function(profileDetails) {
     console.log("dlegate");
     var saveProfileDetailsObj = new profileObject.saveProfileDetailsObj(profileDetails.name,
       profileDetails.dob,
@@ -54,7 +54,7 @@ var profileDelegate = (function() {
     }
   };
 
-  getProfileDetailsByProfileId: async function(profileDetails) {
+  getProfileDetailsByProfileId= async function(profileDetails) {
     console.log("dlegate");
     try {
       console.log("del try");
@@ -68,7 +68,7 @@ var profileDelegate = (function() {
   }
 
   return {
-    saveProfileDetails: saveProfileDetails,
+    saveBasicProfileDetails: saveBasicProfileDetails,
     getProfileDetailsByProfileId: getProfileDetailsByProfileId
   }
 

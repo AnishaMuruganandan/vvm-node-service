@@ -101,5 +101,62 @@ router.get('/fetch-caste', function(req, res, next) {
   res.json(result);
 });
 
+router.get('/registration-master-details', function(req, res, next) {
+  console.log("registrationMasterTable");
+  var registrationMasterTableData{};
+
+var religionsMasterTableData = await masterTableDelegateObj.getReligionsMasterTable();
+registrationMasterTableData.religionsMasterTableData = religionsMasterTableData;
+
+var casteMasterTableData = await masterTableDelegateObj.getCasteMasterTable();
+registrationMasterTableData.casteMasterTableData = casteMasterTableData;
+
+var cityMasterTableData =  await masterTableDelegateObj.getCityMasterTable();
+registrationMasterTableData.cityMasterTableData = cityMasterTableData;
+
+var professionMasterTableData =  await masterTableDelegateObj.getProfessionDetailsMasterTable();
+registrationMasterTableData.professionMasterTableData = professionMasterTableData;
+
+var educationMasterTableData =  await masterTableDelegateObj.getEducationalQualificationMasterTable();
+registrationMasterTableData.educationMasterTableData = educationMasterTableData;
+
+  console.log(result + "result route");
+  res.json(result);
+});
+
+router.get('/profile-master-details', function(req, res, next) {
+  console.log("registrationMasterTable");
+  var profileMasterTableData{};
+
+var zodiacMasterTableData = await masterTableDelegateObj.getZodiacMasterTable();
+profileMasterTableData.zodiacMasterTableData = zodiacMasterTableData;
+
+var starMasterTableData = await masterTableDelegateObj.getStarMasterTable();
+profileMasterTableData.starMasterTableData = starMasterTableData;
+
+var salaryMasterTableData = await masterTableDelegateObj.getSalaryMasterTable();
+profileMasterTableData.salaryMasterTableData = salaryMasterTableData;
+
+var relativeMasterTableData = await masterTableDelegateObj.getRelativeTypeMasterTable();
+profileMasterTableData.relativeMasterTableData = relativeMasterTableData;
+
+var motherTongueMasterTableData = await masterTableDelegateObj.getMotherTongueMasterTable();
+profileMasterTableData.motherTongueMasterTableData = motherTongueMasterTableData;
+
+var LanguagesMasterTableData = await masterTableDelegateObj.getLanguagesMasterTable();
+profileMasterTableData.LanguagesMasterTableData = LanguagesMasterTableData;
+
+var LagnaMasterTableData = await masterTableDelegateObj.getLagnaMasterTable();
+profileMasterTableData.LagnaMasterTableData = LagnaMasterTableData;
+
+var GothramMasterTableData = await masterTableDelegateObj.getGothramMasterTable();
+profileMasterTableData.GothramMasterTableData = GothramMasterTableData;
+
+var GothramMasterTableData = await masterTableDelegateObj.getGothramMasterTable();
+profileMasterTableData.GothramMasterTableData = GothramMasterTableData;
+
+  console.log(result + "result route");
+  res.json(result);
+});
 
 module.exports = router;

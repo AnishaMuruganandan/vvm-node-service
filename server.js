@@ -12,6 +12,7 @@ var errorPg = path.join(__dirname, "./public/404.html");
 var bodyParser = require('body-parser');
 app.use(express.static(path.join(__dirname, 'public')));
 
+console.log("hey an in server");
 var port = process.env.PORT || 9872;
 
 app.use(bodyParser.json());

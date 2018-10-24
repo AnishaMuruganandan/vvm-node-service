@@ -5,16 +5,15 @@ var profileService = (function() {
 
   saveBasicProfileDetails = async function(saveBasicProfileDetailsObj) {
     console.log("profileService");
-    var msg = "";
+    var output = "";
     try {
       var output = await profileQueries.saveBasicDetailsQuery(profileQueriesConst.saveBasicDetailsQuery, saveBasicProfileDetailsObj);
       console.log(JSON.stringify(output) + "output");
-      msg = "profile" + output.profileId;
     } catch (err) {
       msg = err;
       console.log('Opps, an error occurred', err);
     }
-    return msg;
+    return output;
   };
 
   saveProfileDetails = async function(saveProfileDetailsObj) {
@@ -46,7 +45,7 @@ var profileService = (function() {
   }
 
   return {
-    saveProfileDetails: saveProfileDetails,
+    saveBasicProfileDetails: saveBasicProfileDetails,
     getProfileDetailsByProfileId: getProfileDetailsByProfileId
   }
 

@@ -93,7 +93,7 @@ let profileFunc = (function() {
 
 
   let logoutService = function() {
-
+   securityJS.removeCookie("LOGIN_SALT");
     window.location.href = "./index.html";
 
   };

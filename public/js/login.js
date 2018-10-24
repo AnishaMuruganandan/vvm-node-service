@@ -37,6 +37,7 @@ let loginFunc = (function() {
 
     var result = await loginServiceDeclaration.verifyLoginDetailsService(data);
     if (result == "found") {
+      securityJS.addCookie("LOGIN_SALT", "true");
       window.location.href = "./profile.html";
 
 

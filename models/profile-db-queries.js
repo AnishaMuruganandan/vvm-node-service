@@ -1,11 +1,12 @@
-var dbconnectionObj = require('../dbconnection');
+var dbconnectionConst = require('../dbconnection');
 
 var profileQueries = {
 
 saveBasicDetailsQuery: function(saveBasicDetailsQuery, saveBasicProfileDetailsObj) {
   return new Promise((resolve, reject) => {
-        let dbconnection = mysqlConnect.connectDatabase();
-    return dbconnection.query(saveBasicDetailsQuery, [
+      let dbconnectionObj = dbconnectionConst.connectDatabase();
+
+    return dbconnectionObj.query(saveBasicDetailsQuery, [
       saveBasicProfileDetailsObj.name,
       saveBasicProfileDetailsObj.dateOfBirth,
       saveBasicProfileDetailsObj.height,
@@ -14,9 +15,9 @@ saveBasicDetailsQuery: function(saveBasicDetailsQuery, saveBasicProfileDetailsOb
       saveBasicProfileDetailsObj.professionId,
       saveBasicProfileDetailsObj.religionId,
       saveBasicProfileDetailsObj.casteId,
-      saveBasicProfileDetailsObj.profilePicture   
+      saveBasicProfileDetailsObj.profilePicture
     ], (err, rows) => {
-        mysqlConnect.disconnectDatabase();
+        dbconnectionConst.disconnectDatabase();
       if (err)
          reject(err);
       resolve(rows);
