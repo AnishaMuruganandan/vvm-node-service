@@ -54,7 +54,7 @@ var profileDelegate = (function() {
     }
   };
 
-  getProfileDetailsByProfileId= async function(profileDetails) {
+  getProfileDetailsByProfileId = async function(profileDetails) {
     console.log("dlegate");
     try {
       console.log("del try");

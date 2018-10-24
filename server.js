@@ -12,8 +12,9 @@ var errorPg = path.join(__dirname, "./public/404.html");
 var bodyParser = require('body-parser');
 app.use(express.static(path.join(__dirname, 'public')));
 
-console.log("hey an in server");
-var port = process.env.PORT || 9872;
+var port = process.env.PORT || 3000;
+
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -39,5 +40,7 @@ app.get("*", function(req,res){
 
 app.listen(port, "0.0.0.0", function() {
   console.log("Listening on Port" + port);
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+
 
 });
