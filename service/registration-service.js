@@ -89,7 +89,8 @@ var registrationService = {
               console.log('Opps, an error occurred', err);
             }
             return msg;
-          }
+          },
+
 
 }
 

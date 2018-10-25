@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var registrationDelegateObj = require('../delegate-layer/registration-delegate');
 var profileDelegateObj = require('../delegate-layer/profile-delegate');
 
 //email duplicate verification
@@ -26,15 +25,9 @@ router.get('/phone-number-check', async function(req, res, next) {
 router.post('/registration-details', async function(req, res, next) {
   var result;
   console.log('body: ' + JSON.stringify(req.body));
-  var profileInsertion = await profileDelegateObj.saveBasicProfileDetails(req.body);
-  var response= JSON.stringify(profileInsertion);
-  console.log(profileInsertion.insertId + "profileInsertion");
-  if(profileInsertion.insertId > 0){
-var data = req.body;
-data.profileBasicId = profileInsertion.insertId;
-  result =await registrationDelegateObj.saveRegistrationDetails(data);
-  }
-  res.json(result);
+  var dataInsertion = await profileDelegateObj.saveBasicProfileDetails(req.body);
+  console.log('dataInsertion: ' + JSON.stringify(dataInsertion));
+  res.json(dataInsertion);
 });
 
 //update password by email id

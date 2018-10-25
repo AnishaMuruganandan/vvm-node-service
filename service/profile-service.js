@@ -42,11 +42,36 @@ var profileService = (function() {
       console.log('Opps, an error occurred', err);
     }
     return msg;
-  }
+  };
+
+  getBasicProfileDetails = async function() {
+    console.log("profileService");
+    try {
+      var output = await profileQueries.getBasicProfileDetails(profileQueriesConst.getProfileBasicDetailsQuery);
+      console.log(JSON.stringify(output) + "output");
+    } catch (err) {
+      output = err;
+      console.log('Opps, an error occurred', err);
+    }
+    return output;
+  };
+
+  getProfileBasicDetailsByProfileId = async function() {
+    console.log("profileService");
+    try {
+      var output = await profileQueries.getProfileBasicDetailsByProfileId(profileQueriesConst.getProfileBasicDetailsByProfileIdQuery);
+      console.log(JSON.stringify(output) + "output");
+    } catch (err) {
+      output = err;
+      console.log('Opps, an error occurred', err);
+    }
+    return output;
+  };
 
   return {
     saveBasicProfileDetails: saveBasicProfileDetails,
-    getProfileDetailsByProfileId: getProfileDetailsByProfileId
+    getBasicProfileDetails: getBasicProfileDetails,
+    getProfileBasicDetailsByProfileId: getProfileBasicDetailsByProfileId
   }
 
 })();

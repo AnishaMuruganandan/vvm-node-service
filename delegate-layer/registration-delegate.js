@@ -3,9 +3,9 @@ var registrationServiceObj = require('../service/registration-service');
 var registrationObject = require('../objects/registration-obj');
 var OtpObj = require('../util/otp');
 
-var registrationDelegate = {
+var registrationDelegate = (function() {
 
-  verifyEmailId: async function(emailId) {
+  verifyEmailId = async function(emailId) {
       console.log("dlegate");
       var verfiyEmailIdObj = new registrationObject.verifyEmailIdObj(emailId);
       try {
@@ -17,9 +17,9 @@ var registrationDelegate = {
         console.log(error);
         return error;
       }
-    },
+    };
 
-    verifyPhoneNo: async function(phoneNo) {
+    verifyPhoneNo = async function(phoneNo) {
         console.log("dlegate");
         var verifyPhoneNoObj = new registrationObject.verifyPhoneNoObj(phoneNo);
         try {
@@ -31,9 +31,9 @@ var registrationDelegate = {
           console.log(error);
           return error;
         }
-      },
+      };
 
-      saveRegistrationDetails: async function(registrationDetails) {
+      saveRegistrationDetails = async function(registrationDetails) {
           console.log("dlegate");
           var otp=0;
           var saveRegistrationDetailsObj = new registrationObject.saveRegistrationDetailsObj(registrationDetails.profileBasicId, registrationDetails.emailId, registrationDetails.phoneNo, otp , registrationDetails.emailId, registrationDetails.password);
@@ -46,9 +46,9 @@ var registrationDelegate = {
             console.log(error);
             return error;
           }
-        },
+        };
 
-        updatePassword: async function(emailId, registrationDetails) {
+        updatePassword = async function(emailId, registrationDetails) {
             console.log("dlegate");
             var updatePasswordObj = new registrationObject.updatePasswordObj(emailId, registrationDetails.password);
             try {
@@ -60,9 +60,9 @@ var registrationDelegate = {
               console.log(error);
               return error;
             }
-          },
+          };
 
-          updateProfileId: async function(loginId, registrationDetails) {
+          updateProfileId = async function(loginId, registrationDetails) {
             console.log("dlegate");
             var updateProfileIdObj = new registrationObject.updateProfileIdObj(loginId, registrationDetails.profileId);
             try {
@@ -74,9 +74,9 @@ var registrationDelegate = {
               console.log(error);
               return error;
             }
-          },
+          };
 
-          sendOTP: function(contactDetails) {
+          sendOTP = function(contactDetails) {
             console.log("dlegate");
 
             try {
@@ -92,7 +92,18 @@ var registrationDelegate = {
               console.log(error);
               return error;
             }
+          };
+
+          return {
+            verifyEmailId: verifyEmailId,
+            verifyPhoneNo: verifyPhoneNo,
+            saveRegistrationDetails: saveRegistrationDetails,
+            updatePassword: updatePassword,
+            updateProfileId: updateProfileId,
+            sendOTP: sendOTP
           }
 
-}
+        })();
+
+
 module.exports = registrationDelegate;

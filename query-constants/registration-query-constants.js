@@ -8,7 +8,8 @@ var registrationQueryConst = {
 
   updatePasswordByEmailIdQuery: "update login_details set password=? where email_id=?",
 
-  updateProfileIdByLoginIdQuery: "update login_details set profile_id=? where login_id=?"
+  updateProfileIdByLoginIdQuery: "update login_details set profile_id=? where login_id=?",
+
 };
 
 module.exports = registrationQueryConst;

@@ -64,6 +64,30 @@ getProfileDetails: function(getProfileDetailsQuery) {
   });
 }
 
+getBasicProfileDetails: function(getProfileBasicDetailsQuery) {
+  return new Promise((resolve, reject) => {
+    let dbconnection = mysqlConnect.connectDatabase();
+    return dbconnection.query(getProfileBasicDetailsQuery, (err, rows) => {
+      mysqlConnect.disconnectDatabase();
+      if (err)
+         reject(err);
+      resolve(rows);
+    });
+  });
+}
+
+getProfileBasicDetailsByProfileId: function(getProfileBasicDetailsByProfileIdQuery) {
+  return new Promise((resolve, reject) => {
+    let dbconnection = mysqlConnect.connectDatabase();
+    return dbconnection.query(getProfileBasicDetailsByProfileIdQuery, (err, rows) => {
+      mysqlConnect.disconnectDatabase();
+      if (err)
+         reject(err);
+      resolve(rows);
+    });
+  });
+}
+
 }
 
 module.exports = profileQueries;

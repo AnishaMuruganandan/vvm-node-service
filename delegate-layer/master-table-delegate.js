@@ -4,7 +4,7 @@ var masterTableObject = require('../objects/master-table-obj');
 
 var masterTableDelegate = (function() {
 
-  getZodiacMasterTable: async function() {
+  getZodiacMasterTable = async function() {
     console.log("dlegate");
     try {
       console.log("del try");
@@ -18,7 +18,7 @@ var masterTableDelegate = (function() {
     }
   };
 
-  getStarMasterTable: async function() {
+  getStarMasterTable = async function() {
     console.log("dlegate");
     try {
       console.log("del try");
@@ -33,7 +33,7 @@ var masterTableDelegate = (function() {
   };
 
 
-  getSalaryMasterTable: async function() {
+  getSalaryMasterTable = async function() {
     console.log("dlegate");
     try {
       console.log("del try");
@@ -47,7 +47,7 @@ var masterTableDelegate = (function() {
     }
   };
 
-  getReligionsMasterTable: async function() {
+  getReligionsMasterTable = async function() {
     console.log("dlegate");
     try {
       console.log("del try");
@@ -61,7 +61,7 @@ var masterTableDelegate = (function() {
     }
   };
 
-  getRelativeTypeMasterTable: async function() {
+  getRelativeTypeMasterTable = async function() {
     console.log("dlegate");
     try {
       console.log("del try");
@@ -75,7 +75,7 @@ var masterTableDelegate = (function() {
     }
   };
 
-  getProfessionDetailsMasterTable: async function() {
+  getProfessionDetailsMasterTable = async function() {
     console.log("dlegate");
     try {
       console.log("del try");
@@ -89,7 +89,7 @@ var masterTableDelegate = (function() {
     }
   };
 
-  getMotherTongueMasterTable: async function() {
+  getMotherTongueMasterTable = async function() {
     console.log("dlegate");
     try {
       console.log("del try");
@@ -103,7 +103,7 @@ var masterTableDelegate = (function() {
     }
   };
 
-  getLanguagesMasterTable: async function() {
+  getLanguagesMasterTable = async function() {
     console.log("dlegate");
     try {
       console.log("del try");
@@ -117,7 +117,7 @@ var masterTableDelegate = (function() {
     }
   };
 
-  getLagnaMasterTable: async function() {
+  getLagnaMasterTable = async function() {
     console.log("dlegate");
     try {
       console.log("del try");
@@ -131,7 +131,7 @@ var masterTableDelegate = (function() {
     }
   };
 
-  getGothramMasterTable: async function() {
+  getGothramMasterTable = async function() {
     console.log("dlegate");
     try {
       console.log("del try");
@@ -145,7 +145,7 @@ var masterTableDelegate = (function() {
     }
   };
 
-  getEducationalQualificationMasterTable: async function() {
+  getEducationalQualificationMasterTable = async function() {
     console.log("dlegate");
     try {
       console.log("del try");
@@ -159,7 +159,7 @@ var masterTableDelegate = (function() {
     }
   };
 
-  getCityMasterTable: async function() {
+  getCityMasterTable = async function() {
     console.log("dlegate");
     try {
       console.log("del try");
@@ -173,7 +173,7 @@ var masterTableDelegate = (function() {
     }
   };
 
-  getCasteMasterTable: async function() {
+  getCasteMasterTable = async function() {
     console.log("dlegate");
     try {
       console.log("del try");

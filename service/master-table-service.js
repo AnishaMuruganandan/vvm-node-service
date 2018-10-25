@@ -3,7 +3,7 @@ var masterTableQueries = require('../models/master-table-db-queries');
 var masterTableQueriesConst = require('../query-constants/master-table-query-constant');
 var masterTableService =  (function() {
 
-  getZodiacMasterTable: async function() {
+  getZodiacMasterTable = async function() {
     console.log("getZodiacMasterTable");
     var msg = {};
     try {
@@ -17,7 +17,7 @@ var masterTableService =  (function() {
     return msg;
   };
 
-  getStarMasterTable: async function() {
+  getStarMasterTable = async function() {
     console.log("getStarMasterTable");
     var msg = {};
     try {
@@ -31,7 +31,7 @@ var masterTableService =  (function() {
     return msg;
   };
 
-  getSalaryMasterTable: async function() {
+  getSalaryMasterTable = async function() {
     console.log("getSalaryMasterTable");
     var msg = {};
     try {
@@ -45,7 +45,7 @@ var masterTableService =  (function() {
     return msg;
   };
 
-  getReligionsMasterTable: async function() {
+  getReligionsMasterTable = async function() {
     console.log("getReligionsMasterTable");
     var msg = {};
     try {
@@ -59,7 +59,7 @@ var masterTableService =  (function() {
     return msg;
   };
 
-  getRelativeTypeMasterTable: async function() {
+  getRelativeTypeMasterTable = async function() {
     console.log("getRelativeTypeMasterTable");
     var msg = {};
     try {
@@ -73,7 +73,7 @@ var masterTableService =  (function() {
     return msg;
   };
 
-  getProfessionDetailsMasterTable: async function() {
+  getProfessionDetailsMasterTable = async function() {
     console.log("getProfessionDetailsMasterTable");
     var msg = {};
     try {
@@ -87,7 +87,7 @@ var masterTableService =  (function() {
     return msg;
   };
 
-  getMotherTongueMasterTable: async function() {
+  getMotherTongueMasterTable = async function() {
     console.log("getMotherTongueMasterTable");
     var msg = {};
     try {
@@ -101,7 +101,7 @@ var masterTableService =  (function() {
     return msg;
   };
 
-  getLanguagesMasterTable: async function() {
+  getLanguagesMasterTable = async function() {
     console.log("getLanguagesMasterTable");
     var msg = {};
     try {
@@ -115,7 +115,7 @@ var masterTableService =  (function() {
     return msg;
   };
 
-  getLagnaMasterTable: async function() {
+  getLagnaMasterTable = async function() {
     console.log("getLagnaMasterTable");
     var msg = {};
     try {
@@ -129,7 +129,7 @@ var masterTableService =  (function() {
     return msg;
   };
 
-  getGothramMasterTable: async function() {
+  getGothramMasterTable = async function() {
     console.log("getGothramMasterTable");
     var msg = {};
     try {
@@ -143,7 +143,7 @@ var masterTableService =  (function() {
     return msg;
   };
 
-  getEducationalQualificationMasterTable: async function() {
+  getEducationalQualificationMasterTable = async function() {
     console.log("getEducationalQualificationMasterTable");
     var msg = {};
     try {
@@ -157,7 +157,7 @@ var masterTableService =  (function() {
     return msg;
   };
 
-  getCityMasterTable: async function() {
+  getCityMasterTable = async function() {
     console.log("getCityMasterTable");
     var msg = {};
     try {
@@ -171,7 +171,7 @@ var masterTableService =  (function() {
     return msg;
   };
 
-  getCasteMasterTable: async function() {
+  getCasteMasterTable = async function() {
     console.log("getCasteMasterTable");
     var msg = {};
     try {

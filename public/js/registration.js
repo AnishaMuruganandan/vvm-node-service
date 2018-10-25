@@ -117,7 +117,7 @@ let registrationFunc = (function() {
       "profession": $profession.val(),
       "religion": $religion.val(),
       "caste": $caste.val(),
-      "profile_picture": "www.adf.com"
+      "profilePicture": "www.adf.com"
     }
     var result = await registrationServiceDeclaration.saveAllDetailsService(data);
     console.log(result + "fearesult");

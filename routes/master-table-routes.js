@@ -120,8 +120,8 @@ registrationMasterTableData.professionMasterTableData = professionMasterTableDat
 var educationMasterTableData =  await masterTableDelegateObj.getEducationalQualificationMasterTable();
 registrationMasterTableData.educationMasterTableData = educationMasterTableData;
 
-  console.log(result + "result route");
-  res.json(result);
+  console.log(registrationMasterTableData + "result route");
+  res.json(registrationMasterTableData);
 });
 
 router.get('/profile-master-details', function(req, res, next) {
@@ -152,11 +152,8 @@ profileMasterTableData.LagnaMasterTableData = LagnaMasterTableData;
 var GothramMasterTableData = await masterTableDelegateObj.getGothramMasterTable();
 profileMasterTableData.GothramMasterTableData = GothramMasterTableData;
 
-var GothramMasterTableData = await masterTableDelegateObj.getGothramMasterTable();
-profileMasterTableData.GothramMasterTableData = GothramMasterTableData;
-
-  console.log(result + "result route");
-  res.json(result);
+  console.log(profileMasterTableData + "result route");
+  res.json(profileMasterTableData);
 });
 
 module.exports = router;
