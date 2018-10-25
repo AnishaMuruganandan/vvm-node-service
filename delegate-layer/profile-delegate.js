@@ -1,7 +1,7 @@
 var express = require('express');
 var profileServiceObj = require('../service/profile-service');
 var profileObject = require('../objects/profile-obj');
-var registrationDelegateObj = require('../registration-delegate');
+var registrationDelegateObj = require('../delegate-layer/registration-delegate');
 var registrationServiceObj = require('../service/registration-service');
 
 var profileDelegate = (function() {
