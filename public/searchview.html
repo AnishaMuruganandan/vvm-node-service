@@ -25,9 +25,9 @@
     <div class="menu row m-0">
       <div class="col-12 p-3">
         <div class="menu-nav float-right pt-4 mr-5">
-          <a class="selected"
+          <a class=""
              id="profileView"
-             href="#">Profile</a>
+             href="index.html">Profile</a>
           <span class="">|</span>
           <a class=""
              id="findMatch"
@@ -43,11 +43,8 @@
     <div class="header">
 
       <div class="profilebgpicture">
-        <div class="profilepicture"
-             id="upload_widget_opener">
-          <div class="addImage">
-            Change Image
-          </div>
+        <div class="profilepicture">
+
         </div>
         <i class="fa fa-add"></i>
 
@@ -89,19 +86,7 @@
           <hr class="cardEndLine">
 
 
-          <!-- Contact card -->
-          <div class="bodycontent__row__leftcol__professionCard">
-            <div class="form-group">
-              <label class="titleLabel">CONTACT NUMBER</label>
-              <input type="text"
-                     class="InfoTextbox"
-                     placeholder="Registerd Phone Number"
-                     id="">
-            </div>
 
-          </div>
-
-          <hr class="cardEndLine" />
 
           <!-- profession card -->
           <div class="bodycontent__row__leftcol__professionCard">
@@ -198,15 +183,6 @@
                    href="#">HOBBIES & INTEREST</a></li>
               <li class="tabList"><a class="tabTextStyle"
                    href="#">PHOTOS</a></li>
-              <li class="tabList optionbtn"><a class="tabTextStyle"
-                   href="#"
-                   id="editbtn">EDIT</a></li>
-              <li class="tabList optionbtn"><a class="tabTextStyle"
-                   href="#"
-                   id="savebtn">SAVE</a></li>
-              <li class="tabList optionbtn"><a class="tabTextStyle"
-                   href="#"
-                   id="cancelbtn">CANCEL</a></li>
 
 
 
@@ -250,20 +226,7 @@
                   </div>
                 </div>
 
-                <div class="col-md-4">
-                  <div class="profileInput"
-                       ng-app="myApp"
-                       ng-controller="myCtrl">
-                    <input id="name"
-                           name="name"
-                           type="text"
-                           required
-                           class="profileInputBox inputbox"
-                           ng-model="firstName">
-                    <label for="name"
-                           class="profileLabel">Email Id</label>
-                  </div>
-                </div>
+
 
 
               </div>
@@ -562,17 +525,7 @@
               <div class="row mb-5">
 
                 <div class="col-md-12">
-                  <div class="profileInput"
-                       ng-app="myApp"
-                       ng-controller="myCtrl">
-                    <input id="name"
-                           name="name"
-                           type="text"
-                           required
-                           class="profileInputBox inputbox"
-                           ng-model="firstName">
-                    <label for="name"
-                           class="profileLabel">Address</label>
+                
                   </div>
                 </div>
 
@@ -639,7 +592,6 @@
   $(document).ready(function() {
     $('.js-example-basic-single').select2();
   });
-
 </script>
 <script>
   history.pushState(null, null, location.href);

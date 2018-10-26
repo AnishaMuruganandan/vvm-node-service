@@ -12,7 +12,7 @@ var validOptions = {
 var OTPUtil = (function() {
   var otp;
   let OTPGeneration = function() {
-     otp = otpGenerator.generate(6, {
+    otp = otpGenerator.generate(6, {
       specialChars: false
     });
     return otp;
@@ -35,18 +35,18 @@ var OTPUtil = (function() {
       'sender': TEXT_LOCAL_SENDER,
       'numbers': phoneNo
     }
-      request.post({
-        url: TEXT_LOCAL_HOST,
-        form: options
-      }, (error, response, body) => {
-        if(error)
-console.error("err",error);
-console.log("response",response);
+    request.post({
+      url: TEXT_LOCAL_HOST,
+      form: options
+    }, (error, response, body) => {
+      if (error)
+        console.error("err", error);
+      console.log("response", response);
 
-console.log("body",body);
+      console.log("body", body);
 
-      })
-return  OTP;
+    })
+    return OTP;
 
   };
 

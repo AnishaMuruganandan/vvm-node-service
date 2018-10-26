@@ -15,7 +15,7 @@ let securityJS = (function() {
       if (path != '/profile.html') {}
       //   location.replace('/profile.html');
     } else {
-      if (path != '/index.html')
+      if (path != '/index.html' && path != '/')
         location.replace('/index.html');
     }
 

@@ -69,6 +69,7 @@ let registrationFunc = (function() {
       $LoginForm.show();
       $loginBtn.hide();
       $registerBn.show();
+      $registrationUsingEmailPwd.hide();
     });
 
     $registerBn.click(function(e) {
@@ -82,6 +83,11 @@ let registrationFunc = (function() {
 
   let finalise = function() {
     $loginBtn.trigger('click');
+
+    $('.js-example-basic-single').select2();
+    $('.date').datetimepicker({
+      format: 'DD-MM-YYYY'
+    });
   };
 
   let generateandSendOTPService = async function() {
@@ -171,11 +177,16 @@ var registrationJS = {
     registrationObj.finalise();
     securityJS.validateLogin();
 
-    $( document ).ready(function() {
-        console.log( "ready!" );
+    $(document).ready(function() {
+      console.log("ready!");
     });
-   //  var option = new Option(data.full_name, data.id, true, true);
-   // studentSelect.append(option).trigger('change');
+    //  var option = new Option(data.full_name, data.id, true, true);
+    // studentSelect.append(option).trigger('change');
+    //
+    setTimeout(function() {
+      $('#loader').fadeOut();
+    }, 5000);
+
   }
 
 };

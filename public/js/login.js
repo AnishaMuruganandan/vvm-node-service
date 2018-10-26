@@ -94,7 +94,7 @@ var loginJS = {
    * DESCRIPTION : Finalize
    */
   _finalise: function() {
-
+    loginObj.finalise();
     securityJS.validateLogin();
   }
 
