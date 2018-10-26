@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var profileDelegateObj = require('../delegate-layer/profile-delegate');
-
+var registrationDelegateObj = require('../delegate-layer/registration-delegate');
 //email duplicate verification
 
 router.get('/email-check', async function(req, res, next) {

@@ -27,7 +27,9 @@ let loginFunc = (function() {
 
   };
 
-  let finalise = function() {};
+  let finalise = function() {
+
+  };
 
 
   let loginService = async function() {

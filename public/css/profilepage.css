@@ -243,9 +243,9 @@ a {
   padding: 0 2px;
 }
 
-.profileInputBox:disabled+label ,
+.profileInputBox:disabled+label,
 .select2-container--disabled .select2-selection__rendered,
-.select2-container--disabled ~ label{
+.select2-container--disabled~label {
   color: #686868 !important
 }
 
@@ -331,4 +331,12 @@ a {
 
 .select2-container--default.select2-container--disabled .select2-selection--single, .select2-container--default.select2-container--disabled .select2-selection--multiple {
   background-color: white !important;
+}
+
+a {
+  color: #666666 !important;
+}
+
+.selected {
+  color: #ffaa00 !important;
 }

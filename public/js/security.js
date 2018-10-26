@@ -11,8 +11,8 @@ let securityJS = (function() {
     let path = window.location.pathname;
 
     if (loginSalt) {
-      if (path != '/profile.html')
-        location.replace('/profile.html');
+      if (path != '/profile.html'){}
+      //   location.replace('/profile.html');
     } else {
       if (path != '/index.html')
         location.replace('/index.html');

@@ -80,7 +80,9 @@ let registrationFunc = (function() {
     });
   };
 
-  let finalise = function() {};
+  let finalise = function() {
+    $loginBtn.trigger('click');
+  };
 
   let generateandSendOTPService = async function() {
 
@@ -166,6 +168,7 @@ var registrationJS = {
    * DESCRIPTION : Finalize
    */
   _finalise: function() {
+    registrationObj.finalise();
     securityJS.validateLogin();
   }
 

@@ -1,2 +1,2 @@
-URL_Domain = "https://vivahahvizhamatrimony.herokuapp.com/";
-// URL_Domain = "http://localhost:9872/";
+//URL_Domain = "https://vivahahvizhamatrimony.herokuapp.com/";
+ URL_Domain = "http://localhost:3000/";
