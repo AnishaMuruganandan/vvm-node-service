@@ -44,7 +44,7 @@ var profileService = (function() {
     return msg;
   };
 
-  getBasicProfileDetails = async function() {
+  getProfileBasicDetails = async function() {
     console.log("profileService");
     try {
       var output = await profileQueries.getBasicProfileDetails(profileQueriesConst.getProfileBasicDetailsQuery);
@@ -56,10 +56,10 @@ var profileService = (function() {
     return output;
   };
 
-  getProfileBasicDetailsByProfileId = async function() {
-    console.log("profileService");
+  getProfileBasicDetailsByProfileId = async function(profileId) {
+    console.log("profileService" +profileId);
     try {
-      var output = await profileQueries.getProfileBasicDetailsByProfileId(profileQueriesConst.getProfileBasicDetailsByProfileIdQuery);
+      var output = await profileQueries.getProfileBasicDetailsByProfileId(profileQueriesConst.getProfileBasicDetailsByProfileIdQuery, profileId);
       console.log(JSON.stringify(output) + "output");
     } catch (err) {
       output = err;
@@ -70,7 +70,7 @@ var profileService = (function() {
 
   return {
     saveBasicProfileDetails: saveBasicProfileDetails,
-    getBasicProfileDetails: getBasicProfileDetails,
+    getProfileBasicDetails: getProfileBasicDetails,
     getProfileBasicDetailsByProfileId: getProfileBasicDetailsByProfileId
   }
 

@@ -12,7 +12,7 @@ var loginDelegate = (function() {
     try {
       console.log("del try");
       var output = await (loginServiceObj.verifyLoginDetails(verifyLoginDetailsObj));
-      console.log(output + "out delegate");
+      console.log(JSON.stringify(output) + "out delegate");
       return output;
     } catch (error) {
       console.log(error);

@@ -4,6 +4,7 @@ var app = express();
 var cors = require('cors');
 var registrationRoutes = require('./routes/registration-routes');
 var loginRoutes = require('./routes/login-routes');
+var profileRoutes = require('./routes/profile-routes')
 
 var errorPg = path.join(__dirname, "./public/404.html");
 
@@ -23,6 +24,8 @@ app.use(bodyParser.urlencoded({
 
 app.use('/registration', registrationRoutes);
 app.use('/login', loginRoutes);
+app.use('/profile', profileRoutes);
+
 // app.use('/profile', "./public/profile.html");
 
 // app.use(function(req, res, next) {

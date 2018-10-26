@@ -7,25 +7,27 @@ var loginService = (function() {
 
   let verifyLoginDetails = async function(verifyLoginDetailsObj) {
     console.log("verifyLoginDetails");
-    var msg = "";
+    var loginData = {};
     try {
       var output = await (loginQueries.findByPhoneNoAndPassword(loginQueriesConst.findByPhoneNoAndPasswordQuery, verifyLoginDetailsObj));
-      console.log(JSON.stringify(output) + "output");
+console.log(JSON.stringify(output) + "output1");
+      console.log(output[0].profile_basic_id + "output");
       var count = Object.keys(output).length;
       console.log(count);
       if (count == 0) {
         console.log(count + "leng");
-        msg = "no entry found";
-        console.log(msg + "msg");
+        loginData.msg = "no entry found";
+        console.log(JSON.stringify(loginData.msg) + "msg");
       } else {
-        msg = "found";
-        console.log(msg + "msg");
+        loginData.profileBasicId = output[0].profile_basic_id
+        loginData.msg = "found";
+        console.log(loginData  + "msg");
       }
     } catch (err) {
-      msg = err;
+      loginData.msg = err;
       console.log('Opps, an error occurred', err);
     }
-    return msg;
+    return loginData;
   };
 
   let updateLoginTime = async function(updateLoginTimeObj) {

@@ -9,7 +9,7 @@ var loginDelegateObj = require('../delegate-layer/login-delegate');
 router.get('/login-check', async function(req, res, next) {
   console.log("logincheck :: " + req.query.phoneNo + " " + req.query.password);
   var result = await (loginDelegateObj.verifyLoginDetails(req.query.phoneNo, req.query.password));
-  console.log(result + "result route");
+  console.log(JSON.stringify(result) + "result route");
   res.json(result);
 });
 

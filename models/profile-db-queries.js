@@ -66,9 +66,9 @@ var profileQueries = {
 
   getBasicProfileDetails: function(getProfileBasicDetailsQuery) {
     return new Promise((resolve, reject) => {
-      let dbconnection = mysqlConnect.connectDatabase();
-      return dbconnection.query(getProfileBasicDetailsQuery, (err, rows) => {
-        mysqlConnect.disconnectDatabase();
+      let dbconnectionObj = dbconnectionConst.connectDatabase();
+      return dbconnectionObj.query(getProfileBasicDetailsQuery, (err, rows) => {
+        dbconnectionConst.disconnectDatabase();
         if (err)
           reject(err);
         resolve(rows);
@@ -76,13 +76,14 @@ var profileQueries = {
     });
   },
 
-  getProfileBasicDetailsByProfileId: function(getProfileBasicDetailsByProfileIdQuery) {
+  getProfileBasicDetailsByProfileId: function(getProfileBasicDetailsByProfileIdQuery, profileId) {
     return new Promise((resolve, reject) => {
-      let dbconnection = mysqlConnect.connectDatabase();
-      return dbconnection.query(getProfileBasicDetailsByProfileIdQuery, (err, rows) => {
-        mysqlConnect.disconnectDatabase();
+      let dbconnectionObj = dbconnectionConst.connectDatabase();
+      return dbconnectionObj.query(getProfileBasicDetailsByProfileIdQuery, [profileId], (err, rows) => {
+        dbconnectionConst.disconnectDatabase();
         if (err)
           reject(err);
+          console.log("rows"+rows);
         resolve(rows);
       });
     });

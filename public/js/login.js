@@ -38,8 +38,10 @@ let loginFunc = (function() {
     data.loginPassword = $loginPassword.val();
 
     var result = await loginServiceDeclaration.verifyLoginDetailsService(data);
-    if (result == "found") {
+    if (result.msg == "found") {
       securityJS.addCookie("LOGIN_SALT", "true");
+      securityJS.addCookie("PROFILE_BASIC_ID", result.profileBasicId);
+      console.log(result.profileBasicId+"pbid");
       window.location.href = "./profile.html";
 
 

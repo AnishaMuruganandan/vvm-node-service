@@ -10,14 +10,14 @@ router.post('/profile-details', async function(req, res, next) {
   res.json(result);
 });
 
-router.get('/fetch-profile-details/:profileId', function(req, res, next) {
-  console.log('body: ' + JSON.stringify(req.body));
-  var result = await profileDelegateObj.getProfileDetailsByProfileId(req.body);
-  console.log(result + "result route");
-  res.json(result);
-});
+// router.get('/fetch-profile-details/:profileId', function(req, res, next) {
+//   console.log('body: ' + JSON.stringify(req.body));
+//   var result = await profileDelegateObj.getProfileDetailsByProfileId(req.body);
+//   console.log(result + "result route");
+//   res.json(result);
+// });
 
-router.get('/:id?', function(req, res, next) {
+router.get('/:id?', async function(req, res, next) {
   if (req.params.id) {
     console.log('body: ' + JSON.stringify(req.params.id));
     var profileBasicDetails = await profileDelegateObj.getProfileBasicDetailsByProfileId(req.params.id);
@@ -32,7 +32,7 @@ router.get('/:id?', function(req, res, next) {
 });
 
 
-router.get('details/:id?', function(req, res, next) {
+router.get('details/:id?', async function(req, res, next) {
   if (req.params.id) {
     console.log('body: ' + JSON.stringify(req.params.id));
     var result = await profileDelegateObj.getProfileDetailsByProfileId(req.params.id);

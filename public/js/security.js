@@ -7,11 +7,12 @@ let securityJS = (function() {
   let validateLogin = function() {
 
     let loginSalt = getCookie('LOGIN_SALT');
+    let profileBasicId = getCookie('PROFILE_BASIC_ID');
 
     let path = window.location.pathname;
 
     if (loginSalt) {
-      if (path != '/profile.html'){}
+      if (path != '/profile.html') {}
       //   location.replace('/profile.html');
     } else {
       if (path != '/index.html')
