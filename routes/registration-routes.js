@@ -52,7 +52,7 @@ router.put('/update-profileId/:loginId', async function(req, res, next) {
 
 router.post('/send-otp', function(req, res, next) {
   console.log('body: ' + JSON.stringify(req.body));
-  var result = registrationDelegateObj.sendOTP(req.body);
+  var result =  registrationDelegateObj.sendOTP(req.body);
   console.log(result + "result route");
   res.json(result);
 });

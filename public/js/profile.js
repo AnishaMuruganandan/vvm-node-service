@@ -89,6 +89,9 @@ let profileFunc = (function() {
       autoclose: true
     });
     $fieldbox.attr('disabled', true);
+    $('.date').datetimepicker({
+      format: 'DD-MM-YYYY'
+    });
   };
 
 

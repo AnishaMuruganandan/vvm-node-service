@@ -371,3 +371,84 @@
 .select2-container--disabled~label {
   color: #686868 !important
 }
+
+.profileInput {
+  position: relative;
+}
+
+.profileInputBox {
+  border: 1px solid #CDCDCD;
+  box-shadow: rgba(205, 205, 205, 0.36) 1px 1px 5px;
+  width: 100%;
+  padding: 10px 5px;
+}
+
+.profileInputBox+label {
+  position: absolute;
+  top: 10px;
+  justify-content: center;
+  left: 10px;
+}
+
+.profileLabel {
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+}
+
+.profileInputBox:focus {
+  outline: none;
+}
+
+.profileInput:valid+label,
+.profileInputBox:valid+label,
+.profileInputBox:focus+label,
+.profileInputBox:disabled+label {
+  top: -11px;
+  background-color: white;
+  margin: 0;
+  padding: 0 2px;
+}
+
+.profileInputBox:disabled+label,
+.select2-container--disabled .select2-selection__rendered,
+.select2-container--disabled~label {
+  color: #686868 !important
+}
+
+.select2ProfileInputBox {
+  position: absolute;
+  left: 10px;
+  top: -10px;
+  background-color: white;
+  padding: 0 2px;
+}
+
+.select2-selection__rendered {
+  height: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.select2-selection__arrow {
+  top: 7px !important;
+}
+
+.select2-selection--single, .select2-selection--multiple {
+  width: 100% !important;
+  height: 42px !important;
+  border: 1px solid #CDCDCD !important;
+  box-shadow: rgba(205, 205, 205, 0.36) 1px 1px 5px !important;
+  border-radius: 0px !important;
+}
+
+.select2-selection--multiple ul {
+  padding-top: 5px !important;
+}
+
+.select2-container {
+  width: 100% !important;
+}
+
+.select2-selection--single:focus, input:focus, textarea:focus {
+  outline: none !important;
+}
