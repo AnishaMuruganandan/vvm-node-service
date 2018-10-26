@@ -182,6 +182,7 @@ var registrationJS = {
     });
     //  var option = new Option(data.full_name, data.id, true, true);
     // studentSelect.append(option).trigger('change');
+    $('#loader').hide();
   }
 
 };
