@@ -170,9 +170,16 @@ var registrationJS = {
   _finalise: function() {
     registrationObj.finalise();
     securityJS.validateLogin();
+
+    $( document ).ready(function() {
+        console.log( "ready!" );
+    });
+   //  var option = new Option(data.full_name, data.id, true, true);
+   // studentSelect.append(option).trigger('change');
   }
 
 };
+
 
 /* Document on ready */
 
