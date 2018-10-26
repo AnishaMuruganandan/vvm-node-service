@@ -5,6 +5,7 @@ var profileQueryConst = {
   getProfileDetailsQuery: "select * from profile_details where profile_id=?",
   getProfileBasicDetailsQuery: "select * from profile_basic_details",
   getProfileBasicDetailsByProfileIdQuery: "select * from profile_basic_details where profile_basic_id=?",
+  getTenProfileBasicDetailsQuery: "select * from profile_basic_details LIMIT 10"
 
 };
 

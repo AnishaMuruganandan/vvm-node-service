@@ -94,11 +94,11 @@ var profileDelegate = (function() {
     }
   };
 
-    getProfileBasicDetails = async function() {
+    getProfileBasicDetails = async function(data) {
       console.log("dlegate");
       try {
-        console.log("del try");
-        var output = await profileServiceObj.getProfileBasicDetails();
+        console.log(data+"del try" );
+        var output = await profileServiceObj.getProfileBasicDetails(data);
         console.log(output + "output");
         return output;
       } catch (error) {

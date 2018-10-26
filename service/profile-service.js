@@ -44,10 +44,13 @@ var profileService = (function() {
     return msg;
   };
 
-  getProfileBasicDetails = async function() {
+  getProfileBasicDetails = async function(data) {
     console.log("profileService");
     try {
-      var output = await profileQueries.getBasicProfileDetails(profileQueriesConst.getProfileBasicDetailsQuery);
+      if (data == "true")
+        var output = await profileQueries.getBasicProfileDetails(profileQueriesConst.getTenProfileBasicDetailsQuery);
+      else
+        var output = await profileQueries.getBasicProfileDetails(profileQueriesConst.getProfileBasicDetailsQuery);
       console.log(JSON.stringify(output) + "output");
     } catch (err) {
       output = err;
@@ -57,7 +60,7 @@ var profileService = (function() {
   };
 
   getProfileBasicDetailsByProfileId = async function(profileId) {
-    console.log("profileService" +profileId);
+    console.log("profileService" + profileId);
     try {
       var output = await profileQueries.getProfileBasicDetailsByProfileId(profileQueriesConst.getProfileBasicDetailsByProfileIdQuery, profileId);
       console.log(JSON.stringify(output) + "output");
