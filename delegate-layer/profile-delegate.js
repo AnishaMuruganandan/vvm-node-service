@@ -107,9 +107,9 @@ var profileDelegate = (function() {
     console.log("dlegate");
     var updateProfileBasicDetailsObj = new profileObject.updateProfileBasicDetailsObj(profileBasicdata.profileBasicId,
       profileBasicdata.profileId,
-      profileBasicdata.educationId,
-      profileBasicdata.professionId,
-      profileBasicdata.cityId);
+      profileBasicdata.education,
+      profileBasicdata.profession,
+      profileBasicdata.city);
     try {
       console.log(data + "del try");
       var output = await profileServiceObj.updateProfileBasicDetails(updateProfileBasicDetailsObj);

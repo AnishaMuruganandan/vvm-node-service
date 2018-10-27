@@ -4,7 +4,7 @@ var router = express.Router();
 var profileDelegateObj = require('../delegate-layer/profile-delegate');
 
 
-router.get('/details/:id?', async function(req, res, next) {
+router.get('/basic-details/:id?', async function(req, res, next) {
   console.log("inside id");
   var data = "false";
   if (req.params.id) {
