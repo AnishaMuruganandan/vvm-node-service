@@ -3,12 +3,6 @@ var router = express.Router();
 // var queries = require('../models/dbqueries');
 var profileDelegateObj = require('../delegate-layer/profile-delegate');
 
-router.post('/profile-details', async function(req, res, next) {
-  console.log('body: ' + JSON.stringify(req.body));
-  var result = await profileDelegateObj.saveprofileDetails(req.body);
-  console.log(result + "result route");
-  res.json(result);
-});
 
 router.get('/details/:id?', async function(req, res, next) {
   console.log("inside id");
@@ -19,7 +13,7 @@ router.get('/details/:id?', async function(req, res, next) {
     console.log(profileBasicDetails + "profileBasicDetails route");
     res.json(profileBasicDetails);
   } else {
-    console.log("get profile details"+ data);
+    console.log("get profile details" + data);
     var profileBasicDetails = await profileDelegateObj.getProfileBasicDetails(data);
     console.log(profileBasicDetails + "basicDetails route");
     res.json(profileBasicDetails);
@@ -29,15 +23,27 @@ router.get('/details/:id?', async function(req, res, next) {
 router.get('/top-ten', async function(req, res, next) {
   console.log("hi inside top 10");
   var data = "true";
-    console.log("get profile details"+ data);
-    var profileBasicDetails = await profileDelegateObj.getProfileBasicDetails(data);
-    console.log(profileBasicDetails + "basicDetails route");
-    res.json(profileBasicDetails);
+  console.log("get profile details" + data);
+  var profileBasicDetails = await profileDelegateObj.getProfileBasicDetails(data);
+  console.log(profileBasicDetails + "basicDetails route");
+  res.json(profileBasicDetails);
 
 });
 
+
+// router.post('/profile-details', async function(req, res, next) {
+//   console.log('body: ' + JSON.stringify(req.body));
+//   try {
+//     var result = await profileDelegateObj.saveprofileDetails(req.body);
+//     console.log(result + "result route");
+//   } catch (err) {
+//     console.log(err);
+//
+//   }
+//   res.json(result);
+// });
+
 router.post('/profile-details', async function(req, res, next) {
-  var result;
   console.log('body: ' + JSON.stringify(req.body));
   var dataInsertion = await profileDelegateObj.saveProfileDetails(req.body);
   console.log('dataInsertion: ' + JSON.stringify(dataInsertion));

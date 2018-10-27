@@ -12,6 +12,12 @@ let profileFunc = (function() {
     $clockInput = $('#clock-input');
     $fieldbox = $('.bodycontent input ,.bodycontent select');
     $uploadWidgetOpener = $('#upload_widget_opener');
+    $gender = $('#gender');
+    $salary = $('#salary');
+    $complexion = $('#complexion');
+    $address = $('#address');
+    $physicallyDisabled = $('#physicallyDisabled');
+    $languageKnown = $('#languageKnown');
 
   };
 
@@ -27,7 +33,7 @@ let profileFunc = (function() {
     });
 
     $savebtn.click(function(e) {
-
+      saveAllProfileDetailsService();
       $fieldbox.attr('disabled', true);
       $editbtn.css("display", "block");
       $savebtn.css("display", "none");
@@ -96,27 +102,24 @@ let profileFunc = (function() {
 
 
   let logoutService = function() {
-   securityJS.removeCookie("LOGIN_SALT");
+    securityJS.removeCookie("LOGIN_SALT");
     window.location.href = "./index.html";
 
   };
 
-  let saveAllDetailsService = async function() {
+  let saveAllProfileDetailsService = async function() {
+
     var data = {
-      "name": $name.val(),
-      "emailId": $emailId.val(),
-      "phoneNo": $phoneNo.val(),
-      "password": $password.val(),
-      "dob": $dob.val(),
-      "height": $height.val(),
-      "city": $city.val(),
-      "educationalQualification": $educationalQualification.val(),
-      "profession": $profession.val(),
-      "religion": $religion.val(),
-      "caste": $caste.val(),
-      "profilePicture": "www.adf.com"
+    "profileAdditionalData":{
+      "gender": $gender.val(),
+      "salary": $salary.select2().val(),
+      "complexion": $complexion.val(),
+      "address": $address.val(),
+      "physicallyDisabled": $physicallyDisabled.select2().val(),
+      "languageKnown": $languageKnown.select2().val()
     }
-    var result = await registrationServiceDeclaration.saveAllDetailsService(data);
+};
+    var result = await profileServiceDeclaration.saveAllProfileDetailsService(data);
     console.log(result + "fearesult");
   };
 

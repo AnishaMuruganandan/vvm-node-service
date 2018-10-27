@@ -272,8 +272,8 @@
 
                 <div class="col-md-4">
                   <div class="profileInput">
-                    <input id="name"
-                           name="name"
+                    <input id="gender"
+                           name="gender"
                            type="text"
                            required
                            class="inputbox profileInputBox">
@@ -296,8 +296,8 @@
 
                 <div class="col-md-4">
                   <div class="profileInput">
-                    <input id="name"
-                           name="name"
+                    <input id="complexion"
+                           name="complexion"
                            type="text"
                            required
                            class="inputbox profileInputBox">
@@ -315,7 +315,7 @@
                   <div class="profileInput">
 
                     <select class="js-example-basic-single select2me"
-                            name="Language">
+                            name="Language" id="salary">
                       <option value="">Less than 50k</option>
                       ...
                       <option value="WY">More than 50k</option>
@@ -360,7 +360,7 @@
                   <div class="profileInput">
 
                     <select class="js-example-basic-single select2me"
-                            name="Language">
+                            name="Language" id="physicallyDisabled">
                       <option value="">Chennai</option>
                       <option value="WY">Coimbatore</option>
                       <option value="WY">Kanchipuram</option>
@@ -389,7 +389,7 @@
 
                     <select class="js-example-basic-single select2me"
                             name="Language"
-                            multiple="multiple">
+                            multiple="multiple" id="languageKnown">
                       <option value="">Chennai</option>
                       <option value="WY">Coimbatore</option>
                       <option value="WY">Kanchipuram</option>
@@ -565,8 +565,8 @@
                   <div class="profileInput"
                        ng-app="myApp"
                        ng-controller="myCtrl">
-                    <input id="name"
-                           name="name"
+                    <input id="address"
+                           name="address"
                            type="text"
                            required
                            class="profileInputBox inputbox"
@@ -632,6 +632,8 @@
 
 <script src="js/constants.js"></script>
 <script src="../js/security.js"></script>
+<script defer
+        src="js/profile-service-declaration.js"></script>
 <script defer
         src="js/profile.js"></script>
 

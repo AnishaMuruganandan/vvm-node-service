@@ -27,7 +27,7 @@ var profileQueries = {
 
   saveProfileDetailsQuery: function(saveProfileDetailsQuery, saveProfileDetailsObj) {
     return new Promise((resolve, reject) => {
-      let dbconnection = mysqlConnect.connectDatabase();
+      let dbconnection = dbconnectionConst.connectDatabase();
       return dbconnection.query(saveProfileDetailsQuery, [
         saveProfileDetailsObj.gender,
         saveProfileDetailsObj.salary,
@@ -36,7 +36,7 @@ var profileQueries = {
         saveProfileDetailsObj.physicallyDisabled,
         saveProfileDetailsObj.languageKnown
       ], (err, rows) => {
-        mysqlConnect.disconnectDatabase();
+        dbconnectionConst.disconnectDatabase();
         if (err)
           reject(err);
         resolve(rows);

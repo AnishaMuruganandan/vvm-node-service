@@ -43,30 +43,29 @@ var profileDelegate = (function() {
 
   saveProfileDetails = async function(profileDetails) {
     console.log("dlegate");
-    var saveProfileDetailsObj = new profileObject.saveProfileDetailsObj(profileDetails.profileAdditionalData.gender,
-      profileDetails.profileAdditionalData.salary,
-      profileDetails.profileAdditionalData.complexion,
-      profileDetails.profileAdditionalData.address,
-      profileDetails.profileAdditionalData.physicallyDisabled,
-      profileDetails.profileAdditionalData.languageKnown);
-    try {
-      var output;
 
+
+
+    try {
+      var saveProfileDetailsObj = new profileObject.saveProfileDetailsObj(profileDetails.profileAdditionalData.gender,
+        profileDetails.profileAdditionalData.salary,
+        profileDetails.profileAdditionalData.complexion,
+        profileDetails.profileAdditionalData.address,
+        profileDetails.profileAdditionalData.physicallyDisabled,
+        profileDetails.profileAdditionalData.languageKnown);
       console.log("del try");
       var profileInsertion = await profileServiceObj.saveProfileDetails(saveProfileDetailsObj);
-
       console.log(profileInsertion.insertId + "profileInsertion");
-
-      console.log(JSON.stringify(output) + "out delegate");
-      return output;
-
+      return profileInsertion;
     } catch (error) {
       console.log(error);
       return error;
     }
   };
+
   // getProfileDetailsByProfileId = async function(profileId) {
   //   console.log("dlegate");
+//  now try running
   //   try {
   //     console.log("del try");
   //     var output = await profileServiceObj.getProfileDetailsByProfileId();
