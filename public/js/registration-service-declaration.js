@@ -16,36 +16,38 @@ var registrationServiceDeclaration = {
 
     saveAllDetailsService: async function(data) {
 
-      const AJAX_INPUT_OBJ = {
-        "METHOD": "POST",
-        "data": data,
-        "URL": "/registration/registration-details"
-      };
+        const AJAX_INPUT_OBJ = {
+          "METHOD": "POST",
+          "data": data,
+          "URL": "/registration/registration-details"
+        };
 
-      var response = await this.ajaxService(AJAX_INPUT_OBJ);
-      console.log(JSON.stringify(response)+"save response");
-      return response;
+        var response = await this.ajaxService(AJAX_INPUT_OBJ);
+        console.log(JSON.stringify(response) + "save response");
+        loadProfileJS.showProfileList();
+        alert('Successfully Registered');
+        return response;
 
-    },
-    ajaxService: function(obj) {
-      return new Promise((resolve, reject) => {
-        console.log("he am in reg ajax");
-        $.ajax({
-          type: obj.METHOD,
-          data: JSON.stringify(obj.data),
-          contentType: "application/json",
-          url: obj.URL,
+      },
+      ajaxService: function(obj) {
+        return new Promise((resolve, reject) => {
+          console.log("he am in reg ajax");
+          $.ajax({
+            type: obj.METHOD,
+            data: JSON.stringify(obj.data),
+            contentType: "application/json",
+            url: obj.URL,
 
-          success: function(data) {
+            success: function(data) {
 
-            console.log("success");
-            var session = JSON.stringify(data);
-            console.log(session + "fe data");
-            resolve(data);
+              console.log("success");
+              var session = JSON.stringify(data);
+              console.log(session + "fe data");
+              resolve(data);
 
-          }
+            }
 
+          });
         });
-      });
-    }
+      }
 };

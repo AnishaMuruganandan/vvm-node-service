@@ -88,6 +88,8 @@ let registrationFunc = (function() {
     $('.date').datetimepicker({
       format: 'DD-MM-YYYY'
     });
+
+    loadProfileJS.showProfileList();
   };
 
   let generateandSendOTPService = async function() {
@@ -120,12 +122,12 @@ let registrationFunc = (function() {
       "password": $password.val(),
       "dob": $dob.val(),
       "height": $height.val(),
-      "city": $city.val(),
-      "educationalQualification": $educationalQualification.val(),
-      "profession": $profession.val(),
-      "religion": $religion.val(),
-      "caste": $caste.val(),
-      "profilePicture": "www.adf.com"
+      "cityId": $city.select2().val(),
+      "educationId": $educationalQualification.select2().val(),
+      "professionId": $profession.select2().val(),
+      "religionId": $religion.select2().val(),
+      "casteId": $caste.select2().val(),
+      "profilePicture": "http://vivahahvizhamatrimony.com/assets/wedcouple.png"
     }
     var result = await registrationServiceDeclaration.saveAllDetailsService(data);
     console.log(result + "fearesult");
