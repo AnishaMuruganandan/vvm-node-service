@@ -22,7 +22,21 @@ var profileService = (function() {
     try {
       var output = await profileQueries.saveProfileDetailsQuery(profileQueriesConst.saveProfileDetailsQuery, saveProfileDetailsObj);
       console.log(JSON.stringify(output) + "output");
-      msg = "profile" + output.profileId;
+      msg = output;
+    } catch (err) {
+      msg = err;
+      console.log('Opps, an error occurred', err);
+    }
+    return msg;
+  };
+
+  saveProfilePicture = async function(profilepic) {
+    console.log("profileService");
+    var msg = "";
+    try {
+      var output = await profileQueries.saveProfilePicQuery(profileQueriesConst.saveProfilePicQuery, profilepic);
+      console.log(JSON.stringify(output) + "output");
+      msg = output;
     } catch (err) {
       msg = err;
       console.log('Opps, an error occurred', err);
@@ -88,7 +102,8 @@ updateProfileBasicDetails = async function(updateProfileBasicDetailsObj) {
     getProfileBasicDetails: getProfileBasicDetails,
     getProfileBasicDetailsByProfileId: getProfileBasicDetailsByProfileId,
     updateProfileBasicDetails:updateProfileBasicDetails,
-    saveProfileDetails:saveProfileDetails
+    saveProfileDetails:saveProfileDetails,
+    saveProfilePicture:saveProfilePicture
   }
 
 })();

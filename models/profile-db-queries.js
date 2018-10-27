@@ -44,6 +44,21 @@ var profileQueries = {
     });
   },
 
+  saveProfilePicQuery: function(saveProfilePicQuery, profilepic) {
+    return new Promise((resolve, reject) => {
+      let dbconnection = dbconnectionConst.connectDatabase();
+      return dbconnection.query(saveProfilePicQuery, [
+        profilepic.picURL,
+        profilepic.profileBasicId
+      ], (err, rows) => {
+        dbconnectionConst.disconnectDatabase();
+        if (err)
+          reject(err);
+        resolve(rows);
+      });
+    });
+  },
+
   getProfileDetails: function(getProfileDetailsQuery) {
     return new Promise((resolve, reject) => {
       let dbconnection = mysqlConnect.connectDatabase();
@@ -75,7 +90,7 @@ var profileQueries = {
         dbconnectionConst.disconnectDatabase();
         if (err)
           reject(err);
-          console.log("rows"+rows);
+        console.log("rows" + rows);
         resolve(rows);
       });
     });
@@ -93,7 +108,7 @@ var profileQueries = {
         dbconnectionConst.disconnectDatabase();
         if (err)
           reject(err);
-          console.log("rows"+rows);
+        console.log("rows" + rows);
         resolve(rows);
       });
     });

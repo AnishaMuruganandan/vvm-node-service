@@ -56,6 +56,11 @@ var profileDelegate = (function() {
       console.log("del try");
       var profileInsertion = await profileServiceObj.saveProfileDetails(saveProfileDetailsObj);
       console.log(profileInsertion.insertId + "profileInsertion");
+      if (profileInsertion.insertId > 0) {
+        profileDetails.profileAdditionalData.profileId = profileInsertion.insertId;
+        var profileBasicUpdation = updateProfileBasicDetails(profileDetails);
+        console.log(profileBasicUpdation + "profileBasicUpdation");
+      }
       return profileInsertion;
     } catch (error) {
       console.log(error);
@@ -65,7 +70,7 @@ var profileDelegate = (function() {
 
   // getProfileDetailsByProfileId = async function(profileId) {
   //   console.log("dlegate");
-//  now try running
+  //  now try running
   //   try {
   //     console.log("del try");
   //     var output = await profileServiceObj.getProfileDetailsByProfileId();
@@ -76,6 +81,19 @@ var profileDelegate = (function() {
   //     return error;
   //   }
   // };
+  saveProfilePicture = async function(profilepic) {
+      var saveProfilePicObj = new profileObject.saveProfilePicObj(profilepic.picURL, profilepic.profileBasicId);
+    console.log("dlegate");
+    try {
+      console.log("del try");
+      var profilePicInsertion = await profileServiceObj.saveProfilePicture(saveProfilePicObj);
+      console.log(JSON.stringify(profilePicInsertion)+"profilePicInsertion");
+      return profilePicInsertion;
+    } catch (error) {
+      console.log(error);
+      return error;
+    }
+  };
 
   getProfileBasicDetailsByProfileId = async function(profileId) {
     console.log("dlegate");
@@ -103,13 +121,13 @@ var profileDelegate = (function() {
     }
   };
 
-  updateProfileBasicDetails = async function(profileBasicdata) {
+  updateProfileBasicDetails = async function(profileDetails) {
     console.log("dlegate");
-    var updateProfileBasicDetailsObj = new profileObject.updateProfileBasicDetailsObj(profileBasicdata.profileBasicId,
-      profileBasicdata.profileId,
-      profileBasicdata.education,
-      profileBasicdata.profession,
-      profileBasicdata.city);
+    var updateProfileBasicDetailsObj = new profileObject.updateProfileBasicDetailsObj(profileDetails.profileBasicdata.profileBasicId,
+      profileDetails.profileAdditionalData.profileId,
+      profileDetails.profileBasicdata.education,
+      profileDetails.profileBasicdata.profession,
+      profileDetails.profileBasicdata.city);
     try {
       console.log(data + "del try");
       var output = await profileServiceObj.updateProfileBasicDetails(updateProfileBasicDetailsObj);
@@ -126,6 +144,7 @@ var profileDelegate = (function() {
     getProfileBasicDetails: getProfileBasicDetails,
     getProfileBasicDetailsByProfileId: getProfileBasicDetailsByProfileId,
     updateProfileBasicDetails: updateProfileBasicDetails,
+    saveProfilePicture: saveProfilePicture
 
   }
 

@@ -28,6 +28,11 @@ var profileObj = {
     this.physicallyDisabled = physicallyDisabled || '';
     this.languageKnown = languageKnown || '';
   },
+
+  saveProfilePicObj: function(picURL, profileBasicId) {
+    this.picURL = picURL;
+    this.profileBasicId = profileBasicId;
+  }
 }
 
 module.exports = profileObj;
