@@ -233,7 +233,7 @@
 }
 
 .blurstyle {
-  filter: blur(5px);
+  /* filter: blur(2px); */
 }
 
 .overlay {
