@@ -101,6 +101,24 @@ let profileFunc = (function() {
 
   };
 
+  let saveAllDetailsService = async function() {
+    var data = {
+      "name": $name.val(),
+      "emailId": $emailId.val(),
+      "phoneNo": $phoneNo.val(),
+      "password": $password.val(),
+      "dob": $dob.val(),
+      "height": $height.val(),
+      "city": $city.val(),
+      "educationalQualification": $educationalQualification.val(),
+      "profession": $profession.val(),
+      "religion": $religion.val(),
+      "caste": $caste.val(),
+      "profilePicture": "www.adf.com"
+    }
+    var result = await registrationServiceDeclaration.saveAllDetailsService(data);
+    console.log(result + "fearesult");
+  };
 
   return {
     init: init,

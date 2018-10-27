@@ -25,24 +25,16 @@ var profileQueries = {
     });
   },
 
-  saveAll: function(saveAllQuery, saveProfileDetailsObj) {
+  saveProfileDetailsQuery: function(saveProfileDetailsQuery, saveProfileDetailsObj) {
     return new Promise((resolve, reject) => {
       let dbconnection = mysqlConnect.connectDatabase();
-      return dbconnection.query(saveAllQuery, [
-        saveProfileDetailsObj.name,
-        saveProfileDetailsObj.dateOfBirth,
-        saveProfileDetailsObj.age,
-        saveProfileDetailsObj.religionId,
+      return dbconnection.query(saveProfileDetailsQuery, [
         saveProfileDetailsObj.gender,
-        saveProfileDetailsObj.educationId,
-        saveProfileDetailsObj.professionId,
-        saveProfileDetailsObj.salaryId,
-        saveProfileDetailsObj.height,
+        saveProfileDetailsObj.salary,
         saveProfileDetailsObj.complexion,
-        saveProfileDetailsObj.cityId,
         saveProfileDetailsObj.address,
-        saveProfileDetailsObj.physicalDisablity,
-        saveProfileDetailsObj.profilePicture
+        saveProfileDetailsObj.physicallyDisabled,
+        saveProfileDetailsObj.languageKnown
       ], (err, rows) => {
         mysqlConnect.disconnectDatabase();
         if (err)
@@ -80,6 +72,24 @@ var profileQueries = {
     return new Promise((resolve, reject) => {
       let dbconnectionObj = dbconnectionConst.connectDatabase();
       return dbconnectionObj.query(getProfileBasicDetailsByProfileIdQuery, [profileId], (err, rows) => {
+        dbconnectionConst.disconnectDatabase();
+        if (err)
+          reject(err);
+          console.log("rows"+rows);
+        resolve(rows);
+      });
+    });
+  },
+
+  updateProfileBasicDetailsById: function(updateProfileBasicDetailsByIdQuery, updateProfileBasicDetailsObj) {
+    return new Promise((resolve, reject) => {
+      let dbconnectionObj = dbconnectionConst.connectDatabase();
+      return dbconnectionObj.query(updateProfileBasicDetailsByIdQuery, [updateProfileBasicDetailsObj.profileId,
+        updateProfileBasicDetailsObj.cityId,
+        updateProfileBasicDetailsObj.educationId,
+        updateProfileBasicDetailsObj.professionId,
+        updateProfileBasicDetailsObj.profileBasicId
+      ], (err, rows) => {
         dbconnectionConst.disconnectDatabase();
         if (err)
           reject(err);

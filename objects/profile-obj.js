@@ -1,33 +1,32 @@
 var profileObj = {
 
   saveBasicProfileDetailsObj: function(name, dateOfBirth, height, cityId, educationId, professionId, religionId, casteId, profilePicture) {
-    this.name = name || '0';
-    this.dateOfBirth = dateOfBirth || '0';
-    this.height = height || '0';
-    this.cityId = cityId || '0';
-    this.educationId = educationId || '0';
-    this.professionId = professionId || '0';
-    this.religionId = religionId || '0';
-    this.casteId = casteId || '0';
-    this.profilePicture = profilePicture || '0';
+    this.name = name || '';
+    this.dateOfBirth = dateOfBirth || '';
+    this.height = height || '';
+    this.cityId = cityId || '';
+    this.educationId = educationId || '';
+    this.professionId = professionId || '';
+    this.religionId = religionId || '';
+    this.casteId = casteId || '';
+    this.profilePicture = profilePicture || '';
   },
 
-  saveProfileDetailsObj: function(name, dateOfBirth, age, religionId, gender, educationId, professionId, salaryId, height, complexion, cityId, address, physicalDisablity, profilePicture) {
-    this.name = name || '0';
-    this.dateOfBirth = dateOfBirth || '0';
-    this.age = age || '0';
-    this.religionId = religionId || '0';
-    this.gender = gender || '0';
-    this.educationId = educationId || '0';
-    this.professionId = professionId || '0';
-    this.salaryId = salaryId || '0';
-    this.height = height || '0';
-    this.complexion = complexion || '0';
-    this.cityId = cityId || '0';
-    this.address = address || '0';
-    this.physicalDisablity = physicalDisablity || '0';
-    this.profilePicture = profilePicture || '0';
+  updateProfileBasicDetailsObj: function(profileBasicId, profileId, educationId, professionId, cityId) {
+    this.profileBasicId = profileBasicId;
+    this.profileId = profileId;
+    this.educationId = educationId;
+    this.professionId = professionId
+    this.cityId = cityId;
+  },
 
+  saveProfileDetailsObj: function(gender, salary, complexion, address, physicallyDisabled, languageKnown) {
+    this.gender = gender || '';
+    this.salary = salary || '';
+    this.complexion = complexion || '';
+    this.address = address || '';
+    this.physicallyDisabled = physicallyDisabled || '';
+    this.languageKnown = languageKnown || '';
   },
 }
 

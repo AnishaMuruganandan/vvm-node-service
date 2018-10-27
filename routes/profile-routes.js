@@ -10,13 +10,6 @@ router.post('/profile-details', async function(req, res, next) {
   res.json(result);
 });
 
-// router.get('/fetch-profile-details/:profileId', function(req, res, next) {
-//   console.log('body: ' + JSON.stringify(req.body));
-//   var result = await profileDelegateObj.getProfileDetailsByProfileId(req.body);
-//   console.log(result + "result route");
-//   res.json(result);
-// });
-
 router.get('/details/:id?', async function(req, res, next) {
   console.log("inside id");
   var data = "false";
@@ -44,10 +37,11 @@ router.get('/top-ten', async function(req, res, next) {
 });
 
 router.post('/profile-details', async function(req, res, next) {
+  var result;
   console.log('body: ' + JSON.stringify(req.body));
-  var result = await profileDelegateObj.saveprofileDetails(req.body);
-  console.log(result + "result route");
-  res.json(result);
+  var dataInsertion = await profileDelegateObj.saveProfileDetails(req.body);
+  console.log('dataInsertion: ' + JSON.stringify(dataInsertion));
+  res.json(dataInsertion);
 });
 
 router.get('details/:id?', async function(req, res, next) {

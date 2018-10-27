@@ -23,13 +23,13 @@ var profileDelegate = (function() {
       console.log("del try");
       var profileInsertion = await profileServiceObj.saveBasicProfileDetails(saveBasicProfileDetailsObj);
 
-        console.log(profileInsertion.insertId + "profileInsertion");
+      console.log(profileInsertion.insertId + "profileInsertion");
 
-        if (profileInsertion.insertId > 0) {
-          var data = profileDetails;
-          data.profileBasicId = profileInsertion.insertId;
-          output = await registrationDelegateObj.saveRegistrationDetails(data);
-        }
+      if (profileInsertion.insertId > 0) {
+        var data = profileDetails;
+        data.profileBasicId = profileInsertion.insertId;
+        output = await registrationDelegateObj.saveRegistrationDetails(data);
+      }
 
       console.log(JSON.stringify(output) + "out delegate");
       return output;
@@ -41,33 +41,30 @@ var profileDelegate = (function() {
   };
 
 
-  saveMoreProfileDetails = async function(profileDetails) {
+  saveProfileDetails = async function(profileDetails) {
     console.log("dlegate");
-    var saveProfileDetailsObj = new profileObject.saveProfileDetailsObj(profileDetails.name,
-      profileDetails.dob,
-      profileDetails.age,
-      profileDetails.religionId,
-      profileDetails.gender,
-      profileDetails.educationId,
-      profileDetails.professionId,
-      profileDetails.salaryId,
-      profileDetails.height,
-      profileDetails.complexion,
-      profileDetails.cityId,
-      profileDetails.address,
-      profileDetails.physicalDisablity,
-      profileDetails.profilePicture);
+    var saveProfileDetailsObj = new profileObject.saveProfileDetailsObj(profileDetails.profileAdditionalData.gender,
+      profileDetails.profileAdditionalData.salary,
+      profileDetails.profileAdditionalData.complexion,
+      profileDetails.profileAdditionalData.address,
+      profileDetails.profileAdditionalData.physicallyDisabled,
+      profileDetails.profileAdditionalData.languageKnown);
     try {
+      var output;
+
       console.log("del try");
-      var output = await profileServiceObj.saveProfileDetails(saveProfileDetailsObj);
-      console.log(output + "out delegate");
+      var profileInsertion = await profileServiceObj.saveProfileDetails(saveProfileDetailsObj);
+
+      console.log(profileInsertion.insertId + "profileInsertion");
+
+      console.log(JSON.stringify(output) + "out delegate");
       return output;
+
     } catch (error) {
       console.log(error);
       return error;
     }
   };
-
   // getProfileDetailsByProfileId = async function(profileId) {
   //   console.log("dlegate");
   //   try {
@@ -94,23 +91,43 @@ var profileDelegate = (function() {
     }
   };
 
-    getProfileBasicDetails = async function(data) {
-      console.log("dlegate");
-      try {
-        console.log(data+"del try" );
-        var output = await profileServiceObj.getProfileBasicDetails(data);
-        console.log(output + "output");
-        return output;
-      } catch (error) {
-        console.log(error);
-        return error;
-      }
-    };
+  getProfileBasicDetails = async function(data) {
+    console.log("dlegate");
+    try {
+      console.log(data + "del try");
+      var output = await profileServiceObj.getProfileBasicDetails(data);
+      console.log(output + "output");
+      return output;
+    } catch (error) {
+      console.log(error);
+      return error;
+    }
+  };
 
+  updateProfileBasicDetails = async function(profileBasicdata) {
+    console.log("dlegate");
+    var updateProfileBasicDetailsObj = new profileObject.updateProfileBasicDetailsObj(profileBasicdata.profileBasicId,
+      profileBasicdata.profileId,
+      profileBasicdata.educationId,
+      profileBasicdata.professionId,
+      profileBasicdata.cityId);
+    try {
+      console.log(data + "del try");
+      var output = await profileServiceObj.updateProfileBasicDetails(updateProfileBasicDetailsObj);
+      console.log(output + "output");
+      return output;
+    } catch (error) {
+      console.log(error);
+      return error;
+    }
+  };
   return {
     saveBasicProfileDetails: saveBasicProfileDetails,
+    saveProfileDetails: saveProfileDetails,
     getProfileBasicDetails: getProfileBasicDetails,
-    getProfileBasicDetailsByProfileId: getProfileBasicDetailsByProfileId
+    getProfileBasicDetailsByProfileId: getProfileBasicDetailsByProfileId,
+    updateProfileBasicDetails: updateProfileBasicDetails,
+
   }
 
 })();
