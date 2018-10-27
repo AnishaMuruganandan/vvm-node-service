@@ -11,11 +11,11 @@ var profileDelegate = (function() {
     var saveBasicProfileDetailsObj = new profileObject.saveBasicProfileDetailsObj(profileDetails.name,
       profileDetails.dob,
       profileDetails.height,
-      profileDetails.cityId,
-      profileDetails.educationId,
-      profileDetails.professionId,
-      profileDetails.religionId,
-      profileDetails.casteId,
+      profileDetails.city,
+      profileDetails.educationalQualification,
+      profileDetails.profession,
+      profileDetails.religion,
+      profileDetails.caste,
       profileDetails.profilePicture);
     try {
       var output;
