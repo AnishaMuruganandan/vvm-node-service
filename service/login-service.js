@@ -20,7 +20,7 @@ console.log(JSON.stringify(output) + "output1");
         console.log(JSON.stringify(loginData.msg) + "msg");
       } else {
         loginData.profileBasicId = output[0].profile_basic_id;
-        loginData.profileId = output[0].profile_basic_id;
+        loginData.profileId = output[0].profile_id;
         loginData.msg = "found";
         console.log(loginData  + "msg");
       }

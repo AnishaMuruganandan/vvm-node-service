@@ -8,6 +8,7 @@ let securityJS = (function() {
 
     let loginSalt = getCookie('LOGIN_SALT');
     let profileBasicId = getCookie('PROFILE_BASIC_ID');
+    let profileId = getCookie('PROFILE_ID');
 
     let path = window.location.pathname;
 
