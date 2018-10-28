@@ -1,0 +1,450 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+  color: #787777;
+}
+a {
+  cursor: pointer;
+}
+
+.menu {
+  height: 70px;
+  background: white;
+}
+
+.menu-nav {}
+
+.profilebgpicture {
+  width: 100%;
+  background-image: url("../asset/img/marriageImg2.png");
+  position: relative;
+  height: 270px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.profilebgpicture::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.logoImg {
+  position: absolute;
+  top: -70px;
+  left: 160px;
+}
+
+.logoText {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+}
+
+.searchbox {
+  position: absolute;
+  bottom: -5px;
+  right: 50px;
+}
+
+.searchtext {
+  position: relative;
+  background-color: transparent !important;
+  color: white;
+}
+
+.searchtext:focus {
+  border: 1px solid #ccc !important;
+  ackground-color: transparent !important;
+  color: white !important;
+}
+
+.searchtext::placeholder {
+  color: white !important;
+}
+
+.linebar {
+  position: absolute;
+  bottom: 3px;
+  right: 27px;
+  font-size: 1.5em;
+  color: white;
+}
+
+.searchimg {
+  position: absolute;
+  bottom: 7px;
+  right: 5px;
+  width: 20px;
+}
+
+.footerDiv {
+  width: 100%;
+}
+
+.footer {
+  background-color: #FF9400;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 20px;
+  color: white;
+  margin: 10px 0;
+}
+
+.bodycontent {
+  padding-bottom: 15px;
+  background-color: #f6f6f6;
+}
+
+.bodycontent .row .leftcol {
+  margin-top: 110px;
+}
+
+.semiboldFont {
+  font-weight: 600;
+}
+
+.namecard {
+  background-color: white;
+  box-shadow: 0 0 16px -9px #E8E8E8;
+  text-align: center;
+  padding: 15px;
+}
+
+.namecard .name {
+  font-size: 1.5em;
+}
+
+.namecard .areaIDfontStyle {
+  font-weight: 600;
+  color: #9E9D9D;
+  /* font-size: 0.7em; */
+}
+
+.namecard .nameendLine {
+  color: #CDCDCD;
+  width: 200px;
+}
+
+.cardEndLine {
+  color: #D9D9D9;
+}
+
+.titleLabel {
+  font-weight: 400;
+}
+
+.InfoTextbox {
+  box-shadow: 0 0 16px -9px #000000;
+  border-style: none;
+  background-color: #FFFFFF;
+  width: 100%;
+  padding: 10px;
+}
+
+.photosblock .photosList .pictureppty {
+  float: left;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  box-shadow: 0 2px 4px 0 #000000;
+}
+
+.photosblock .photosList .firstpicture {
+  background-image: url("../asset/img/sneha.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.photosblock .photosList .morepicture {
+  text-align: center;
+  box-sizing: border-box;
+  padding: 5px 0;
+  margin-left: 10px;
+}
+
+.profileTabContent {
+  background-color: #FFFFFF;
+}
+
+.list-inline {
+  margin: 30px 10px 30px 0 !important;
+}
+
+.list-inline .tabList {
+  padding: 0 !important;
+  margin-right: 30px !important;
+}
+
+.list-inline .tabTextStyle {
+  color: #000000 !important;
+}
+
+.TabContent {
+  padding: 15px;
+}
+
+.profileInput {
+  position: relative;
+}
+
+.profileInputBox {
+  border: 1px solid #CDCDCD;
+  box-shadow: rgba(205, 205, 205, 0.36) 1px 1px 5px;
+  width: 100%;
+  padding: 10px 5px;
+}
+
+.profileInputBox+label {
+  position: absolute;
+  top: 10px;
+  justify-content: center;
+  left: 10px;
+}
+
+.profileLabel {
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+}
+
+.profileInputBox:focus {
+  outline: none;
+}
+
+.profileInput:valid+label,
+.profileInputBox:valid+label,
+.profileInputBox:focus+label,
+.profileInputBox:disabled+label {
+  top: -11px;
+  background-color: white;
+  margin: 0;
+  padding: 0 2px;
+}
+
+.profileInputBox:disabled+label,
+.select2-container--disabled .select2-selection__rendered,
+.select2-container--disabled~label {
+  color: #686868 !important
+}
+
+.select2ProfileInputBox {
+  position: absolute;
+  left: 10px;
+  top: -10px;
+  background-color: white;
+  padding: 0 2px;
+}
+
+.select2-selection__rendered {
+  height: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.select2-selection__arrow {
+  top: 7px !important;
+}
+
+.select2-selection--single, .select2-selection--multiple {
+  width: 100% !important;
+  height: 42px !important;
+  border: 1px solid #CDCDCD !important;
+  box-shadow: rgba(205, 205, 205, 0.36) 1px 1px 5px !important;
+  border-radius: 0px !important;
+}
+
+.select2-selection--multiple ul {
+  padding-top: 5px !important;
+}
+
+.select2-container {
+  width: 100% !important;
+}
+
+.select2-selection--single:focus, input:focus, textarea:focus {
+  outline: none !important;
+}
+
+.logout {
+  float: right;
+  margin-top: -45px;
+  margin-right: 50px;
+}
+
+.optionbtn {
+  float: right;
+}
+
+#savebtn, #cancelbtn {
+  display: none;
+}
+
+.addImage {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  background: #000000a1;
+  padding-top: 50%;
+  padding-left: 25%;
+  border-radius: 103px;
+  width: 100%;
+  height: 100%;
+}
+
+#upload_widget_opener:hover .addImage {
+  display: block;
+  cursor: pointer;
+}
+
+.leftcol .select2-selection--single {
+  border: 1px solid #ffffff !important;
+}
+
+.btn-outline-primary:hover {
+  color: white !important;
+}
+
+.select2-container--default.select2-container--disabled .select2-selection--single, .select2-container--default.select2-container--disabled .select2-selection--multiple {
+  background-color: white !important;
+}
+
+a {
+  color: #666666 !important;
+}
+
+.selected {
+  color: #ffaa00 !important;
+}
+
+.allProfileDetails {
+  height: calc(100vh - 160px - 50px - 30px - 130px);
+  overflow-y: scroll;
+  padding: 10px;
+  background-color: white;
+  margin: 20px 10px;
+  box-shadow: 0 0 12px -3px #0000003d;
+  width: 100%;
+}
+
+.bodycontent {
+  /* height: calc(100vh - 160px - 50px - 30px - 70px - 10rem); */
+}
+
+.searchbox {
+  position: absolute;
+  bottom: -5px;
+  right: 25px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 0px !important;
+  border-radius: 4px;
+  width: 220px;
+}
+
+.searchtext {
+  border: 0px !important;
+  color: white !important;
+  position: relative;
+  background-color: transparent !important;
+  padding: 0px 20px 0px 10px !important;
+  font-weight: 300;
+}
+
+.searchtext::placeholder {
+  font-weight: 300;
+  color: white;
+  font-size: 0.8em;
+}
+
+.linebar {
+  position: absolute;
+  bottom: -3px;
+  right: 27px;
+  font-size: 1.9em;
+  color: white;
+}
+
+.searchimg {
+  position: absolute;
+  bottom: 7px;
+  right: 5px;
+  width: 18px;
+}
+
+.buildingImg {
+  /* width: 50rem; */
+  margin: auto;
+  max-height: 100%;
+}
+
+.box {
+  height: 5rem;
+  background-color: #FBFBFB;
+}
+
+.profilePicture {
+  width: 160px;
+  height: 150px;
+  padding-bottom: 15%;
+  position: relative;
+  /* object-fit: cover; */
+  background-image: url(../asset/img/sneha.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* height: auto; */
+  float: left;
+}
+
+.profileInfo {
+  float: left;
+  margin-left: 5%;
+  font-size: 1.5em;
+}
+
+.OtherInfo {
+  font-size: 14px;
+  margin: 6px 0px 10px 0px;
+}
+
+.whitecolor {
+  color: white !important;
+}
+
+.viewButton {
+  text-align: center;
+  background-image: linear-gradient(#FFA105, #FF6C12);
+  border-radius: 4px;
+  padding: 7px 20px;
+  float: left;
+  font-weight: 300;
+  font-size: 0.6em;
+}
+
+.lock {
+  font-size: 1em;
+  float: left;
+  margin: 5px 10px;
+  display: none;
+}
+
+.profileDetails {
+  overflow: hidden;
+  padding: 15px;
+  /* background-color: red; */
+  margin: 20px 10px;
+  box-sizing: border-box;
+}
+
+.tickMark {
+  color: #417505;
+  margin: 0 0 0 10px;
+}

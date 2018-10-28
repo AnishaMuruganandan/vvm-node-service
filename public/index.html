@@ -22,7 +22,7 @@
         href="css/style.css">
 
 
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -44,7 +44,8 @@
         <div class="form-group searchbox">
           <input type="text"
                  class="form-control searchtext"
-                 placeholder="SEARCH BY VVM NUMBER">
+                 placeholder="SEARCH BY PROFILE ID"
+                  id="searchProfile">
 
           <img src="asset/img/search.png"
                class="img-responsive searchimg">
@@ -509,12 +510,5 @@
 <script src="../js/loadprofile.js"></script>
 <script src="../js/login.js"></script>
 
-<script>
-  history.pushState(null, null, location.href);
-  window.onpopstate = function()
-  {
-    history.go(1);
-  };
-</script>
 
 </html>

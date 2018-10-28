@@ -88,8 +88,8 @@ let registrationFunc = (function() {
     $('.date').datetimepicker({
       format: 'DD-MM-YYYY'
     });
-
-    loadProfileJS.showProfileList();
+    let URL = "profile/top-ten";
+    loadProfileJS.showProfileList(URL);
   };
 
   let generateandSendOTPService = async function() {
@@ -151,7 +151,7 @@ var registrationJS = {
 
     registrationObj = new registrationFunc();
     registrationObj.init();
-
+    loadProfileJS.init();
   },
 
   /*
@@ -159,7 +159,9 @@ var registrationJS = {
    * AUTHOR : AV
    * DESCRIPTION : Constructing
    */
-  _construct: function() {},
+  _construct: function() {
+    loadProfileJS.construct();
+  },
 
   /*
    * METHOD_NAME : _complete
@@ -187,7 +189,7 @@ var registrationJS = {
     //
     setTimeout(function() {
       $('#loader').fadeOut();
-    }, 5000);
+    }, 3000);
 
   }
 

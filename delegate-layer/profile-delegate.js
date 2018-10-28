@@ -10,14 +10,15 @@ var profileDelegate = (function() {
 
   saveBasicProfileDetails = async function(profileDetails) {
     console.log("dlegate");
+    
     var saveBasicProfileDetailsObj = new profileObject.saveBasicProfileDetailsObj(profileDetails.name,
       profileDetails.dob,
       profileDetails.height,
-      profileDetails.city,
-      profileDetails.educationalQualification,
-      profileDetails.profession,
-      profileDetails.religion,
-      profileDetails.caste,
+      profileDetails.cityId,
+      profileDetails.educationId,
+      profileDetails.professionId,
+      profileDetails.religionId,
+      profileDetails.casteId,
       profileDetails.profilePicture);
     try {
       var output;
