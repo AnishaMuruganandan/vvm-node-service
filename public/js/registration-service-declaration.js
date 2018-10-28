@@ -24,7 +24,8 @@ var registrationServiceDeclaration = {
 
         var response = await this.ajaxService(AJAX_INPUT_OBJ);
         console.log(JSON.stringify(response) + "save response");
-        loadProfileJS.showProfileList();
+        let URL = "profile/basic-details/"
+       loadProfileJS.showProfileList(URL);
 
         if (response.code == 'ER_DUP_ENTRY') {
           alert('User Already registered with this Phone Number or Email ID. Please Call us for Assistance');

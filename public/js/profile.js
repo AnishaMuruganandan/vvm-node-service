@@ -59,7 +59,7 @@ let profileFunc = (function() {
     });
 
     $cancelbtn.click(function(e) {
-
+      location.reload();
       $fieldbox.attr('disabled', true);
       $editbtn.css("display", "block");
       $savebtn.css("display", "none");
@@ -174,6 +174,8 @@ let profileFunc = (function() {
       }
     };
     var result = await profileServiceDeclaration.saveAllProfileDetailsService(data);
+    securityJS.addCookie("PROFILE_ID", result.insertId);
+    location.reload();
     console.log(result + "fearesult");
   };
 
