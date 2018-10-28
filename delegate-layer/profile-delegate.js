@@ -2,6 +2,8 @@ var express = require('express');
 var profileServiceObj = require('../service/profile-service');
 var profileObject = require('../objects/profile-obj');
 var registrationDelegateObj = require('../delegate-layer/registration-delegate');
+var horoscopeDelegateObj = require('../delegate-layer/horoscope-delegate');
+var familyDelegateObj = require('../delegate-layer/family-delegate');
 var registrationServiceObj = require('../service/registration-service');
 
 var profileDelegate = (function() {
@@ -44,9 +46,8 @@ var profileDelegate = (function() {
   saveProfileDetails = async function(profileDetails) {
     console.log("dlegate");
 
-
-
     try {
+      var profileInsertion, profileBasicUpdation, horoscopeInsertion, familyInsertion;
       var saveProfileDetailsObj = new profileObject.saveProfileDetailsObj(profileDetails.profileAdditionalData.gender,
         profileDetails.profileAdditionalData.salary,
         profileDetails.profileAdditionalData.complexion,
@@ -54,14 +55,27 @@ var profileDelegate = (function() {
         profileDetails.profileAdditionalData.physicallyDisabled,
         profileDetails.profileAdditionalData.languageKnown);
       console.log("del try");
-      var profileInsertion = await profileServiceObj.saveProfileDetails(saveProfileDetailsObj);
+      profileInsertion = await profileServiceObj.saveProfileDetails(saveProfileDetailsObj);
       console.log(profileInsertion.insertId + "profileInsertion");
+
       if (profileInsertion.insertId > 0) {
         profileDetails.profileAdditionalData.profileId = profileInsertion.insertId;
-        var profileBasicUpdation = updateProfileBasicDetails(profileDetails);
+        profileBasicUpdation = await updateProfileBasicDetails(profileDetails);
         console.log(profileBasicUpdation + "profileBasicUpdation");
+
+        if (profileBasicUpdation.affectedRows > 0) {
+          horoscopeInsertion = await horoscopeDelegateObj.saveHoroscopeDetails(profileDetails);
+          console.log(horoscopeInsertion.insertId + "horoscopeInsertion");
+
+          if (horoscopeInsertion.insertId > 0) {
+            familyInsertion = await familyDelegateObj.saveFamilyDetails(profileDetails);
+            console.log(familyInsertion.insertId + "familyInsertion");
+          }
+
+        }
+
       }
-      return profileInsertion;
+      return familyInsertion;
     } catch (error) {
       console.log(error);
       return error;
@@ -82,12 +96,12 @@ var profileDelegate = (function() {
   //   }
   // };
   saveProfilePicture = async function(profilepic) {
-      var saveProfilePicObj = new profileObject.saveProfilePicObj(profilepic.picURL, profilepic.profileBasicId);
+    var saveProfilePicObj = new profileObject.saveProfilePicObj(profilepic.picURL, profilepic.profileBasicId);
     console.log("dlegate");
     try {
       console.log("del try");
       var profilePicInsertion = await profileServiceObj.saveProfilePicture(saveProfilePicObj);
-      console.log(JSON.stringify(profilePicInsertion)+"profilePicInsertion");
+      console.log(JSON.stringify(profilePicInsertion) + "profilePicInsertion");
       return profilePicInsertion;
     } catch (error) {
       console.log(error);

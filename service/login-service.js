@@ -19,7 +19,8 @@ console.log(JSON.stringify(output) + "output1");
         loginData.msg = "no entry found";
         console.log(JSON.stringify(loginData.msg) + "msg");
       } else {
-        loginData.profileBasicId = output[0].profile_basic_id
+        loginData.profileBasicId = output[0].profile_basic_id;
+        loginData.profileId = output[0].profile_basic_id;
         loginData.msg = "found";
         console.log(loginData  + "msg");
       }
