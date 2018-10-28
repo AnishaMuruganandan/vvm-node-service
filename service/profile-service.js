@@ -84,17 +84,16 @@ var profileService = (function() {
     return output;
   };
 
-  updateProfileBasicDetails = async function(updateProfileBasicDetailsObj) {
-    console.log("profileService" + profileId);
-    try {
-      var output = await profileQueries.updateProfileBasicDetailsById(profileQueriesConst.updateProfileBasicDetailsByIdQuery, updateProfileBasicDetailsObj);
-      console.log(JSON.stringify(output) + "output");
-    } catch (err) {
-      output = err;
-      console.log('Opps, an error occurred', err);
-    }
-    return output;
-  };
+updateProfileBasicDetails = async function(updateProfileBasicDetailsObj) {
+  try {
+    var output = await profileQueries.updateProfileBasicDetailsById(profileQueriesConst.updateProfileBasicDetailsByIdQuery, updateProfileBasicDetailsObj);
+    console.log(JSON.stringify(output) + "output");
+  } catch (err) {
+    output = err;
+    console.log('Opps, an error occurred', err);
+  }
+  return output;
+};
 
   return {
     saveBasicProfileDetails: saveBasicProfileDetails,

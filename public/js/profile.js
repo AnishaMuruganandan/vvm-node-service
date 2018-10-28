@@ -19,10 +19,27 @@ let profileFunc = (function() {
     $physicallyDisabled = $('#physicallyDisabled');
     $languageKnown = $('#languageKnown');
     $imageURL = $('#image-url');
+    $horoscope = $('#horoscope');
+    $cityLiving = $('#cityLiving');
+    $profession = $('#profession');
+    $education = $('#education');
+    $fatherName = $('#fName');
+    $motherName = $('#mName');
+    $siblingCount = $('#sibCount');
+    $motherTongue = $('#motherTongue');
+    $nativePalce = $('#nativePlace');
+    $jathagamSoftCopy = $('#horoscope');
+    $tob = $('#tob');
+    $pob = $('#pob');
+    $zodiac = $('#rasi');
+    $star = $('#nakshatra');
+    $lagna = $('#lagna');
 
   };
 
-  let construct = function() {};
+  let construct = function() {
+    $('.js-example-basic-single').select2();
+  };
 
   let complete = function() {
 
@@ -49,7 +66,17 @@ let profileFunc = (function() {
       $cancelbtn.css("display", "none");
     });
 
+    $horoscope.click(function(e) {
+      cloudinary.openUploadWidget({
+          cloud_name: 'the-corp-india',
+          upload_preset: 'xwnyzhmn',
+        },
+        function(error, result) {
+          resultFromURL = result;
+          $horoscope.val(result[0].secure_url);
+        });
 
+    });
 
 
 
@@ -117,12 +144,33 @@ let profileFunc = (function() {
 
     var data = {
       "profileAdditionalData": {
-        "gender": $gender.val(),
-        "salary": $salary.select2().val(),
-        "complexion": $complexion.val(),
-        "address": $address.val(),
-        "physicallyDisabled": $physicallyDisabled.select2().val(),
-        "languageKnown": $languageKnown.select2().val()
+        "gender": $gender.select2().val(),
+        "salary": $salary.select2().val() || "",
+        "complexion": $complexion.val() || "",
+        "address": $address.val() || "",
+        "physicallyDisabled": $physicallyDisabled.select2().val() || "",
+        "languageKnown": $languageKnown.select2().val().toString() || "",
+      },
+      "profileBasicData": {
+        "profileBasicId": securityJS.getCookie('PROFILE_BASIC_ID') || 0,
+        "city": $cityLiving.select2().val() || "",
+        "education": $education.select2().val() || "",
+        "profession": $profession.select2().val() || ""
+      },
+      "familyData": {
+        "fatherName": $fatherName.val() || "",
+        "motherName": $motherName.val() || "",
+        "siblingCount": $siblingCount.val() || "",
+        "motherTongue": $motherTongue.select2().val() || "",
+        "nativePalce": $nativePalce.val()
+      },
+      "horoscopeData": {
+        "jathagamSoftCopy": $jathagamSoftCopy.val() || "",
+        "tob": $tob.val() || "",
+        "pob": $pob.val() || "",
+        "zodiac": $zodiac.select2().val() || "",
+        "star": $star.select2().val() || "",
+        "lagna": $lagna.select2().val() || ""
       }
     };
     var result = await profileServiceDeclaration.saveAllProfileDetailsService(data);
@@ -170,7 +218,9 @@ var profileJS = {
    * AUTHOR : AV
    * DESCRIPTION : Constructing
    */
-  _construct: function() {},
+  _construct: function() {
+    profileObj.construct();
+  },
 
   /*
    * METHOD_NAME : _complete
@@ -190,6 +240,15 @@ var profileJS = {
 
     profileObj.finalise();
     securityJS.validateLogin();
+    $('#loader').fadeOut();
+
+    if (securityJS.getCookie('PROFILE_ID') == '0') {
+
+      $editbtn.trigger('click');
+      setTimeout(function() {
+        alert('Please update your Profile Details');
+      }, 1000);
+    }
 
   }
 
