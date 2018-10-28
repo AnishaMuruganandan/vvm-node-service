@@ -44,18 +44,17 @@ var profileService = (function() {
     return msg;
   };
 
-  getProfileDetailsByProfileId = async function() {
+  getProfileDetailsByProfileId = async function(profileId) {
     console.log("profileService");
-    var msg = "";
+    var output;
     try {
-      var output = await profileQueries.getProfileDetails(profileQueriesConst.getProfileDetailsQuery);
+      output = await profileQueries.getProfileDetails(profileQueriesConst.getProfileDetailsQuery, profileId);
       console.log(JSON.stringify(output) + "output");
-      msg = "profile" + output.profileId;
     } catch (err) {
-      msg = err;
+      output = err;
       console.log('Opps, an error occurred', err);
     }
-    return msg;
+    return output;
   };
 
   getProfileBasicDetails = async function(data) {
@@ -85,25 +84,26 @@ var profileService = (function() {
     return output;
   };
 
-updateProfileBasicDetails = async function(updateProfileBasicDetailsObj) {
-  console.log("profileService" + profileId);
-  try {
-    var output = await profileQueries.updateProfileBasicDetailsById(profileQueriesConst.updateProfileBasicDetailsByIdQuery, updateProfileBasicDetailsObj);
-    console.log(JSON.stringify(output) + "output");
-  } catch (err) {
-    output = err;
-    console.log('Opps, an error occurred', err);
-  }
-  return output;
-};
+  updateProfileBasicDetails = async function(updateProfileBasicDetailsObj) {
+    console.log("profileService" + profileId);
+    try {
+      var output = await profileQueries.updateProfileBasicDetailsById(profileQueriesConst.updateProfileBasicDetailsByIdQuery, updateProfileBasicDetailsObj);
+      console.log(JSON.stringify(output) + "output");
+    } catch (err) {
+      output = err;
+      console.log('Opps, an error occurred', err);
+    }
+    return output;
+  };
 
   return {
     saveBasicProfileDetails: saveBasicProfileDetails,
     getProfileBasicDetails: getProfileBasicDetails,
     getProfileBasicDetailsByProfileId: getProfileBasicDetailsByProfileId,
-    updateProfileBasicDetails:updateProfileBasicDetails,
-    saveProfileDetails:saveProfileDetails,
-    saveProfilePicture:saveProfilePicture
+    updateProfileBasicDetails: updateProfileBasicDetails,
+    saveProfileDetails: saveProfileDetails,
+    saveProfilePicture: saveProfilePicture,
+    getProfileDetailsByProfileId: getProfileDetailsByProfileId
   }
 
 })();

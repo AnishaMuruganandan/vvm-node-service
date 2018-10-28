@@ -20,6 +20,17 @@ var profileObj = {
     this.cityId = cityId;
   },
 
+  // updateProfileDetailsObj: function(profileId, gender, salary, complexion, address, physicallyDisabled, languageKnown) {
+  //   this.profileBasicId = profileBasicId;
+  //   this.profileId = profileId;
+  //   this.gender = gender || '';
+  //   this.salary = salary || '';
+  //   this.complexion = complexion || '';
+  //   this.address = address || '';
+  //   this.physicallyDisabled = physicallyDisabled || '';
+  //   this.languageKnown = languageKnown || '';
+  // },
+
   saveProfileDetailsObj: function(gender, salary, complexion, address, physicallyDisabled, languageKnown) {
     this.gender = gender || '';
     this.salary = salary || '';

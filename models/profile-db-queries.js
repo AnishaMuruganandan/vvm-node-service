@@ -59,11 +59,11 @@ var profileQueries = {
     });
   },
 
-  getProfileDetails: function(getProfileDetailsQuery) {
+  getProfileDetails: function(getProfileDetailsQuery, profileId) {
     return new Promise((resolve, reject) => {
-      let dbconnection = mysqlConnect.connectDatabase();
-      return dbconnection.query(getProfileDetailsQuery, (err, rows) => {
-        mysqlConnect.disconnectDatabase();
+      let dbconnection = dbconnectionConst.connectDatabase();
+      return dbconnection.query(getProfileDetailsQuery,[profileId], (err, rows) => {
+        dbconnectionConst.disconnectDatabase();
         if (err)
           reject(err);
         resolve(rows);

@@ -1,6 +1,6 @@
 var express = require('express');
 var horoscopeQueries = require('../models/horoscope-db-queries');
-var horoscopeQueriesConst = require('../query-constants/horoscope-query-constant');
+var horoscopeQueriesConst = require('../query-constants/horoscope-query-constants');
 var horoscopeService = (function() {
   saveHoroscopeDetails = async function(saveHoroscopeDetailsObj) {
     console.log("horoscopeService");
@@ -14,8 +14,23 @@ var horoscopeService = (function() {
     }
     return output;
   };
+
+  getHoroscopeDetailsByProfileId = async function(profileId) {
+    console.log("horoscopeService");
+    var output;
+    try {
+      output = await horoscopeQueries.getHoroscopeDetailsByProfileIdQuery(horoscopeQueriesConst.getHoroscopeDetailsByProfileIdQuery, profileId);
+      console.log(JSON.stringify(output) + "output");
+    } catch (err) {
+      output = err;
+      console.log('Opps, an error occurred', err);
+    }
+    return output;
+  };
+
   return {
-    saveHoroscopeDetails: saveHoroscopeDetails
+    saveHoroscopeDetails: saveHoroscopeDetails,
+    getHoroscopeDetailsByProfileId: getHoroscopeDetailsByProfileId
   }
 
 })();
