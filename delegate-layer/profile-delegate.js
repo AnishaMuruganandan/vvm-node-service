@@ -5,6 +5,8 @@ var registrationDelegateObj = require('../delegate-layer/registration-delegate')
 var horoscopeDelegateObj = require('../delegate-layer/horoscope-delegate');
 var familyDelegateObj = require('../delegate-layer/family-delegate');
 var registrationServiceObj = require('../service/registration-service');
+var horoscopeServiceObj = require('../service/horoscope-service');
+var familyServiceObj = require('../service/family-service');
 
 var profileDelegate = (function() {
 
@@ -76,26 +78,89 @@ var profileDelegate = (function() {
         }
 
       }
-      return familyInsertion;
+      return profileInsertion;
     } catch (error) {
       console.log(error);
       return error;
     }
   };
 
-  // getProfileDetailsByProfileId = async function(profileId) {
+  // updateProfileDetails = async function(profileDetails) {
   //   console.log("dlegate");
-  //  now try running
+  //
   //   try {
+  //     var profileUpdation, profileBasicUpdation, horoscopeUpdation, familyUpdation;
+  //     var updateProfileDetailsObj = new profileObject.updateProfileDetailsObj(profileDetails.profileBasicdata.profileBasicId,
+  //       profileDetails.profileAdditionalData.gender,
+  //       profileDetails.profileAdditionalData.salary,
+  //       profileDetails.profileAdditionalData.complexion,
+  //       profileDetails.profileAdditionalData.address,
+  //       profileDetails.profileAdditionalData.physicallyDisabled,
+  //       profileDetails.profileAdditionalData.languageKnown);
   //     console.log("del try");
-  //     var output = await profileServiceObj.getProfileDetailsByProfileId();
-  //     console.log(output + "out delegate");
-  //     return output;
+  //     profileUpdation = await profileServiceObj.saveProfileDetails(saveProfileDetailsObj);
+  //     console.log(profileUpdation.insertId + "profileUpdation");
+  //
+  //     if (profileInsertion.affectedRows > 0) {
+  //       profileDetails.profileAdditionalData.profileId = profileInsertion.insertId;
+  //       profileBasicUpdation = await updateProfileBasicDetails(profileDetails);
+  //       console.log(profileBasicUpdation + "profileBasicUpdation");
+  //
+  //       if (profileBasicUpdation.affectedRows > 0) {
+  //         horoscopeUpdation = await horoscopeDelegateObj.saveHoroscopeDetails(profileDetails);
+  //         console.log(horoscopeUpdation.insertId + "horoscopeUpdation");
+  //
+  //         if (horoscopeInsertion.affectedRows > 0) {
+  //           familyUpdation = await familyDelegateObj.saveFamilyDetails(profileDetails);
+  //           console.log(familyUpdation.insertId + "familyUpdation");
+  //         }
+  //
+  //       }
+  //
+  //     }
+  //     return familyInsertion;
   //   } catch (error) {
   //     console.log(error);
   //     return error;
   //   }
   // };
+
+  getProfileDetailsByProfileId = async function(profileId) {
+    console.log("dlegate");
+    var profile = {};
+
+    try {
+      console.log("del try");
+
+      var profileDetails = await profileServiceObj.getProfileDetailsByProfileId(profileId);
+      console.log(profileDetails + "out delegate");
+      profile.profileAdditionalData = profileDetails;
+
+      if (profileDetails[0].profile_id > 0) {
+        var profileBasicData = await getProfileBasicDetailsByProfileId(profileId);
+        console.log(profileBasicData + "out delegate");
+        profile.profileBasicData = profileBasicData;
+
+        if (profileBasicData[0].profile_id > 0) {
+          var horoscopeData = await horoscopeServiceObj.getHoroscopeDetailsByProfileId(profileId);
+          console.log(horoscopeData + "out delegate");
+          profile.horoscopeData = horoscopeData;
+
+          if (horoscopeData[0].profile_id > 0) {
+            var familyDetails = await familyServiceObj.getFamilyDetailsByProfileId(profileId);
+            console.log(familyDetails + "out delegate");
+            profile.familyData = familyDetails;
+          }
+
+        }
+
+      }
+      return profile;
+    } catch (error) {
+      console.log(error);
+      return error;
+    }
+  };
 
   saveProfilePicture = async function(profilepic) {
     var saveProfilePicObj = new profileObject.saveProfilePicObj(profilepic.picURL, profilepic.profileBasicId);
@@ -144,7 +209,7 @@ var profileDelegate = (function() {
       profileDetails.profileBasicData.education,
       profileDetails.profileBasicData.profession,
       profileDetails.profileBasicData.city);
-      
+
     try {
 
       var output = await profileServiceObj.updateProfileBasicDetails(updateProfileBasicDetailsObj);
@@ -161,7 +226,8 @@ var profileDelegate = (function() {
     getProfileBasicDetails: getProfileBasicDetails,
     getProfileBasicDetailsByProfileId: getProfileBasicDetailsByProfileId,
     updateProfileBasicDetails: updateProfileBasicDetails,
-    saveProfilePicture: saveProfilePicture
+    saveProfilePicture: saveProfilePicture,
+    getProfileDetailsByProfileId: getProfileDetailsByProfileId
 
   }
 

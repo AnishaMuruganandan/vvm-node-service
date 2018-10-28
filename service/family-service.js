@@ -1,6 +1,6 @@
 var express = require('express');
 var familyQueries = require('../models/family-db-queries');
-var familyQueriesConst = require('../query-constants/family-query-constant');
+var familyQueriesConst = require('../query-constants/family-query-constants');
 var familyService = (function() {
   saveFamilyDetails = async function(saveFamilyDetailsObj) {
     console.log("familyService");
@@ -14,8 +14,24 @@ var familyService = (function() {
     }
     return output;
   };
+
+  getFamilyDetailsByProfileId = async function(profileId) {
+    console.log("horoscopeService");
+    var output;
+    try {
+      output = await familyQueries.getFamilyDetailsByProfileIdQuery(familyQueriesConst.getFamilyDetailsByProfileIdQuery, profileId);
+      console.log(JSON.stringify(output) + "output");
+    } catch (err) {
+      output = err;
+      console.log('Opps, an error occurred', err);
+    }
+    return output;
+  };
+
+
   return {
-    saveFamilyDetails: saveFamilyDetails
+    saveFamilyDetails: saveFamilyDetails,
+    getFamilyDetailsByProfileId: getFamilyDetailsByProfileId
   }
 
 })();

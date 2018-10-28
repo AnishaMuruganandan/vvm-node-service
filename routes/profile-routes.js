@@ -30,13 +30,19 @@ router.get('/top-ten', async function(req, res, next) {
 
 });
 
-
 router.post('/profile-details', async function(req, res, next) {
   console.log('body: ' + JSON.stringify(req.body));
   var dataInsertion = await profileDelegateObj.saveProfileDetails(req.body);
   console.log('dataInsertion: ' + JSON.stringify(dataInsertion));
   res.json(dataInsertion);
 });
+
+// router.post('/profile-details-update', async function(req, res, next) {
+//   console.log('body: ' + JSON.stringify(req.body));
+//   var dataInsertion = await profileDelegateObj.updateProfileDetails(req.body);
+//   console.log('dataInsertion: ' + JSON.stringify(dataInsertion));
+//   res.json(dataInsertion);
+// });
 
 router.post('/profile-picture', async function(req, res, next) {
   console.log('body: ' + JSON.stringify(req.body));
@@ -46,18 +52,11 @@ router.post('/profile-picture', async function(req, res, next) {
 });
 
 
-router.get('details/:id?', async function(req, res, next) {
-  if (req.params.id) {
+router.get('/all-details/:id', async function(req, res, next) {
     console.log('body: ' + JSON.stringify(req.params.id));
     var result = await profileDelegateObj.getProfileDetailsByProfileId(req.params.id);
     console.log(result + "result route");
     res.json(result);
-  } else {
-    console.log("get profile details");
-    var result = await profileDelegateObj.getProfileDetails();
-    console.log(result + "result route");
-    res.json(result);
-  }
 });
 
 module.exports = router;
