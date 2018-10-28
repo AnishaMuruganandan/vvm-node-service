@@ -10,7 +10,7 @@ var profileDelegate = (function() {
 
   saveBasicProfileDetails = async function(profileDetails) {
     console.log("dlegate");
-    
+
     var saveBasicProfileDetailsObj = new profileObject.saveBasicProfileDetailsObj(profileDetails.name,
       profileDetails.dob,
       profileDetails.height,
@@ -96,6 +96,7 @@ var profileDelegate = (function() {
   //     return error;
   //   }
   // };
+
   saveProfilePicture = async function(profilepic) {
     var saveProfilePicObj = new profileObject.saveProfilePicObj(profilepic.picURL, profilepic.profileBasicId);
     console.log("dlegate");
@@ -138,13 +139,14 @@ var profileDelegate = (function() {
 
   updateProfileBasicDetails = async function(profileDetails) {
     console.log("dlegate");
-    var updateProfileBasicDetailsObj = new profileObject.updateProfileBasicDetailsObj(profileDetails.profileBasicdata.profileBasicId,
+    var updateProfileBasicDetailsObj = new profileObject.updateProfileBasicDetailsObj(profileDetails.profileBasicData.profileBasicId,
       profileDetails.profileAdditionalData.profileId,
-      profileDetails.profileBasicdata.education,
-      profileDetails.profileBasicdata.profession,
-      profileDetails.profileBasicdata.city);
+      profileDetails.profileBasicData.education,
+      profileDetails.profileBasicData.profession,
+      profileDetails.profileBasicData.city);
+      
     try {
-      console.log(data + "del try");
+
       var output = await profileServiceObj.updateProfileBasicDetails(updateProfileBasicDetailsObj);
       console.log(output + "output");
       return output;

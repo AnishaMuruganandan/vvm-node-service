@@ -86,7 +86,6 @@ var profileService = (function() {
   };
 
 updateProfileBasicDetails = async function(updateProfileBasicDetailsObj) {
-  console.log("profileService" + profileId);
   try {
     var output = await profileQueries.updateProfileBasicDetailsById(profileQueriesConst.updateProfileBasicDetailsByIdQuery, updateProfileBasicDetailsObj);
     console.log(JSON.stringify(output) + "output");

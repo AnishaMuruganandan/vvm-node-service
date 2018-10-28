@@ -17,6 +17,8 @@
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" />
   <link rel="stylesheet"
+        href="css/loader.css">
+  <link rel="stylesheet"
         href="css/profilepage.css">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
@@ -240,6 +242,10 @@
               <select class="InfoTextbox js-example-basic-single select2me"
                       id="religion"
                       disabled>
+
+                <option value=""
+                        selected="selected"
+                        disabled="disabled">-- select one --</option>
                 <option value="Hindu">Hindu</option>
                 <option value="Christian">Christian</option>
                 <option value="Muslim">Muslim</option>
@@ -290,7 +296,8 @@
                    href="#">PHOTOS</a></li>
               <li class="tabList optionbtn"><a class="tabTextStyle"
                    href="#"
-                   id="editbtn">EDIT</a></li>
+                   id="editbtn">EDIT <i class="fa fa-pencil-square-o"
+                     aria-hidden="true"></i></a></li>
               <li class="tabList optionbtn"><a class="tabTextStyle"
                    href="#"
                    id="savebtn">SAVE</a></li>
@@ -586,6 +593,10 @@
                     <select class="js-example-basic-single select2me"
                             name="nakshatra"
                             id="nakshatra">
+
+                      <option value=""
+                              selected="selected"
+                              disabled="disabled">-- select one --</option>
                       <option value="Aswini">Aswini</option>
                       <option value="Bharani">Bharani</option>
                       <option value="Karthigai">Karthigai</option>
@@ -677,6 +688,17 @@
                            class="profileInputBox inputbox clock-input">
                     <label for="tob"
                            class="profileLabel">Time Of Birth</label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="profileInput">
+                    <input id="horoscope"
+                           name="horoscope"
+                           type="text"
+                           required
+                           class="profileInputBox inputbox ">
+                    <label for="horoscope"
+                           class="profileLabel">Upload Horoscope</label>
                   </div>
                 </div>
 
@@ -778,6 +800,16 @@
       vivahahvizhamatrimony 2018
     </div>
   </div>
+  <div id="loader"
+       class="loader">
+
+    <div class="imgContentDiv">
+
+      <img src="asset/img/loader.gif" />
+      <h3>Better way to find your better half...</h3>
+    </div>
+
+  </div>
 </body>
 
 <!-- <script src="https://code.jquery.com/jquery-1.6.2.min.js"></script>
@@ -816,11 +848,7 @@
 <script defer
         src="js/profile.js"></script>
 
-<script>
-  $(document).ready(function() {
-    $('.js-example-basic-single').select2();
-  });
-</script>
+
 <script>
   history.pushState(null, null, location.href);
   window.onpopstate = function() {
