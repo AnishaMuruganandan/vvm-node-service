@@ -41,7 +41,7 @@ let loginFunc = (function() {
     if (result.msg == "found") {
       securityJS.addCookie("LOGIN_SALT", "true");
       securityJS.addCookie("PROFILE_BASIC_ID", result.profileBasicId);
-      console.log(result.profileBasicId+"pbid");
+      console.log(result.profileBasicId + "pbid");
       window.location.href = "./profile.html";
 
 

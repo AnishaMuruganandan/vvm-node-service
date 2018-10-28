@@ -18,6 +18,7 @@ let profileFunc = (function() {
     $address = $('#address');
     $physicallyDisabled = $('#physicallyDisabled');
     $languageKnown = $('#languageKnown');
+    $imageURL = $('#image-url');
 
   };
 
@@ -70,7 +71,8 @@ let profileFunc = (function() {
     $uploadWidgetOpener.click(function(e) {
       cloudinary.openUploadWidget({
           cloud_name: 'the-corp-india',
-          upload_preset: 'rvg5voir'
+          upload_preset: 'rvg5voir',
+          cropping: true
         },
         function(error, result) {
 
@@ -80,6 +82,9 @@ let profileFunc = (function() {
 
           $('#image-url').val(result[0].secure_url);
           $('#image-thumbnail-url').val(result[0].thumbnail_url);
+
+
+          saveProfilePictureService();
 
 
         });
@@ -103,25 +108,40 @@ let profileFunc = (function() {
 
   let logoutService = function() {
     securityJS.removeCookie("LOGIN_SALT");
-    window.location.href = "./index.html";
+    securityJS.removeCookie("PROFILE_BASIC_ID");
+    window.location.href = "/";
 
   };
 
   let saveAllProfileDetailsService = async function() {
 
     var data = {
-    "profileAdditionalData":{
-      "gender": $gender.val(),
-      "salary": $salary.select2().val(),
-      "complexion": $complexion.val(),
-      "address": $address.val(),
-      "physicallyDisabled": $physicallyDisabled.select2().val(),
-      "languageKnown": $languageKnown.select2().val()
-    }
-};
+      "profileAdditionalData": {
+        "gender": $gender.val(),
+        "salary": $salary.select2().val(),
+        "complexion": $complexion.val(),
+        "address": $address.val(),
+        "physicallyDisabled": $physicallyDisabled.select2().val(),
+        "languageKnown": $languageKnown.select2().val()
+      }
+    };
     var result = await profileServiceDeclaration.saveAllProfileDetailsService(data);
     console.log(result + "fearesult");
   };
+
+
+  let saveProfilePictureService = async function() {
+
+    var data = {
+      "profileBasicId": securityJS.getCookie('PROFILE_BASIC_ID'),
+      "picURL": $imageURL.val()
+
+
+    };
+    var result = await profileServiceDeclaration.saveProfilePictureService(data);
+    console.log(result + "fearesult");
+  };
+
 
   return {
     init: init,
@@ -169,7 +189,6 @@ var profileJS = {
   _finalise: function() {
 
     profileObj.finalise();
-
     securityJS.validateLogin();
 
   }

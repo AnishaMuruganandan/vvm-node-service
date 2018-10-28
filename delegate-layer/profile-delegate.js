@@ -8,14 +8,15 @@ var profileDelegate = (function() {
 
   saveBasicProfileDetails = async function(profileDetails) {
     console.log("dlegate");
+    
     var saveBasicProfileDetailsObj = new profileObject.saveBasicProfileDetailsObj(profileDetails.name,
       profileDetails.dob,
       profileDetails.height,
-      profileDetails.city,
-      profileDetails.educationalQualification,
-      profileDetails.profession,
-      profileDetails.religion,
-      profileDetails.caste,
+      profileDetails.cityId,
+      profileDetails.educationId,
+      profileDetails.professionId,
+      profileDetails.religionId,
+      profileDetails.casteId,
       profileDetails.profilePicture);
     try {
       var output;
@@ -82,12 +83,12 @@ var profileDelegate = (function() {
   //   }
   // };
   saveProfilePicture = async function(profilepic) {
-      var saveProfilePicObj = new profileObject.saveProfilePicObj(profilepic.picURL, profilepic.profileBasicId);
+    var saveProfilePicObj = new profileObject.saveProfilePicObj(profilepic.picURL, profilepic.profileBasicId);
     console.log("dlegate");
     try {
       console.log("del try");
       var profilePicInsertion = await profileServiceObj.saveProfilePicture(saveProfilePicObj);
-      console.log(JSON.stringify(profilePicInsertion)+"profilePicInsertion");
+      console.log(JSON.stringify(profilePicInsertion) + "profilePicInsertion");
       return profilePicInsertion;
     } catch (error) {
       console.log(error);
