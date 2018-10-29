@@ -45,7 +45,7 @@ var profileService = (function() {
   };
 
   getProfileDetailsByProfileId = async function(profileId) {
-    console.log("profileService");
+    console.log("profileService by profile Id");
     var output;
     try {
       output = await profileQueries.getProfileDetails(profileQueriesConst.getProfileDetailsQuery, profileId);
@@ -76,7 +76,7 @@ var profileService = (function() {
     console.log("profileService" + profileId);
     try {
       var output = await profileQueries.getProfileBasicDetailsByProfileId(profileQueriesConst.getProfileBasicDetailsByProfileIdQuery, profileId);
-      console.log(JSON.stringify(output) + "output");
+      console.log(JSON.stringify(output) + "getProfileBasicDetailsByProfileId");
     } catch (err) {
       output = err;
       console.log('Opps, an error occurred', err);

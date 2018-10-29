@@ -33,6 +33,18 @@ var loginQueries = {
       });
 
     });
+  },
+
+  getLoginDetailsByprofileBasicId : function(getLoginDetailsByprofileBasicIdQuery, profileBasicId) {
+    return new Promise((resolve, reject) => {
+      let dbconnectionObj = mysqlConnect.connectDatabase();
+      return dbconnectionObj.query(getLoginDetailsByprofileBasicIdQuery, [profileBasicId], (err, rows) => {
+        mysqlConnect.disconnectDatabase();
+        if (err)
+          reject(err);
+        resolve(rows);
+      });
+    });
   }
 
 }
