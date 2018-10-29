@@ -100,9 +100,14 @@ var profileQueries = {
     return new Promise((resolve, reject) => {
       let dbconnectionObj = dbconnectionConst.connectDatabase();
       return dbconnectionObj.query(updateProfileBasicDetailsByIdQuery, [updateProfileBasicDetailsObj.profileId,
+        updateProfileBasicDetailsObj.name,
+        updateProfileBasicDetailsObj.dateOfBirth,
+        updateProfileBasicDetailsObj.height,
         updateProfileBasicDetailsObj.cityId,
         updateProfileBasicDetailsObj.educationId,
         updateProfileBasicDetailsObj.professionId,
+        updateProfileBasicDetailsObj.religionId,
+        updateProfileBasicDetailsObj.casteId,
         updateProfileBasicDetailsObj.profileBasicId
       ], (err, rows) => {
         dbconnectionConst.disconnectDatabase();

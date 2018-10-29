@@ -12,12 +12,17 @@ var profileObj = {
     this.profilePicture = profilePicture || '';
   },
 
-  updateProfileBasicDetailsObj: function(profileBasicId, profileId, educationId, professionId, cityId) {
+  updateProfileBasicDetailsObj: function(profileBasicId, profileId, educationId, professionId, cityId, name, dateOfBirth, height, religionId, casteId) {
     this.profileBasicId = profileBasicId;
     this.profileId = profileId;
     this.educationId = educationId;
     this.professionId = professionId
     this.cityId = cityId;
+    this.name = name || '';
+    this.dateOfBirth = dateOfBirth || '';
+    this.height = height || '';
+    this.religionId = religionId || '';
+    this.casteId = casteId || '';
   },
 
   // updateProfileDetailsObj: function(profileId, gender, salary, complexion, address, physicallyDisabled, languageKnown) {

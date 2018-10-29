@@ -10,7 +10,7 @@ let profileFunc = (function() {
     $savebtn = $('#savebtn');
     $cancelbtn = $('#cancelbtn');
     $clockInput = $('#clock-input');
-    $fieldbox = $('.profileTabContent input ,.profileTabContent select');
+    $fieldbox = $('.profileTabContent input ,.profileTabContent select, .diableChanges');
     $uploadWidgetOpener = $('#upload_widget_opener');
     $gender = $('#gender');
     $salary = $('#salary');
@@ -33,6 +33,12 @@ let profileFunc = (function() {
     $zodiac = $('#rasi');
     $star = $('#nakshatra');
     $lagna = $('#lagna');
+    $emailDisable = $('.emailDisable');
+    $name = $('#name');
+    $dob = $('#dob');
+    $height = $('#height');
+    $religion = $('#religion');
+    $caste = $('#caste');
 
   };
 
@@ -49,6 +55,7 @@ let profileFunc = (function() {
 
     $editbtn.click(function(e) {
       $fieldbox.attr('disabled', false);
+      $emailDisable.attr('disabled', true);
       $editbtn.css("display", "none");
       $savebtn.css("display", "block");
       $cancelbtn.css("display", "block");
@@ -159,7 +166,12 @@ let profileFunc = (function() {
         "profileBasicId": securityJS.getCookie('PROFILE_BASIC_ID') || 0,
         "city": $cityLiving.select2().val() || "",
         "education": $education.select2().val() || "",
-        "profession": $profession.select2().val() || ""
+        "profession": $profession.select2().val() || "",
+        "name": $name.val() || "",
+        "dob": $dob.val() || "",
+        "height": $height.val() || "",
+        "religion": $religion.select2().val() || "",
+        "caste": $caste.select2().val() || ""
       },
       "familyData": {
         "fatherName": $fatherName.val() || "",

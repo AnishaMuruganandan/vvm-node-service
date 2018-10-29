@@ -216,7 +216,12 @@ var profileDelegate = (function() {
       profileDetails.profileAdditionalData.profileId,
       profileDetails.profileBasicData.education,
       profileDetails.profileBasicData.profession,
-      profileDetails.profileBasicData.city);
+      profileDetails.profileBasicData.city,
+      profileDetails.profileBasicData.name,
+      profileDetails.profileBasicData.dob,
+      profileDetails.profileBasicData.height,
+      profileDetails.profileBasicData.religion,
+      profileDetails.profileBasicData.caste);
 
     try {
 
