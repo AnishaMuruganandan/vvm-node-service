@@ -38,7 +38,12 @@ let profileFunc = (function() {
   };
 
   let construct = function() {
-    $('.js-example-basic-single').select2();
+    let data = profileServiceDeclaration.getProfileFullInfo();
+
+
+
+      $('.js-example-basic-single').select2();
+
   };
 
   let complete = function() {
