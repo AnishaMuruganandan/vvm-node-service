@@ -4,7 +4,7 @@ var loginQueryConst = {
 
  updateLoginTimeByLoginIdQuery: "update login_details set recent_login_time=? where login_id=?",
 
- getLoginDetailsByprofileBasicIdQuery: "select * from login_details where profile_basic_id=?"
+ getLoginDetailsByprofileBasicIdQuery: "select email_id,phone_no from login_details where profile_basic_id=?"
 
 }
 module.exports = loginQueryConst;
