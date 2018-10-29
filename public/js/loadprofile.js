@@ -30,7 +30,8 @@ var loadProfileJS = (function() {
 
     if (securityJS.getCookie('LOGIN_SALT')) {
 
-      alert(profileId);
+
+      window.location.href = "./searchview.html?q=" + profileId;
     } else {
       alert('Please Login to view this profile');
     }

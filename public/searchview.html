@@ -33,14 +33,11 @@
              id="homeView"
              href="home.html">Home</a>
           <span class="">|</span>
-          <a class="selected"
-             id="profileView"
-             href="#">Profile</a>
-          <span class="">|</span>
           <a class=""
-             id="findMatch"
-             href="match.html">Filter</a>
+             id="profileView"
+             href="profile.html">Profile</a>
           <span class="">|</span>
+        
           <a class=""
              id="logoutAct">Logout</a>
         </div>
@@ -52,11 +49,8 @@
       <div class="profilebgpicture">
         <div class="profilepicture"
              id="upload_widget_opener">
-          <div class="addImage">
-            Change Image
-          </div>
+
         </div>
-        <i class="fa fa-add"></i>
 
         <img src="asset/img/logo.png"
              class="img-responsive logoImg">
@@ -89,20 +83,7 @@
           <hr class="cardEndLine">
 
 
-          <!-- Contact card -->
-          <div class="bodycontent__row__leftcol__professionCard">
-            <div class="form-group">
-              <label class="titleLabel">CONTACT NUMBER</label>
-              <input type="text"
-                     class="InfoTextbox"
-                     placeholder="Registerd Phone Number"
-                     id="contactNo"
-                     disabled>
-            </div>
 
-          </div>
-
-          <hr class="cardEndLine" />
 
           <!-- profession card -->
           <div class="bodycontent__row__leftcol__professionCard">
@@ -295,16 +276,7 @@
                    href="#">HOBBIES & INTEREST</a></li>
               <li class="tabList"><a class="tabTextStyle"
                    href="#">PHOTOS</a></li>
-              <li class="tabList optionbtn"><a class="tabTextStyle"
-                   href="#"
-                   id="editbtn">EDIT <i class="fa fa-pencil-square-o"
-                     aria-hidden="true"></i></a></li>
-              <li class="tabList optionbtn"><a class="tabTextStyle"
-                   href="#"
-                   id="savebtn">SAVE</a></li>
-              <li class="tabList optionbtn"><a class="tabTextStyle"
-                   href="#"
-                   id="cancelbtn">CANCEL</a></li>
+
 
 
 
@@ -348,20 +320,6 @@
                   </div>
                 </div>
 
-                <div class="col-md-4">
-                  <div class="profileInput"
-                       ng-app="myApp"
-                       ng-controller="myCtrl">
-                    <input id="email"
-                           name="email"
-                           type="email"
-                           required
-                           class="profileInputBox inputbox"
-                           ng-model="firstName">
-                    <label for="email"
-                           class="profileLabel">Email Id</label>
-                  </div>
-                </div>
 
 
               </div>
@@ -692,7 +650,7 @@
                   </div>
                 </div>
                 <div class="col-md-4">
-                  <div class="profileInput">
+                  <div class="profileInput d-none">
                     <input id="horoscope"
                            name="horoscope"
                            type="text"
@@ -700,14 +658,20 @@
                            class="profileInputBox inputbox ">
                     <label for="horoscope"
                            class="profileLabel">Upload Horoscope</label>
+
+                  </div>
+
+                  <div class=" profileInput mt-3">
+                    <a target="_blank"
+                       id="jathagamDownload">
+                      Download
+                      Jathagam
+                      here
+                    </a>
                   </div>
                 </div>
-
               </div>
-
-
             </div>
-
             <div> FAMILY DETAILS
             </div>
             <hr class="lifeStyleLine">
@@ -761,28 +725,6 @@
               </div>
               <!-- second row -->
 
-
-              <div class="row mb-5">
-
-                <div class="col-md-12">
-                  <div class="profileInput"
-                       ng-app="myApp"
-                       ng-controller="myCtrl">
-                    <input id="address"
-                           name="address"
-                           type="text"
-                           required
-                           class="profileInputBox inputbox">
-                    <label for="address"
-                           class="profileLabel">Address</label>
-                  </div>
-                </div>
-
-
-
-
-
-              </div>
 
             </div>
           </div>
@@ -846,10 +788,10 @@
 <script src="../js/security.js"></script>
 <script defer
         src="js/profile-service-declaration.js"></script>
-        <script defer
-                src="js/profile-utils.js"></script>
 <script defer
-        src="js/profile.js"></script>
+        src="js/profile-utils.js"></script>
+<script defer
+        src="js/searchview.js"></script>
 
 
 

@@ -1,8 +1,18 @@
 let securityJS = (function() {
 
   let init = function() {
-
+    $logoutAct = $('#logoutAct');
   };
+
+  let complete = function() {
+
+    $logoutAct.click(function() {
+      removeCookie("LOGIN_SALT");
+      removeCookie("PROFILE_BASIC_ID");
+      window.location.href = "/";
+
+    });
+  }
 
   let validateLogin = function() {
 
@@ -42,7 +52,8 @@ let securityJS = (function() {
   };
 
   return {
-
+    init: init,
+    complete: complete,
     validateLogin: validateLogin,
     addCookie: addCookie,
     removeCookie: removeCookie,
