@@ -141,12 +141,12 @@ var profileDelegate = (function() {
         console.log(profileBasicData + "out delegate");
         profile.profileBasicData = profileBasicData;
 
-        if (profileBasicData[0].profile_id > 0) {
+        if (profileBasicData.length > 0 && profileBasicData[0].profile_id > 0) {
           var horoscopeData = await horoscopeServiceObj.getHoroscopeDetailsByProfileId(profileId);
           console.log(horoscopeData + "out delegate");
           profile.horoscopeData = horoscopeData;
 
-          if (horoscopeData[0].profile_id > 0) {
+          if (horoscopeData.length > 0 && horoscopeData[0].profile_id > 0) {
             var familyDetails = await familyServiceObj.getFamilyDetailsByProfileId(profileId);
             console.log(familyDetails + "out delegate");
             profile.familyData = familyDetails;
