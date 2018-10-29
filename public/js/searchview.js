@@ -63,6 +63,7 @@ var seachViewObj = {
 
     seachViewJS = new searchViewFunc();
     seachViewJS.init();
+    securityJS.init();
 
   },
 
@@ -73,6 +74,8 @@ var seachViewObj = {
    */
   _construct: function() {
     seachViewJS.construct();
+
+    //securityJS.construct();
   },
 
   /*
@@ -82,6 +85,7 @@ var seachViewObj = {
    */
   _complete: function() {
     seachViewJS.complete();
+    securityJS.complete();
   },
 
   /*
