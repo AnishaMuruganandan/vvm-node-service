@@ -7,11 +7,12 @@ var familyDelegateObj = require('../delegate-layer/family-delegate');
 var registrationServiceObj = require('../service/registration-service');
 var horoscopeServiceObj = require('../service/horoscope-service');
 var familyServiceObj = require('../service/family-service');
+var loginServiceObj = require('../service/login-service');
 
 var profileDelegate = (function() {
 
   saveBasicProfileDetails = async function(profileDetails) {
-    console.log("dlegate");
+    console.log("save basic dlegate");
 
     var saveBasicProfileDetailsObj = new profileObject.saveBasicProfileDetailsObj(profileDetails.name,
       profileDetails.dob,
@@ -47,7 +48,7 @@ var profileDelegate = (function() {
 
 
   saveProfileDetails = async function(profileDetails) {
-    console.log("dlegate");
+    console.log("sava profile dlegate");
 
     try {
       var profileInsertion, profileBasicUpdation, horoscopeInsertion, familyInsertion;
@@ -125,33 +126,40 @@ var profileDelegate = (function() {
   //   }
   // };
 
-  getProfileDetailsByProfileId = async function(profileId) {
-    console.log("dlegate");
+  getProfileDetailsByProfileId = async function(profileBasicId) {
+    console.log("get profile dlegate");
     var profile = {};
 
     try {
       console.log("del try");
 
-      var profileDetails = await profileServiceObj.getProfileDetailsByProfileId(profileId);
-      console.log(profileDetails + "out delegate");
-      profile.profileAdditionalData = profileDetails;
+      // get profile basic details  by profile basic id
+      var profileBasicData = await getProfileBasicDetailsByProfileId(profileBasicId);
+      console.log(profileBasicData + "out delegate");
+      profile.profileBasicData = profileBasicData;
 
-      if (profileDetails[0].profile_id > 0) {
-        var profileBasicData = await getProfileBasicDetailsByProfileId(profileId);
-        console.log(profileBasicData + "out delegate");
-        profile.profileBasicData = profileBasicData;
+      if (profileBasicData[0] != null) {
+        var loginData = await getLoginDetails(profileBasicId);
+        console.log(loginData + "loginData out delegate");
+        profile.loginData = loginData;
 
-        if (profileBasicData.length > 0 && profileBasicData[0].profile_id > 0) {
-          var horoscopeData = await horoscopeServiceObj.getHoroscopeDetailsByProfileId(profileId);
-          console.log(horoscopeData + "out delegate");
-          profile.horoscopeData = horoscopeData;
+        if (profileBasicData[0] != null) {
+          var profileDetails = await profileServiceObj.getProfileDetailsByProfileId(profileBasicData[0].profile_id);
+          console.log(profileDetails + "out delegate");
+          profile.profileAdditionalData = profileDetails;
 
-          if (horoscopeData.length > 0 && horoscopeData[0].profile_id > 0) {
-            var familyDetails = await familyServiceObj.getFamilyDetailsByProfileId(profileId);
-            console.log(familyDetails + "out delegate");
-            profile.familyData = familyDetails;
+          if (profileDetails[0] != null) {
+            var horoscopeData = await horoscopeServiceObj.getHoroscopeDetailsByProfileId(profileDetails[0].profile_id);
+            console.log(horoscopeData + "out delegate");
+            profile.horoscopeData = horoscopeData;
+
+            if (horoscopeData[0] != null) {
+              var familyDetails = await familyServiceObj.getFamilyDetailsByProfileId(horoscopeData[0].profile_id);
+              console.log(familyDetails + "out delegate");
+              profile.familyData = familyDetails;
+            }
+
           }
-
         }
 
       }
@@ -164,7 +172,7 @@ var profileDelegate = (function() {
 
   saveProfilePicture = async function(profilepic) {
     var saveProfilePicObj = new profileObject.saveProfilePicObj(profilepic.picURL, profilepic.profileBasicId);
-    console.log("dlegate");
+    console.log("save pic dlegate");
     try {
       console.log("del try");
       var profilePicInsertion = await profileServiceObj.saveProfilePicture(saveProfilePicObj);
@@ -177,7 +185,7 @@ var profileDelegate = (function() {
   };
 
   getProfileBasicDetailsByProfileId = async function(profileId) {
-    console.log("dlegate");
+    console.log("get profile basic dlegate by id");
     try {
       console.log("del try");
       var output = await profileServiceObj.getProfileBasicDetailsByProfileId(profileId);
@@ -190,7 +198,7 @@ var profileDelegate = (function() {
   };
 
   getProfileBasicDetails = async function(data) {
-    console.log("dlegate");
+    console.log("get profile basic dlegate");
     try {
       console.log(data + "del try");
       var output = await profileServiceObj.getProfileBasicDetails(data);
@@ -203,7 +211,7 @@ var profileDelegate = (function() {
   };
 
   updateProfileBasicDetails = async function(profileDetails) {
-    console.log("dlegate");
+    console.log("update profile basic dlegate");
     var updateProfileBasicDetailsObj = new profileObject.updateProfileBasicDetailsObj(profileDetails.profileBasicData.profileBasicId,
       profileDetails.profileAdditionalData.profileId,
       profileDetails.profileBasicData.education,

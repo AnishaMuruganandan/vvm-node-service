@@ -25,7 +25,7 @@ var loginService = (function() {
         var profileBasicOutput = await profileServiceObj.getProfileBasicDetailsByProfileId(loginData.profileBasicId);
         console.log(output + "profileID fetching");
         loginData.profileId = profileBasicOutput[0].profile_id;
-        
+
         loginData.msg = "found";
         console.log(JSON.stringify(loginData) + "msg");
       }
@@ -50,9 +50,23 @@ var loginService = (function() {
     return msg;
   };
 
+  getLoginDetails = async function(profileBasicId) {
+    console.log("profileService");
+    try {
+      var output = await loginQueries.getLoginDetailsByprofileBasicId(loginQueriesConst.getLoginDetailsByprofileBasicIdQuery, profileBasicId);
+      console.log(JSON.stringify(output) + "output");
+    } catch (err) {
+      output = err;
+      console.log('Opps, an error occurred', err);
+    }
+    return output;
+  };
+
+
   return {
     verifyLoginDetails: verifyLoginDetails,
-    updateLoginTime: updateLoginTime
+    updateLoginTime: updateLoginTime,
+    getLoginDetails: getLoginDetails
   };
 
 
