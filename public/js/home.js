@@ -14,8 +14,10 @@ var homeFunc = (function() {
 
   let finalise = function() {
 
+
     let URL = "profile/basic-details";
     loadProfileJS.showProfileList(URL);
+
   };
 
   return {
@@ -41,6 +43,7 @@ var homeObj = {
     homeJS.init();
 
     loadProfileJS.init();
+    securityJS.init();
 
   },
 
@@ -49,7 +52,10 @@ var homeObj = {
    * AUTHOR : AV
    * DESCRIPTION : Constructing
    */
-  _construct: function() {},
+  _construct: function() {
+
+    loadProfileJS.construct();
+  },
 
   /*
    * METHOD_NAME : _complete
@@ -58,7 +64,7 @@ var homeObj = {
    */
   _complete: function() {
     homeJS.complete();
-    loadProfileJS.construct();
+    securityJS.complete();
   },
 
   /*

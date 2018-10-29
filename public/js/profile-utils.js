@@ -41,6 +41,9 @@ var profileUtils = (function() {
   $star = $('#nakshatra');
   $lagna = $('#lagna');
 
+
+  $jathagamDownload = $('#jathagamDownload');
+
   let populateDOM = function(data) {
 
     $upload_widget_opener.css('background-image', 'url("' + data.profileBasicData[0].profile_picture + '")')
@@ -90,6 +93,7 @@ var profileUtils = (function() {
     if (data.horoscopeData && data.horoscopeData.length > 0) {
 
       $horoscope.val(data.horoscopeData[0].horoscope_soft_copy);
+      $jathagamDownload.attr('href', data.horoscopeData[0].horoscope_soft_copy);
       $tob.val(data.horoscopeData[0].time_of_birth);
       $pob.val(data.horoscopeData[0].place_of_birth);
       $zodiac.val(data.horoscopeData[0].zodiac_id);
