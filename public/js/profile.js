@@ -28,7 +28,6 @@ let profileFunc = (function() {
     $siblingCount = $('#sibCount');
     $motherTongue = $('#motherTongue');
     $nativePalce = $('#nativePlace');
-    $jathagamSoftCopy = $('#horoscope');
     $tob = $('#tob');
     $pob = $('#pob');
     $zodiac = $('#rasi');
@@ -37,12 +36,12 @@ let profileFunc = (function() {
 
   };
 
-  let construct = function() {
-    let data = profileServiceDeclaration.getProfileFullInfo();
+  let construct = async function() {
+    let data = await profileServiceDeclaration.getProfileFullInfo();
 
+    profileUtils.populateDOM(data);
 
-
-      $('.js-example-basic-single').select2();
+    $('.js-example-basic-single').select2();
 
   };
 
@@ -151,7 +150,7 @@ let profileFunc = (function() {
       "profileAdditionalData": {
         "gender": $gender.select2().val(),
         "salary": $salary.select2().val() || "",
-        "complexion": $complexion.val() || "",
+        "complexion": $complexion.select2().val() || "",
         "address": $address.val() || "",
         "physicallyDisabled": $physicallyDisabled.select2().val() || "",
         "languageKnown": $languageKnown.select2().val().toString() || "",
@@ -170,7 +169,7 @@ let profileFunc = (function() {
         "nativePalce": $nativePalce.val()
       },
       "horoscopeData": {
-        "jathagamSoftCopy": $jathagamSoftCopy.val() || "",
+        "jathagamSoftCopy": $horoscope.val() || "",
         "tob": $tob.val() || "",
         "pob": $pob.val() || "",
         "zodiac": $zodiac.select2().val() || "",
