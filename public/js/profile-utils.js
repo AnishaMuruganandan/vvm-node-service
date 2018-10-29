@@ -48,7 +48,7 @@ var profileUtils = (function() {
     $livingPlace.html(data.profileBasicData[0].city_id);
     $profileViewId.html(data.profileBasicData[0].profile_basic_id);
     $age.html(_calculateAge(data.profileBasicData[0].dob));
-    $contactNo.val('9xxx xxxx xx');
+
     $profession.val(data.profileBasicData[0].profession_id);
     $education.val(data.profileBasicData[0].education_id);
     $religion.val(data.profileBasicData[0].religion_id);
@@ -56,25 +56,37 @@ var profileUtils = (function() {
 
 
 
+    if (data.loginData && data.loginData.length > 0) {
+      $contactNo.val(data.loginData[0].phone_no);
+      $email.val(data.loginData[0].email_id);
+    }
+
 
 
     $name.val(data.profileBasicData[0].name);
     $dob.val(data.profileBasicData[0].dob);
-    $email.val('x.........@xxx.aaa');
-    $gender.val(data.profileAdditionalData[0].gender);
+
     $height.val(data.profileBasicData[0].height);
-    $complexion.val(data.profileAdditionalData[0].complexion);
-    $salary.val(data.profileAdditionalData[0].salary_id);
+
     $cityLiving.val(data.profileBasicData[0].city_id);
-    $physicallyDisabled.val(data.profileAdditionalData[0].physical_disablity);
+
+
+    if (data.profileAdditionalData && data.profileAdditionalData.length > 0) {
+
+      $gender.val(data.profileAdditionalData[0].gender);
+      $complexion.val(data.profileAdditionalData[0].complexion);
+      $salary.val(data.profileAdditionalData[0].salary_id);
+      $physicallyDisabled.val(data.profileAdditionalData[0].physical_disablity);
+
+
+      var languageKnown = data.profileAdditionalData[0].language_known.split(',');
+      for (let iter in languageKnown) {
+        $('#languageKnown option[value = "' + languageKnown[iter] + '"]').attr('selected', true);
+      }
 
 
 
-    var languageKnown = data.profileAdditionalData[0].language_known.split(',');
-    for (let iter in languageKnown) {
-      $('#languageKnown option[value = "' + languageKnown[iter] + '"]').attr('selected', true);
     }
-
     if (data.horoscopeData && data.horoscopeData.length > 0) {
 
       $horoscope.val(data.horoscopeData[0].horoscope_soft_copy);
@@ -92,7 +104,7 @@ var profileUtils = (function() {
       $motherName.val(data.familyData[0].mother_name);
       $siblingCount.val(data.familyData[0].no_of_siblings);
 
-          $motherTongue.val(data.familyData[0].mother_tongue_id);
+      $motherTongue.val(data.familyData[0].mother_tongue_id);
       $nativePlace.val(data.familyData[0].native_place);
     }
 
