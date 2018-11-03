@@ -13,6 +13,8 @@ var OTPUtil = (function() {
   var otp;
   let OTPGeneration = function() {
     otp = otpGenerator.generate(6, {
+      alphabets:false,
+      upperCase: false,
       specialChars: false
     });
     return otp;
