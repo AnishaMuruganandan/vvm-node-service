@@ -41,7 +41,8 @@ var loadProfileJS = (function() {
 
     let htmlSnippet = '<div class="profile"><div class="profileDetails rounded"><div class="img-responsive profilePicture img-rounded blurstyle" style="background-image:url(\'' + obj.profile_picture + '\' )!important;"></div>';
     htmlSnippet = htmlSnippet + '<div class="profileInfo"><div class="Name">' + obj.name + ' ( VVM ' + obj.profile_basic_id + ' )<i class="fa fa-check-circle tickMark"></i><span class="Name verifiedText ml-2">Verified</span></div>';
-    htmlSnippet = htmlSnippet + '<div class="OtherInfo"><div class=""><span>' + _calculateAge(obj.dob) + '</span> yrs / <span>' + obj.height + '</span> cm</div><div class="">' + obj.education_id + '</div><div class="">' + obj.profession_id + '</div><div class=""><span>' + obj.religion_id + '</span> - <span>' + obj.caste_id + '</span></div></div><div class="viewButton whitecolor viewProfile" style="cursor:pointer;" onclick="loadProfileJS.showProfileView(' + obj.profile_basic_id + ')">  VIEW PROFILE</div><i class="fa fa-lock lock"></i></div></div><hr /></div>';
+    htmlSnippet = htmlSnippet + '<div class="OtherInfo"><div class=""><span>' + _calculateAge(obj.dob) + '</span> yrs / <span>' + obj.height + '</span> cm</div><div class=""><span>'
+    + obj.education_id + + '</span> / <span>' + + obj.profession_id + '</span></div><div class=""><span>' + obj.city_id  + '</div><div class=""><span>' +obj.religion_id + '</span> - <span>' + obj.caste_id + '</span></div></div><div class="viewButton whitecolor viewProfile" style="cursor:pointer;" onclick="loadProfileJS.showProfileView(' + obj.profile_basic_id + ')">  VIEW PROFILE</div><i class="fa fa-lock lock"></i></div></div><hr /></div>';
     return htmlSnippet;
   };
 
