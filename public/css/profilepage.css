@@ -339,3 +339,6 @@ a {
 .selected {
   color: #ffaa00 !important;
 }
+.bgcolor, body{
+  background-color:#ffe1b0;
+}
