@@ -448,3 +448,6 @@ a {
   color: #417505;
   margin: 0 0 0 10px;
 }
+.bgcolor, body{
+  background-color:#ffe1b0;
+}
