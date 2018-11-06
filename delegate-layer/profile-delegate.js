@@ -74,6 +74,12 @@ var profileDelegate = (function() {
           if (horoscopeInsertion.insertId > 0) {
             familyInsertion = await familyDelegateObj.saveFamilyDetails(profileDetails);
             console.log(familyInsertion.insertId + "familyInsertion");
+
+            if (familyInsertion.insertId > 0) {
+              familyInsertion = await familyDelegateObj.saveFamilyDetails(profileDetails);
+              console.log(familyInsertion.insertId + "familyInsertion");
+            }
+
           }
 
         }

@@ -153,6 +153,35 @@ let profileFunc = (function() {
 
   let saveAllProfileDetailsService = async function() {
 
+let siblingsDetails = [];
+    var siblingTypeArr = [];
+    var siblingAgeArr = [];
+    var siblingMaritalStatusArr = [];
+
+    $("select[name='siblingType']").each(function() {
+        siblingTypeArr.push($(this).val());
+    });
+    $("select[name='siblingAge']").each(function() {
+        siblingAgeArr.push($(this).val());
+    });
+    $("select[name='siblingMaritalStatus']").each(function() {
+        siblingMaritalStatusArr.push($(this).val());
+    });
+
+
+for (let i=0;i<values.length;i++){
+let sibling  =  {
+
+  type :siblingTypeArr[i],
+  age :siblingAgeArr[i],
+  maritalStatus :siblingMaritalStatusArr[i]
+};
+siblingsDetails.push(sibling);
+}
+
+
+console.log(values);
+
     var data = {
       "profileAdditionalData": {
         "gender": $gender.select2().val(),
@@ -187,6 +216,9 @@ let profileFunc = (function() {
         "zodiac": $zodiac.select2().val() || "",
         "star": $star.select2().val() || "",
         "lagna": $lagna.select2().val() || ""
+      },
+      "familyBackgroundData":{
+        "siblingsDetails":siblingsDetails;
       }
     };
     var result = await profileServiceDeclaration.saveAllProfileDetailsService(data);
