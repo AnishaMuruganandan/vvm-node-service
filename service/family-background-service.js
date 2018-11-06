@@ -15,11 +15,11 @@ var familyBackgroundService = (function() {
     return output;
   };
 
-  getFamilyDetailsByProfileId = async function(profileId) {
+  getFamilyBackgroundDetailsByProfileId = async function(profileId) {
     console.log("horoscopeService");
     var output;
     try {
-      output = await familyQueries.getFamilyDetailsByProfileIdQuery(familyQueriesConst.getFamilyDetailsByProfileIdQuery, profileId);
+      output = await familyBackgroundQueries.getFamilyBackgroundDetailsByProfileIdQuery(familyBackgroundQueriesConst.getFamilyBackgroundDetailsByProfileIdQuery, profileId);
       console.log(JSON.stringify(output) + "output");
     } catch (err) {
       output = err;
@@ -31,7 +31,7 @@ var familyBackgroundService = (function() {
 
   return {
     saveFamilyBackgroundDetails: saveFamilyBackgroundDetails,
-    getFamilyDetailsByProfileId: getFamilyDetailsByProfileId
+    getFamilyBackgroundDetailsByProfileId: getFamilyBackgroundDetailsByProfileId
   }
 
 })();

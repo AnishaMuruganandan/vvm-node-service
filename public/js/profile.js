@@ -169,7 +169,7 @@ let siblingsDetails = [];
     });
 
 
-for (let i=0;i<values.length;i++){
+for (let i=0;i<siblingTypeArr.length;i++){
 let sibling  =  {
 
   type :siblingTypeArr[i],
@@ -179,8 +179,6 @@ let sibling  =  {
 siblingsDetails.push(sibling);
 }
 
-
-console.log(values);
 
     var data = {
       "profileAdditionalData": {
@@ -205,7 +203,7 @@ console.log(values);
       "familyData": {
         "fatherName": $fatherName.val() || "",
         "motherName": $motherName.val() || "",
-        "siblingCount": $siblingCount.val() || "",
+        "siblingCount": $siblingCount.select2().val() || "",
         "motherTongue": $motherTongue.select2().val() || "",
         "nativePalce": $nativePalce.val()
       },
@@ -218,7 +216,7 @@ console.log(values);
         "lagna": $lagna.select2().val() || ""
       },
       "familyBackgroundData":{
-        "siblingsDetails":siblingsDetails;
+        "siblingsDetails":siblingsDetails
       }
     };
     var result = await profileServiceDeclaration.saveAllProfileDetailsService(data);

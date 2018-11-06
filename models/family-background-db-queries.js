@@ -20,10 +20,10 @@ var familyBackgroundQueries = {
     });
   },
 
-      getFamilyDetailsByProfileIdQuery: function(getFamilyDetailsByProfileIdQuery, profileId) {
+      getFamilyBackgroundDetailsByProfileIdQuery: function(getFamilyBackgroundDetailsByProfileIdQuery, profileId) {
         return new Promise((resolve, reject) => {
           let dbconnection = dbconnectionConst.connectDatabase();
-          return dbconnection.query(getFamilyDetailsByProfileIdQuery,[profileId], (err, rows) => {
+          return dbconnection.query(getFamilyBackgroundDetailsByProfileIdQuery,[profileId], (err, rows) => {
             dbconnectionConst.disconnectDatabase();
             if (err)
               reject(err);

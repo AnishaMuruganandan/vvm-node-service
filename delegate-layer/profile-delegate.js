@@ -8,6 +8,8 @@ var registrationServiceObj = require('../service/registration-service');
 var horoscopeServiceObj = require('../service/horoscope-service');
 var familyServiceObj = require('../service/family-service');
 var loginServiceObj = require('../service/login-service');
+var familyBackgroundServiceObj = require('../service/family-background-service');
+var familyBackgroundDelegateObj = require('../delegate-layer/family-background-delegate');
 
 var profileDelegate = (function() {
 
@@ -76,8 +78,8 @@ var profileDelegate = (function() {
             console.log(familyInsertion.insertId + "familyInsertion");
 
             if (familyInsertion.insertId > 0) {
-              familyInsertion = await familyDelegateObj.saveFamilyDetails(profileDetails);
-              console.log(familyInsertion.insertId + "familyInsertion");
+              familyBackgroundInsertion = await familyBackgroundDelegateObj.saveFamilyBackgroundDetails(profileDetails);
+              console.log(familyBackgroundInsertion.insertId + "familyBackgroundInsertion");
             }
 
           }
@@ -163,6 +165,13 @@ var profileDelegate = (function() {
               var familyDetails = await familyServiceObj.getFamilyDetailsByProfileId(horoscopeData[0].profile_id);
               console.log(familyDetails + "out delegate");
               profile.familyData = familyDetails;
+
+              if (familyDetails[0] != null) {
+                var familyBackgroundDetails = await familyBackgroundServiceObj.getFamilyBackgroundDetailsByProfileId(familyDetails[0].profile_id);
+                console.log(familyBackgroundDetails + "out delegate");
+                profile.familyBackgroundData = familyBackgroundDetails;
+              }
+
             }
 
           }

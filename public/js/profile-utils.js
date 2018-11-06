@@ -44,6 +44,9 @@ var profileUtils = (function() {
 
   $jathagamDownload = $('#jathagamDownload');
 
+
+  $sibDetails = $('#sibDetails');
+
   let populateDOM = function(data) {
 
     $upload_widget_opener.css('background-image', 'url("' + data.profileBasicData[0].profile_picture + '")')
@@ -113,8 +116,19 @@ var profileUtils = (function() {
     }
 
 
+    if (data.familyBackgroundData && data.familyBackgroundData.length > 0) {
 
+      let innerHTML = '';
+      for (var i = 0; i < familyBackgroundData.length; i++) {
 
+        let htmlSnippet = '<div class="row mb-5"><div class="col-md-4"><div class="profileInput"><select name="siblingType" type="number" required class="js-example-basic-single select2me">' + data.familyBackgroundData[i].relative_type_id + '</select><label for="siblingType" class="profileLabel select2ProfileInputBox">Sibling Type</label></div></div>';
+        htmlSnippet = htmlSnippet + '<div class="col-md-4"><div class="profileInput"><select name="siblingAge" type="number" required class="js-example-basic-single select2me">' + data.familyBackgroundData[i].age + '</select><label for="siblingAge" class="profileLabel select2ProfileInputBox">Sibling Age</label></div></div>';
+        htmlSnippet = htmlSnippet + '<div class="col-md-4"><div class="profileInput"><select name="siblingMaritalStatus" type="number" required class="js-example-basic-single select2me">' + data.familyBackgroundData[i].marital_status + '</select><label for="siblingMaritalStatus" class="profileLabel select2ProfileInputBox">Sibling Marital Status</label></div></div></div>';
+        innerHTML = innerHTML + htmlSnippet;
+
+      }
+      $sibDetails.html(innerHTML);
+    }
 
   }
 
