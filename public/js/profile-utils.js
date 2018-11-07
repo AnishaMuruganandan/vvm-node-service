@@ -106,28 +106,55 @@ var profileUtils = (function() {
 
 
     if (data.familyData && data.familyData.length > 0) {
-      $address.val(data.profileAdditionalData[0].address)
-      $fatherName.val(data.familyData[0].father_name);
-      $motherName.val(data.familyData[0].mother_name);
-      $siblingCount.val(data.familyData[0].no_of_siblings);
+      let index = data.familyData.length - 1;
 
-      $motherTongue.val(data.familyData[0].mother_tongue_id);
-      $nativePlace.val(data.familyData[0].native_place);
+      $address.val(data.profileAdditionalData[0].address)
+      $fatherName.val(data.familyData[index].father_name);
+      $motherName.val(data.familyData[index].mother_name);
+      $siblingCount.val(data.familyData[index].no_of_siblings);
+
+      $motherTongue.val(data.familyData[index].mother_tongue_id);
+      $nativePlace.val(data.familyData[index].native_place);
     }
 
 
     if (data.familyBackgroundData && data.familyBackgroundData.length > 0) {
 
       let innerHTML = '';
-      for (var i = 0; i < familyBackgroundData.length; i++) {
+      for (var i = 0; i < data.familyBackgroundData.length; i++) {
 
-        let htmlSnippet = '<div class="row mb-5"><div class="col-md-4"><div class="profileInput"><select name="siblingType" type="number" required class="js-example-basic-single select2me">' + data.familyBackgroundData[i].relative_type_id + '</select><label for="siblingType" class="profileLabel select2ProfileInputBox">Sibling Type</label></div></div>';
-        htmlSnippet = htmlSnippet + '<div class="col-md-4"><div class="profileInput"><select name="siblingAge" type="number" required class="js-example-basic-single select2me">' + data.familyBackgroundData[i].age + '</select><label for="siblingAge" class="profileLabel select2ProfileInputBox">Sibling Age</label></div></div>';
-        htmlSnippet = htmlSnippet + '<div class="col-md-4"><div class="profileInput"><select name="siblingMaritalStatus" type="number" required class="js-example-basic-single select2me">' + data.familyBackgroundData[i].marital_status + '</select><label for="siblingMaritalStatus" class="profileLabel select2ProfileInputBox">Sibling Marital Status</label></div></div></div>';
+        let htmlSnippet = '<div class="row mb-5"><div class="col-md-4"><div class="profileInput"><select name="siblingType" type="number" required class="js-example-basic-single select2me" disabled="disabled"><option value="" selected="selected" disabled="disabled">-- select one --</option><option value="Sister">Sister</option><option value="Brother">Brother</option></select><label for="siblingType" class="profileLabel select2ProfileInputBox">Sibling Type</label></div></div>';
+        htmlSnippet = htmlSnippet + '<div class="col-md-4"><div class="profileInput"><select name="siblingAge" type="number" required class="js-example-basic-single select2me" disabled="disabled"><option value="" selected="selected" disabled="disabled">-- select one --</option><option value="Elder">Elder</option><option value="Younger">Younger</option></select><label for="siblingAge" class="profileLabel select2ProfileInputBox">Sibling Age</label></div></div>';
+        htmlSnippet = htmlSnippet + '<div class="col-md-4"><div class="profileInput"><select name="siblingMaritalStatus" type="number" required class="js-example-basic-single select2me" disabled="disabled"><option value="" selected="selected" disabled="disabled">-- select one --</option><option value="Married">Married</option><option value="Unmarried">Unmarried</option></select><label for="siblingMaritalStatus" class="profileLabel select2ProfileInputBox">Sibling Marital Status</label></div></div></div>';
         innerHTML = innerHTML + htmlSnippet;
 
       }
+
       $sibDetails.html(innerHTML);
+
+
+      relation = data.familyBackgroundData;
+      let j = 0;
+
+      $("select[name='siblingType']").each(function() {
+        j = 0;
+        $(this).val(relation[j].relative_type_id);
+        j++;
+      });
+      $("select[name='siblingAge']").each(function() {
+        j = 0;
+        $(this).val(relation[j].age);
+        j++;
+      });
+      $("select[name='siblingMaritalStatus']").each(function() {
+        j = 0;
+        $(this).val(relation[j].marital_status);
+        j++;
+      });
+
+
+
+
     }
 
   }
