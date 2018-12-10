@@ -39,6 +39,8 @@ let profileFunc = (function() {
     $height = $('#height');
     $religion = $('#religion');
     $caste = $('#caste');
+    $aboutMe = $('#aboutMe');
+    $expectations = $('#expectations');
 
   };
 
@@ -188,6 +190,8 @@ siblingsDetails.push(sibling);
         "address": $address.val() || "",
         "physicallyDisabled": $physicallyDisabled.select2().val() || "",
         "languageKnown": $languageKnown.select2().val().toString() || "",
+        "aboutMe" : $aboutMe.val() || "",
+        "expectations" : $expectations.val() || "",
       },
       "profileBasicData": {
         "profileBasicId": securityJS.getCookie('PROFILE_BASIC_ID') || 0,
