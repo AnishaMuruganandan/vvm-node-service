@@ -18,6 +18,8 @@ var profileUtils = (function() {
   $height = $('#height');
   $complexion = $('#complexion');
   $salary = $('#salary');
+  $aboutMe = $('#aboutMe');
+  $expectations = $('#expectations');
 
   $cityLiving = $('#cityLiving');
   $nativePlace = $('#nativePlace');
@@ -83,6 +85,8 @@ var profileUtils = (function() {
       $complexion.val(data.profileAdditionalData[0].complexion);
       $salary.val(data.profileAdditionalData[0].salary_id);
       $physicallyDisabled.val(data.profileAdditionalData[0].physical_disablity);
+      $aboutMe.val(data.profileAdditionalData[0].about_me);
+      $expectations.val(data.profileAdditionalData[0].expectations);
 
 
       var languageKnown = data.profileAdditionalData[0].language_known.split(',');
