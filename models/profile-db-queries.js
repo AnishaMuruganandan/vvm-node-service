@@ -34,7 +34,11 @@ var profileQueries = {
         saveProfileDetailsObj.complexion,
         saveProfileDetailsObj.address,
         saveProfileDetailsObj.physicallyDisabled,
-        saveProfileDetailsObj.languageKnown
+        saveProfileDetailsObj.languageKnown,
+        saveProfileDetailsObj.aboutMe,
+        saveProfileDetailsObj.expectations,
+        saveProfileDetailsObj.dummy
+
       ], (err, rows) => {
         dbconnectionConst.disconnectDatabase();
         if (err)

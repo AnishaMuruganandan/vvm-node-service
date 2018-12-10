@@ -59,7 +59,10 @@ var profileDelegate = (function() {
         profileDetails.profileAdditionalData.complexion,
         profileDetails.profileAdditionalData.address,
         profileDetails.profileAdditionalData.physicallyDisabled,
-        profileDetails.profileAdditionalData.languageKnown);
+        profileDetails.profileAdditionalData.languageKnown,
+        profileDetails.profileAdditionalData.aboutMe,
+        profileDetails.profileAdditionalData.expectations,
+        profileDetails.profileAdditionalData.dummy);
       console.log("del try");
       profileInsertion = await profileServiceObj.saveProfileDetails(saveProfileDetailsObj);
       console.log(profileInsertion.insertId + "profileInsertion");

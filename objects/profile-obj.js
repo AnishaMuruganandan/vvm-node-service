@@ -36,13 +36,16 @@ var profileObj = {
   //   this.languageKnown = languageKnown || '';
   // },
 
-  saveProfileDetailsObj: function(gender, salary, complexion, address, physicallyDisabled, languageKnown) {
+  saveProfileDetailsObj: function(gender, salary, complexion, address, physicallyDisabled, languageKnown,aboutMe,expectations,dummy) {
     this.gender = gender || '';
     this.salary = salary || '';
     this.complexion = complexion || '';
     this.address = address || '';
     this.physicallyDisabled = physicallyDisabled || '';
     this.languageKnown = languageKnown || '';
+    this.aboutMe = aboutMe || '';
+    this.expectations = expectations || '';
+    this.dummy = dummy || '';
   },
 
   saveProfilePicObj: function(picURL, profileBasicId) {
