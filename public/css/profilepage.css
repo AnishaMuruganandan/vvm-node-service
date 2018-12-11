@@ -339,6 +339,12 @@ a {
 .selected {
   color: #ffaa00 !important;
 }
-.bgcolor, body{
-  background-color:#ffe1b0;
+
+.bgcolor, body {
+  background-color: #ffe1b0;
+}
+
+#horoscope {
+  cursor: pointer;
+  text-align: center !important;
 }

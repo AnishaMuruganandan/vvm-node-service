@@ -11,6 +11,7 @@ let profileFunc = (function() {
     $cancelbtn = $('#cancelbtn');
     $clockInput = $('#clock-input');
     $fieldbox = $('.profileTabContent input ,.profileTabContent select, .diableChanges');
+    $horoscope = $('#horoscope');
     $uploadWidgetOpener = $('#upload_widget_opener');
     $gender = $('#gender');
     $salary = $('#salary');
@@ -19,7 +20,6 @@ let profileFunc = (function() {
     $physicallyDisabled = $('#physicallyDisabled');
     $languageKnown = $('#languageKnown');
     $imageURL = $('#image-url');
-    $horoscope = $('#horoscope');
     $cityLiving = $('#cityLiving');
     $profession = $('#profession');
     $education = $('#education');
@@ -55,30 +55,6 @@ let profileFunc = (function() {
 
   let complete = function() {
 
-    $editbtn.click(function(e) {
-      $fieldbox.attr('disabled', false);
-      $emailDisable.attr('disabled', true);
-      $editbtn.css("display", "none");
-      $savebtn.css("display", "block");
-      $cancelbtn.css("display", "block");
-    });
-
-    $savebtn.click(function(e) {
-      saveAllProfileDetailsService();
-      $fieldbox.attr('disabled', true);
-      $editbtn.css("display", "block");
-      $savebtn.css("display", "none");
-      $cancelbtn.css("display", "none");
-    });
-
-    $cancelbtn.click(function(e) {
-      location.reload();
-      $fieldbox.attr('disabled', true);
-      $editbtn.css("display", "block");
-      $savebtn.css("display", "none");
-      $cancelbtn.css("display", "none");
-    });
-
     $horoscope.click(function(e) {
       cloudinary.openUploadWidget({
           cloud_name: 'the-corp-india',
@@ -89,6 +65,33 @@ let profileFunc = (function() {
           $horoscope.val(result[0].secure_url);
         });
 
+    });
+
+    $editbtn.click(function(e) {
+      $fieldbox.attr('disabled', false);
+      $emailDisable.attr('disabled', true);
+      $horoscope.css("pointer-events", "");
+      $editbtn.css("display", "none");
+      $savebtn.css("display", "block");
+      $cancelbtn.css("display", "block");
+    });
+
+    $savebtn.click(function(e) {
+      saveAllProfileDetailsService();
+      $fieldbox.attr('disabled', true);
+      $horoscope.css("pointer-events", "none");
+      $editbtn.css("display", "block");
+      $savebtn.css("display", "none");
+      $cancelbtn.css("display", "none");
+    });
+
+    $cancelbtn.click(function(e) {
+      location.reload();
+      $fieldbox.attr('disabled', true);
+      $horoscope.css("pointer-events", "none");
+      $editbtn.css("display", "block");
+      $savebtn.css("display", "none");
+      $cancelbtn.css("display", "none");
     });
 
 
@@ -140,6 +143,7 @@ let profileFunc = (function() {
       autoclose: true
     });
     $fieldbox.attr('disabled', true);
+    $horoscope.css("pointer-events", "none");
     $('.date').datetimepicker({
       format: 'DD-MM-YYYY'
     });
@@ -155,31 +159,31 @@ let profileFunc = (function() {
 
   let saveAllProfileDetailsService = async function() {
 
-let siblingsDetails = [];
+    let siblingsDetails = [];
     var siblingTypeArr = [];
     var siblingAgeArr = [];
     var siblingMaritalStatusArr = [];
 
     $("select[name='siblingType']").each(function() {
-        siblingTypeArr.push($(this).val());
+      siblingTypeArr.push($(this).val());
     });
     $("select[name='siblingAge']").each(function() {
-        siblingAgeArr.push($(this).val());
+      siblingAgeArr.push($(this).val());
     });
     $("select[name='siblingMaritalStatus']").each(function() {
-        siblingMaritalStatusArr.push($(this).val());
+      siblingMaritalStatusArr.push($(this).val());
     });
 
 
-for (let i=0;i<siblingTypeArr.length;i++){
-let sibling  =  {
+    for (let i = 0; i < siblingTypeArr.length; i++) {
+      let sibling = {
 
-  type :siblingTypeArr[i],
-  age :siblingAgeArr[i],
-  maritalStatus :siblingMaritalStatusArr[i]
-};
-siblingsDetails.push(sibling);
-}
+        type: siblingTypeArr[i],
+        age: siblingAgeArr[i],
+        maritalStatus: siblingMaritalStatusArr[i]
+      };
+      siblingsDetails.push(sibling);
+    }
 
 
     var data = {
@@ -190,8 +194,8 @@ siblingsDetails.push(sibling);
         "address": $address.val() || "",
         "physicallyDisabled": $physicallyDisabled.select2().val() || "",
         "languageKnown": $languageKnown.select2().val().toString() || "",
-        "aboutMe" : $aboutMe.val() || "",
-        "expectations" : $expectations.val() || "",
+        "aboutMe": $aboutMe.val() || "",
+        "expectations": $expectations.val() || "",
       },
       "profileBasicData": {
         "profileBasicId": securityJS.getCookie('PROFILE_BASIC_ID') || 0,
@@ -219,8 +223,8 @@ siblingsDetails.push(sibling);
         "star": $star.select2().val() || "",
         "lagna": $lagna.select2().val() || ""
       },
-      "familyBackgroundData":{
-        "siblingsDetails":siblingsDetails
+      "familyBackgroundData": {
+        "siblingsDetails": siblingsDetails
       }
     };
     var result = await profileServiceDeclaration.saveAllProfileDetailsService(data);
