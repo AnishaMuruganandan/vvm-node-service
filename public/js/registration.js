@@ -40,9 +40,11 @@ let registrationFunc = (function() {
      * Registraion Form submit listener
      */
     $generateandSendOTP.click(function(e) {
+      if (validationFunction.userName() && validationFunction.userEmailId() && validationFunction.userPhoneNo()) {
       generateandSendOTPService();
       $OtpGeneration.hide();
       $OtpVerification.show();
+    }
     });
 
     $resendOTP.click(function(e) {

@@ -274,8 +274,8 @@
                         selected="selected"
                         disabled="disabled">-- select one --</option>
                 <option value="Hindu">Hindu</option>
-                <option value="Christian">Christian</option>
-                <option value="Muslim">Muslim</option>
+                <!-- <option value="Christian">Christian</option>
+                <option value="Muslim">Muslim</option> -->
               </select>
             </div>
 
@@ -405,7 +405,7 @@
                               disabled="disabled">-- select one --</option>
                       <option value="Male">Male</option>
                       <option value="Female">Female</option>
-                      <option value="Others">Others</option>
+                      <!-- <option value="Others">Others</option> -->
 
                     </select>
                     <label for="gender"
@@ -691,6 +691,27 @@
 
 
               <div class="row mb-5">
+
+                <div class="col-md-4">
+                  <div class="profileInput">
+
+                    <select class="js-example-basic-single select2me"
+                            name="paagam"
+                            id="paagam">
+                      <option value=""
+                              selected="selected"
+                              disabled="disabled">-- select one --</option>
+                      <option value="Maysha">1st Paagam</option>
+                      <option value="Rishaba">2nd Paagam</option>
+                      <option value="Mithuna">3rd Paagam</option>
+                      <option value="Kadaga">4th Paagam</option>
+                    </select>
+                    <label for="paagam"
+                           class="profileLabel select2ProfileInputBox">Paagam</label>
+                  </div>
+                </div>
+
+
                 <div class="col-md-4">
                   <div class="profileInput"
                        ng-app="myApp"
@@ -716,6 +737,10 @@
                            class="profileLabel">Time Of Birth</label>
                   </div>
                 </div>
+
+
+              </div>
+              <div class="row mb-5">
                 <div class="col-md-4">
                   <div class="profileInput">
                     <div id="horoscope"
@@ -735,10 +760,7 @@
                     </a>
                   </div>
                 </div>
-
               </div>
-
-
             </div>
 
             <div> FAMILY DETAILS
@@ -887,14 +909,30 @@
                   </div>
                 </div>
               </div>
-
-
-
-
-
             </div>
             <!-- End of 3fields -->
+            <!-- save and continue button -->
+            <div class="row mb-5">
 
+              <div class="col-md-4">
+              </div>
+
+              <div class="col-md-4">
+                <div class="profileInput">
+                  <div id="save"
+                       name="save"
+                       type="text"
+                       required
+                       class="horoscopeStyle profileInputBox inputbox "> Save and Continue
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+              </div>
+
+            </div>
+            <!-- end of save and continue button -->
 
           </div>
         </div>

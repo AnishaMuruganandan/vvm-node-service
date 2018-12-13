@@ -344,7 +344,8 @@ a {
   background-color: #ffe1b0;
 }
 
-#horoscope {
+.horoscopeStyle {
   cursor: pointer;
   text-align: center !important;
+  background: linear-gradient(to right, #F37335, #FDC830);
 }
