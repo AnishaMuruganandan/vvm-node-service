@@ -77,12 +77,14 @@ let profileFunc = (function() {
     });
 
     $savebtn.click(function(e) {
+      if (validationFunction.userName() && validationFunction.userEmailId() && validationFunction.userPhoneNo()) {
       saveAllProfileDetailsService();
       $fieldbox.attr('disabled', true);
       $horoscope.css("pointer-events", "none");
       $editbtn.css("display", "block");
       $savebtn.css("display", "none");
       $cancelbtn.css("display", "none");
+    }
     });
 
     $cancelbtn.click(function(e) {
