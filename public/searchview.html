@@ -653,8 +653,28 @@
               </div>
               <!-- second row -->
 
-
               <div class="row mb-5">
+
+                <div class="col-md-4">
+                  <div class="profileInput">
+
+                    <select class="js-example-basic-single select2me"
+                            name="paagam"
+                            id="paagam">
+                      <option value=""
+                              selected="selected"
+                              disabled="disabled">-- select one --</option>
+                      <option value="1st Paagam">1st Paagam</option>
+                      <option value="2nd Paagam">2nd Paagam</option>
+                      <option value="3rd Paagam">3rd Paagam</option>
+                      <option value="4th Paagam">4th Paagam</option>
+                    </select>
+                    <label for="paagam"
+                           class="profileLabel select2ProfileInputBox">Paagam</label>
+                  </div>
+                </div>
+
+
                 <div class="col-md-4">
                   <div class="profileInput"
                        ng-app="myApp"
@@ -680,19 +700,21 @@
                            class="profileLabel">Time Of Birth</label>
                   </div>
                 </div>
+
+
+              </div>
+              <div class="row mb-5">
                 <div class="col-md-4">
-                  <div class="profileInput d-none">
-                    <input id="horoscope"
-                           name="horoscope"
-                           type="text"
-                           required
-                           class="profileInputBox inputbox ">
-                    <label for="horoscope"
-                           class="profileLabel">Upload Horoscope</label>
+                  <div class="profileInputt d-none">
+                    <div id="horoscope"
+                         name="horoscope"
+                         type="text"
+                         required
+                         class="horoscopeStyle profileInputBox inputbox ">Upload Horoscope
 
+                    </div>
                   </div>
-
-                  <div class=" profileInput mt-3">
+                  <div class="profileInput mt-3">
                     <a target="_blank"
                        id="jathagamDownload">
                       Download
@@ -816,6 +838,28 @@
 
             </div>
             <!-- End of 3fields -->
+            <!-- back button -->
+            <div class="row mb-5">
+
+              <div class="col-md-4">
+              </div>
+
+              <div class="col-md-4">
+                <div class="profileInput">
+                  <div id="backbtn"
+                       name="back"
+                       type="text"
+                       required
+                       class="horoscopeStyle profileInputBox inputbox "> Back
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+              </div>
+
+            </div>
+            <!-- back button -->
 
           </div>
         </div>

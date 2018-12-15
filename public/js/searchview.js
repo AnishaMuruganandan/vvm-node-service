@@ -2,7 +2,7 @@ var searchViewFunc = (function() {
 
   let init = function() {
 
-
+    $backbtn = $('#backbtn');
   };
 
   let construct = async function() {
@@ -17,8 +17,9 @@ var searchViewFunc = (function() {
 
   let complete = function() {
 
-
-
+    $backbtn.click(function(e) {
+      window.location.href = "/home.html";
+    });
 
   };
 

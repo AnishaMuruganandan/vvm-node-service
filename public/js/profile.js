@@ -41,6 +41,7 @@ let profileFunc = (function() {
     $caste = $('#caste');
     $aboutMe = $('#aboutMe');
     $expectations = $('#expectations');
+    $paagam = $('#paagam');
 
   };
 
@@ -85,7 +86,8 @@ let profileFunc = (function() {
         validationFunction.userRasi() && validationFunction.userNakshatra() && validationFunction.userLagna() &&
         validationFunction.userPaagam() && validationFunction.userPob() && validationFunction.userTob() &&
         validationFunction.userFName() && validationFunction.userMName() && validationFunction.userSibCount() &&
-        validationFunction.userAddress() && validationFunction.userAboutMe() && validationFunction.userExpectations()) {
+        validationFunction.userAddress() && validationFunction.userAboutMe() && validationFunction.userExpectations() &&
+        validationFunction.userSiblingDetails()) {
         saveAllProfileDetailsService();
         $fieldbox.attr('disabled', true);
         $horoscope.css("pointer-events", "none");
@@ -193,6 +195,7 @@ let profileFunc = (function() {
         maritalStatus: siblingMaritalStatusArr[i]
       };
       siblingsDetails.push(sibling);
+      // validationFunction.userSiblingDetails(siblingsDetails);
     }
 
 
@@ -231,7 +234,8 @@ let profileFunc = (function() {
         "pob": $pob.val() || "",
         "zodiac": $zodiac.select2().val() || "",
         "star": $star.select2().val() || "",
-        "lagna": $lagna.select2().val() || ""
+        "lagna": $lagna.select2().val() || "",
+        "paagam": $paagam.select2().val() || ""
       },
       "familyBackgroundData": {
         "siblingsDetails": siblingsDetails

@@ -14,7 +14,8 @@ var horoscopeDelegate = (function() {
         profileDetails.horoscopeData.pob,
         profileDetails.horoscopeData.zodiac,
         profileDetails.horoscopeData.star,
-        profileDetails.horoscopeData.lagna);
+        profileDetails.horoscopeData.lagna,
+        profileDetails.horoscopeData.paagam);
       console.log("del try");
       var horoscopeInsertion = await horoscopeServiceObj.saveHoroscopeDetails(saveHoroscopeDetailsObj);
       console.log(horoscopeInsertion.insertId + "horoscopeInsertion");

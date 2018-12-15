@@ -30,6 +30,8 @@ var validationFunction = (function() {
   $aboutMe = $('#aboutMe');
   $expectations = $('#expectations');
 
+
+
   $name.focusout(function() {
     userName();
   });
@@ -62,7 +64,7 @@ var validationFunction = (function() {
     userDob();
   });
 
-  $gender.on('select2:select', function(e) {
+  $gender.focusout(function() {
     userGender();
   });
 
@@ -70,49 +72,49 @@ var validationFunction = (function() {
     userHeight();
   });
 
-  $complexion.focusout(function() {
-    userComplexion();
-  });
+  // $complexion.focusout(function() {
+  //   userComplexion();
+  // });
 
-  $salary.focusout(function() {
-    userSalary();
-  });
-
-  $cityLiving.focusout(function() {
-    userCityLiving();
-  });
+  // $salary.focusout(function() {
+  //   userSalary();
+  // });
+  //
+  // $cityLiving.focusout(function() {
+  //   userCityLiving();
+  // });
 
   $nativePlace.focusout(function() {
     userNativePlace();
   });
 
-  $physicallyDisabled.focusout(function() {
-    userPhysicallyDisabled();
-  });
-
-  $motherTongue.focusout(function() {
-    userMotherTongue();
-  });
-
-  $languageKnown.focusout(function() {
-    userLanguageKnown();
-  });
-
-  $rasi.focusout(function() {
-    userRasi();
-  });
-
-  $nakshatra.focusout(function() {
-    userNakshatra();
-  });
-
-  $lagna.focusout(function() {
-    userLagna();
-  });
-
-  $paagam.focusout(function() {
-    userPaagam();
-  });
+  // $physicallyDisabled.focusout(function() {
+  //   userPhysicallyDisabled();
+  // });
+  //
+  // $motherTongue.focusout(function() {
+  //   userMotherTongue();
+  // });
+  //
+  // $languageKnown.focusout(function() {
+  //   userLanguageKnown();
+  // });
+  //
+  // $rasi.focusout(function() {
+  //   userRasi();
+  // });
+  //
+  // $nakshatra.focusout(function() {
+  //   userNakshatra();
+  // });
+  //
+  // $lagna.focusout(function() {
+  //   userLagna();
+  // });
+  //
+  // $paagam.focusout(function() {
+  //   userPaagam();
+  // });
 
   $pob.focusout(function() {
     userPob();
@@ -130,9 +132,9 @@ var validationFunction = (function() {
     userMName();
   });
 
-  $sibCount.focusout(function() {
-    userSibCount();
-  });
+  // $sibCount.focusout(function() {
+  //   userSibCount();
+  // });
 
   $address.focusout(function() {
     userAddress();
@@ -237,9 +239,11 @@ var validationFunction = (function() {
 
   function userGender() {
     console.log($gender.select2().val() + "$gender");
+
+
     var userGenderValidationVal = regexCheckJS.userGenderValidation($gender.select2().val());
     if (userGenderValidationVal == false) {
-      $gender.focus();
+
       return false;
     } else {
       return true;
@@ -426,7 +430,6 @@ var validationFunction = (function() {
     console.log($sibCount.select2().val() + "$sibCount");
     var userSibCountValidationVal = regexCheckJS.userSibCountValidation($sibCount.select2().val());
     if (userSibCountValidationVal == false) {
-      $sibCount.focus();
       return false;
     } else {
       return true;
@@ -467,6 +470,42 @@ var validationFunction = (function() {
     }
   }
 
+  function userSiblingDetails() {
+    let siblingsDetails = [];
+    var siblingTypeArr = [];
+    var siblingAgeArr = [];
+    var siblingMaritalStatusArr = [];
+
+    $("select[name='siblingType']").each(function() {
+      siblingTypeArr.push($(this).val());
+    });
+    $("select[name='siblingAge']").each(function() {
+      siblingAgeArr.push($(this).val());
+    });
+    $("select[name='siblingMaritalStatus']").each(function() {
+      siblingMaritalStatusArr.push($(this).val());
+    });
+
+
+    for (let i = 0; i < siblingTypeArr.length; i++) {
+      let sibling = {
+
+        type: siblingTypeArr[i],
+        age: siblingAgeArr[i],
+        maritalStatus: siblingMaritalStatusArr[i]
+      };
+      siblingsDetails.push(sibling);
+    }
+
+    console.log(siblingsDetails + "siblingsDetails");
+    var userSiblingDetailsValidationVal = regexCheckJS.userSiblingDetailsValidation(siblingsDetails);
+    if (userSiblingDetailsValidationVal == false) {
+
+      return false;
+    } else {
+      return true;
+    }
+  }
 
   return {
     userName: userName,
@@ -497,7 +536,8 @@ var validationFunction = (function() {
     userSibCount: userSibCount,
     userAddress: userAddress,
     userAboutMe: userAboutMe,
-    userExpectations: userExpectations
+    userExpectations: userExpectations,
+    userSiblingDetails: userSiblingDetails
   }
 
 })();

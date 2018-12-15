@@ -42,6 +42,7 @@ var profileUtils = (function() {
   $zodiac = $('#rasi');
   $star = $('#nakshatra');
   $lagna = $('#lagna');
+  $paagam = $('#paagam');
 
 
   $jathagamDownload = $('#jathagamDownload');
@@ -106,6 +107,7 @@ var profileUtils = (function() {
       $zodiac.val(data.horoscopeData[0].zodiac_id);
       $star.val(data.horoscopeData[0].star_id);
       $lagna.val(data.horoscopeData[0].lagna_id);
+      $paagam.val(data.horoscopeData[0].paagam);
     }
 
 

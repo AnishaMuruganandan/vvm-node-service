@@ -13,6 +13,7 @@ var horoscopeQueries = {
         saveHoroscopeDetailsObj.zodiac,
         saveHoroscopeDetailsObj.star,
         saveHoroscopeDetailsObj.lagna,
+        saveHoroscopeDetailsObj.paagam,
         saveHoroscopeDetailsObj.jathagamSoftCopy
       ], (err, rows) => {
         dbconnectionConst.disconnectDatabase();

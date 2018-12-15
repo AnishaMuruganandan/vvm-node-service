@@ -1,6 +1,6 @@
 var horoscopeObj = {
 
-  saveHoroscopeDetailsObj: function(profileId, jathagamSoftCopy, tob, pob, zodiac, star, lagna) {
+  saveHoroscopeDetailsObj: function(profileId, jathagamSoftCopy, tob, pob, zodiac, star, lagna, paagam) {
     this.profileId = profileId || '';
     this.jathagamSoftCopy = jathagamSoftCopy || '';
     this.tob = tob || '';
@@ -8,6 +8,7 @@ var horoscopeObj = {
     this.zodiac = zodiac || '';
     this.star = star || '';
     this.lagna = lagna || '';
+    this.paagam = paagam || '';
   }
 
 }
