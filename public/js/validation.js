@@ -62,7 +62,7 @@ var validationFunction = (function() {
     userDob();
   });
 
-  $gender.focusout(function() {
+  $gender.on('select2:select', function(e) {
     userGender();
   });
 
@@ -202,7 +202,7 @@ var validationFunction = (function() {
     }
   }
 
-  function useReligion() {
+  function userReligion() {
     // console.log($religion.select2().val() + "$religion");
     var useReligionValidationVal = regexCheckJS.useReligionValidation($religion.select2().val());
     if (useReligionValidationVal == false) {
@@ -236,7 +236,7 @@ var validationFunction = (function() {
   }
 
   function userGender() {
-    // console.log($gender.select2().val() + "$gender");
+    console.log($gender.select2().val() + "$gender");
     var userGenderValidationVal = regexCheckJS.userGenderValidation($gender.select2().val());
     if (userGenderValidationVal == false) {
       $gender.focus();
@@ -423,7 +423,7 @@ var validationFunction = (function() {
   }
 
   function userSibCount() {
-    // console.log($sibCount.select2().val() + "$sibCount");
+    console.log($sibCount.select2().val() + "$sibCount");
     var userSibCountValidationVal = regexCheckJS.userSibCountValidation($sibCount.select2().val());
     if (userSibCountValidationVal == false) {
       $sibCount.focus();
@@ -446,7 +446,7 @@ var validationFunction = (function() {
 
 
   function userAboutMe() {
-    // console.log($aboutMe.val() + "$aboutMe");
+    console.log($aboutMe.val() + "$aboutMe");
     var userAboutMeValidationVal = regexCheckJS.userAboutMeValidation($aboutMe.val());
     if (userAboutMeValidationVal == false) {
       $aboutMe.focus();
@@ -471,7 +471,33 @@ var validationFunction = (function() {
   return {
     userName: userName,
     userEmailId: userEmailId,
-    userPhoneNo: userPhoneNo
+    userPhoneNo: userPhoneNo,
+    userProfession: userProfession,
+    userEducation: userEducation,
+    userReligion: userReligion,
+    userCaste: userCaste,
+    userDob: userDob,
+    userGender: userGender,
+    userHeight: userHeight,
+    userComplexion: userComplexion,
+    userSalary: userSalary,
+    userCityLiving: userCityLiving,
+    userNativePlace: userNativePlace,
+    userPhysicallyDisabled: userPhysicallyDisabled,
+    userMotherTongue: userMotherTongue,
+    userLanguageKnown: userLanguageKnown,
+    userRasi: userRasi,
+    userNakshatra: userNakshatra,
+    userLagna: userLagna,
+    userPaagam: userPaagam,
+    userPob: userPob,
+    userTob: userTob,
+    userFName: userFName,
+    userMName: userMName,
+    userSibCount: userSibCount,
+    userAddress: userAddress,
+    userAboutMe: userAboutMe,
+    userExpectations: userExpectations
   }
 
 })();

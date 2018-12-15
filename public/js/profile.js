@@ -77,14 +77,22 @@ let profileFunc = (function() {
     });
 
     $savebtn.click(function(e) {
-      if (validationFunction.userName() && validationFunction.userEmailId() && validationFunction.userPhoneNo()) {
-      saveAllProfileDetailsService();
-      $fieldbox.attr('disabled', true);
-      $horoscope.css("pointer-events", "none");
-      $editbtn.css("display", "block");
-      $savebtn.css("display", "none");
-      $cancelbtn.css("display", "none");
-    }
+      if (validationFunction.userName() && validationFunction.userProfession() && validationFunction.userEducation() &&
+        validationFunction.userReligion() && validationFunction.userCaste() && validationFunction.userDob() &&
+        validationFunction.userGender() && validationFunction.userHeight() && validationFunction.userComplexion() &&
+        validationFunction.userSalary() && validationFunction.userCityLiving() && validationFunction.userNativePlace() &&
+        validationFunction.userPhysicallyDisabled() && validationFunction.userMotherTongue() && validationFunction.userLanguageKnown() &&
+        validationFunction.userRasi() && validationFunction.userNakshatra() && validationFunction.userLagna() &&
+        validationFunction.userPaagam() && validationFunction.userPob() && validationFunction.userTob() &&
+        validationFunction.userFName() && validationFunction.userMName() && validationFunction.userSibCount() &&
+        validationFunction.userAddress() && validationFunction.userAboutMe() && validationFunction.userExpectations()) {
+        saveAllProfileDetailsService();
+        $fieldbox.attr('disabled', true);
+        $horoscope.css("pointer-events", "none");
+        $editbtn.css("display", "block");
+        $savebtn.css("display", "none");
+        $cancelbtn.css("display", "none");
+      }
     });
 
     $cancelbtn.click(function(e) {
@@ -231,7 +239,8 @@ let profileFunc = (function() {
     };
     var result = await profileServiceDeclaration.saveAllProfileDetailsService(data);
     securityJS.addCookie("PROFILE_ID", result.insertId);
-    location.reload();
+    // location.reload();
+    window.location.href = "/home.html";
     console.log(result + "fearesult");
   };
 

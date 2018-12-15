@@ -69,6 +69,7 @@ var profileServiceDeclaration = {
                   var session = JSON.stringify(data);
                   console.log(session + "fe data");
                   resolve(data);
+                  
                 }
 
               });

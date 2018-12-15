@@ -324,9 +324,9 @@
                    href="#"
                    id="editbtn">EDIT <i class="fa fa-pencil-square-o"
                      aria-hidden="true"></i></a></li>
-              <li class="tabList optionbtn"><a class="tabTextStyle"
+              <!-- <li class="tabList optionbtn"><a class="tabTextStyle"
                    href="#"
-                   id="savebtn">SAVE</a></li>
+                   id="savebtn">SAVE</a></li> -->
               <li class="tabList optionbtn"><a class="tabTextStyle"
                    href="#"
                    id="cancelbtn">CANCEL</a></li>
@@ -550,9 +550,9 @@
                             name="languageKnown"
                             multiple="multiple"
                             id="languageKnown">
-                            <option value=""
-                                    selected="selected"
-                                    disabled="disabled">-- select one --</option>
+                      <option value=""
+                              selected="selected"
+                              disabled="disabled">-- select one --</option>
                       <option value="Tamil">Tamil</option>
                       <option value="Malayalam">Malayalam</option>
                       <option value="Telugu">Telugu</option>
@@ -938,7 +938,7 @@
 
           </div>
         </div>
-
+  <div id="snackbar"></div>
       </div>
     </div>
     <!-- Hidden Variables -->
@@ -992,7 +992,8 @@
 <script type="text/javascript"
         src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 
-
+<script src="../js/validationRegex.js"></script>
+<script src="../js/validation.js"></script>
 <script src="js/constants.js"></script>
 <script src="../js/security.js"></script>
 <script defer

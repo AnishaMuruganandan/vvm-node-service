@@ -33,8 +33,8 @@ var regexCheckJS = {
   },
 
   userProfessionValidation: function(profession) {
-    // console.log(profession);
-    if (profession == 'NULL' || profession == "-- select one --") {
+    console.log(profession);
+    if (profession == 'NULL' || profession == null  || profession == "-- select one --") {
       regexCheckJS.snackBar("Enter Valid Profession");
       return false;
     } else {
@@ -44,7 +44,7 @@ var regexCheckJS = {
 
   userEducationValidation: function(education) {
     // console.log(education);
-    if (education == 'NULL' || education == "-- select one --") {
+    if (education == 'NULL' || education == null || education == "-- select one --") {
       regexCheckJS.snackBar("Enter Valid Education");
       return false;
     } else {
@@ -54,7 +54,7 @@ var regexCheckJS = {
 
   useReligionValidation: function(religion) {
     // console.log(religion);
-    if (religion == 'NULL' || religion == "-- select one --") {
+    if (religion == 'NULL' || religion == null || religion == "-- select one --") {
       regexCheckJS.snackBar("Enter Valid Religion");
       return false;
     } else {
@@ -64,7 +64,7 @@ var regexCheckJS = {
 
   userCasteValidation: function(caste) {
     // console.log(caste);
-    if (caste == 'NULL' || caste == "-- select one --") {
+    if (caste == 'NULL' || caste == null || caste == "-- select one --") {
       regexCheckJS.snackBar("Enter Valid Caste");
       return false;
     } else {
@@ -74,7 +74,7 @@ var regexCheckJS = {
 
   userDobValidation: function(dob) {
     // console.log(dob);
-    if (dob == 'NULL') {
+    if (dob == 'NULL' || dob == null) {
       regexCheckJS.snackBar("Enter Valid Date of Birth");
       return false;
     } else {
@@ -83,8 +83,8 @@ var regexCheckJS = {
   },
 
   userGenderValidation: function(gender) {
-    // console.log(gender);
-    if (gender == 'NULL' || gender == "-- select one --") {
+    console.log(gender+"gender");
+    if (gender == "" ||  gender == null || gender == "-- select one --") {
       regexCheckJS.snackBar("Enter Valid Gender");
       return false;
     } else {
@@ -94,7 +94,7 @@ var regexCheckJS = {
 
   userHeightValidation: function(height) {
     // console.log(height);
-    if (height == 'NULL' || height <= 0) {
+    if (height == 'NULL' || height <= 0 || height.length == 0 ) {
       regexCheckJS.snackBar("Enter Valid Height");
       return false;
     } else {
@@ -104,7 +104,7 @@ var regexCheckJS = {
 
   userComplexionValidation: function(complexion) {
     // console.log(complexion);
-    if (complexion == 'NULL' || complexion == "-- select one --") {
+    if (complexion == 'NULL' || complexion == "-- select one --" || complexion == null) {
       regexCheckJS.snackBar("Enter Valid Complexion");
       return false;
     } else {
@@ -114,7 +114,7 @@ var regexCheckJS = {
 
 userSalaryValidation: function(salary) {
   // console.log(salary);
-  if (salary == 'NULL' || salary == "-- select one --") {
+  if (salary == 'NULL' || salary == "-- select one --" || salary == null) {
     regexCheckJS.snackBar("Enter Valid Salary");
     return false;
   } else {
@@ -124,7 +124,7 @@ userSalaryValidation: function(salary) {
 
 userCityLivingValidation: function(cityLiving) {
   // console.log(cityLiving);
-  if (cityLiving == 'NULL' || cityLiving == "-- select one --") {
+  if (cityLiving == 'NULL' || cityLiving == "-- select one --" || cityLiving == null) {
     regexCheckJS.snackBar("Enter Valid City");
     return false;
   } else {
@@ -134,7 +134,7 @@ userCityLivingValidation: function(cityLiving) {
 
 userNativePlaceValidation: function(nativePlace) {
   // console.log(nativePlace);
-  if (nativePlace == 'NULL') {
+  if (nativePlace == 'NULL' || nativePlace.length == 0) {
     regexCheckJS.snackBar("Enter Valid Native Place");
     return false;
   } else {
@@ -144,7 +144,7 @@ userNativePlaceValidation: function(nativePlace) {
 
 userPhysicallyDisabledValidation: function(physicallyDisabled) {
   // console.log(physicallyDisabled);
-  if (physicallyDisabled == 'NULL' || physicallyDisabled == "-- select one --") {
+  if (physicallyDisabled == 'NULL' || physicallyDisabled == "-- select one --" || physicallyDisabled == null) {
     regexCheckJS.snackBar("Choose valid option for physically Disabled");
     return false;
   } else {
@@ -154,7 +154,7 @@ userPhysicallyDisabledValidation: function(physicallyDisabled) {
 
 userMotherTongueValidation: function(motherTongue) {
   // console.log(motherTongue);
-  if (motherTongue == 'NULL' || motherTongue == "-- select one --") {
+  if (motherTongue == 'NULL' || motherTongue == "-- select one --" || motherTongue == null) {
     regexCheckJS.snackBar("Choose valid option for motherTongue");
     return false;
   } else {
@@ -164,7 +164,7 @@ userMotherTongueValidation: function(motherTongue) {
 
 userLanguageKnownValidation: function(languageKnown) {
   // console.log(languageKnown);
-  if (languageKnown == 'NULL' || languageKnown == "-- select one --") {
+  if (languageKnown == 'NULL' || languageKnown == "-- select one --"  || languageKnown == null) {
     regexCheckJS.snackBar("Choose valid option for languageKnown");
     return false;
   } else {
@@ -174,7 +174,7 @@ userLanguageKnownValidation: function(languageKnown) {
 
 userRasiValidation: function(rasi) {
   // console.log(rasi);
-  if (rasi == 'NULL' || rasi == "-- select one --") {
+  if (rasi == 'NULL' || rasi == "-- select one --" || rasi == null) {
     regexCheckJS.snackBar("Choose valid option for Rasi");
     return false;
   } else {
@@ -184,7 +184,7 @@ userRasiValidation: function(rasi) {
 
 userNakshatraValidation: function(nakshatra) {
   // console.log(nakshatra);
-  if (nakshatra == 'NULL' || nakshatra == "-- select one --") {
+  if (nakshatra == 'NULL' || nakshatra == "-- select one --" || nakshatra == null) {
     regexCheckJS.snackBar("Choose valid option for Nakshatra");
     return false;
   } else {
@@ -194,7 +194,7 @@ userNakshatraValidation: function(nakshatra) {
 
 userLagnaValidation: function(lagna) {
   // console.log(lagna);
-  if (lagna == 'NULL' || lagna == "-- select one --") {
+  if (lagna == 'NULL' || lagna == "-- select one --" || lagna == null) {
     regexCheckJS.snackBar("Choose valid option for Lagna");
     return false;
   } else {
@@ -204,7 +204,7 @@ userLagnaValidation: function(lagna) {
 
 userPaagamValidation: function(paagam) {
   // console.log(paagam);
-  if (paagam == 'NULL' || paagam == "-- select one --") {
+  if (paagam == 'NULL' || paagam == "-- select one --" || paagam == null) {
     regexCheckJS.snackBar("Choose valid option for Paagam");
     return false;
   } else {
@@ -214,7 +214,7 @@ userPaagamValidation: function(paagam) {
 
 userPobValidation : function(pob) {
   // console.log(pob);
-  if (pob == 'NULL') {
+  if (pob == 'NULL' || pob.length == 0) {
     regexCheckJS.snackBar("Enter valid place of birth");
     return false;
   } else {
@@ -224,7 +224,7 @@ userPobValidation : function(pob) {
 
 userTobValidation: function(tob) {
   // console.log(tob);
-  if (tob == 'NULL') {
+  if (tob == 'NULL' || tob == null) {
     regexCheckJS.snackBar("Choose valid option for time of birth");
     return false;
   } else {
@@ -234,7 +234,7 @@ userTobValidation: function(tob) {
 
 userFNameValidation: function(fName) {
   // console.log(fName);
-  if (fName == 'NULL') {
+  if (fName == 'NULL' || fName.length == 0) {
     regexCheckJS.snackBar("Enter Father Name");
     return false;
   } else {
@@ -244,7 +244,7 @@ userFNameValidation: function(fName) {
 
 userMNameValidation: function(mName) {
   // console.log(mName);
-  if (mName == 'NULL') {
+  if (mName == 'NULL' || mName.length == 0) {
     regexCheckJS.snackBar("Enter Mother Name");
     return false;
   } else {
@@ -254,17 +254,7 @@ userMNameValidation: function(mName) {
 
 userSibCountValidation: function(sibCount) {
   // console.log(sibCount);
-  if (sibCount == 'NULL' || sibCount == "-- select one --")  {
-    regexCheckJS.snackBar("Choose valid option for Sibling Count");
-    return false;
-  } else {
-    return true;
-  }
-},
-
-userSibCountValidation: function(sibCount) {
-  // console.log(sibCount);
-  if (sibCount == 'NULL' || sibCount == "-- select one --")  {
+  if (sibCount == 'NULL' || sibCount == "-- select one --"|| sibCount == null)  {
     regexCheckJS.snackBar("Choose valid option for Sibling Count");
     return false;
   } else {
@@ -274,7 +264,7 @@ userSibCountValidation: function(sibCount) {
 
 userAddressValidation: function(address) {
   // console.log(address);
-  if (address == 'NULL')  {
+  if (address == 'NULL' || address.length == 0)  {
     regexCheckJS.snackBar("Enter valid Address");
     return false;
   } else {
@@ -283,8 +273,8 @@ userAddressValidation: function(address) {
 },
 
 userAboutMeValidation: function(aboutMe) {
-  // console.log(aboutMe);
-  if (aboutMe == 'NULL')  {
+  console.log(aboutMe);
+  if (aboutMe == 'NULL' || aboutMe.length == 0 )  {
     regexCheckJS.snackBar("Enter About Me");
     return false;
   } else {
@@ -293,8 +283,8 @@ userAboutMeValidation: function(aboutMe) {
 },
 
 userExpectationsValidation: function(expectations) {
-  // console.log($expectations);
-  if ($expectations == 'NULL')  {
+  // console.log(expectations);
+  if (expectations == 'NULL' || expectations.length == 0 )  {
     regexCheckJS.snackBar("Enter Expectations");
     return false;
   } else {
