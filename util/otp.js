@@ -13,7 +13,7 @@ var OTPUtil = (function() {
   var otp;
   let OTPGeneration = function() {
     otp = otpGenerator.generate(6, {
-      alphabets:false,
+      alphabets: false,
       upperCase: false,
       specialChars: false
     });
@@ -28,8 +28,9 @@ var OTPUtil = (function() {
     // });
     // return result;
     const TEXT_LOCAL_HOST = 'https://api.textlocal.in/send/';
-    var MSG_TEMPLATE = OTP + " is the OTP for Crop Per Drop App.";
-    var TEXT_LOCAL_SENDER = 'TeamBF';
+  //  var MSG_TEMPLATE = OTP + " is the OTP for Crop Per Drop App.";
+    var MSG_TEMPLATE = "This is your VVM OTP : "+OTP+", Please don't share with any one.\n\n-Vivahah Vizha Matrimony";
+    var TEXT_LOCAL_SENDER = 'VVMTXT';
 
     let options = {
       'apikey': validOptions.apikey,
