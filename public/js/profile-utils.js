@@ -101,7 +101,17 @@ var profileUtils = (function() {
     if (data.horoscopeData && data.horoscopeData.length > 0) {
 
       $horoscope.val(data.horoscopeData[0].horoscope_soft_copy);
-      $jathagamDownload.attr('href', data.horoscopeData[0].horoscope_soft_copy);
+      if (data.horoscopeData[0].horoscope_soft_copy != '') {
+        $jathagamDownload.html('Download Jathagam here');
+        $jathagamDownload.attr('href', data.horoscopeData[0].horoscope_soft_copy);
+        $jathagamDownload.attr('target', "_blank");
+
+      } else {
+
+        $jathagamDownload.removeAttr('target');
+        $jathagamDownload.html('No Jathagam Available');
+      }
+
       $tob.val(data.horoscopeData[0].time_of_birth);
       $pob.val(data.horoscopeData[0].place_of_birth);
       $zodiac.val(data.horoscopeData[0].zodiac_id);
