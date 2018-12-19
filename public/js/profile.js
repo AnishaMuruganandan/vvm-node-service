@@ -64,6 +64,8 @@ let profileFunc = (function() {
         function(error, result) {
           resultFromURL = result;
           $horoscope.val(result[0].secure_url);
+          $('#fileName').html(result[0].original_filename);
+
         });
 
     });
