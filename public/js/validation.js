@@ -29,7 +29,7 @@ var validationFunction = (function() {
   $address = $('#address');
   $aboutMe = $('#aboutMe');
   $expectations = $('#expectations');
-
+$password = $('#password');
 
 
   $name.focusout(function() {
@@ -148,6 +148,9 @@ var validationFunction = (function() {
     userExpectations();
   });
 
+  $password.focusout(function() {
+    userPassword();
+  });
 
   function userName() {
     // console.log($name.val() + "name");
@@ -470,6 +473,18 @@ var validationFunction = (function() {
     }
   }
 
+  function userPassword() {
+    // console.log($expectations.val() + "$expectations");
+    var userPasswordValidationVal = regexCheckJS.userPasswordValidation($password.val());
+    if (userPasswordValidationVal == false) {
+      $password.focus();
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+
   function userSiblingDetails() {
     let siblingsDetails = [];
     var siblingTypeArr = [];
@@ -537,7 +552,8 @@ var validationFunction = (function() {
     userAddress: userAddress,
     userAboutMe: userAboutMe,
     userExpectations: userExpectations,
-    userSiblingDetails: userSiblingDetails
+    userSiblingDetails: userSiblingDetails,
+    userPassword : userPassword
   }
 
 })();

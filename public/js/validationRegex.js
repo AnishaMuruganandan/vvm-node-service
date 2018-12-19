@@ -292,9 +292,19 @@ var regexCheckJS = {
     }
   },
 
+  userPasswordValidation: function(password) {
+    // console.log(expectations);
+    if (password == 'NULL' || password.length == 0) {
+      regexCheckJS.snackBar("Enter Password");
+      return false;
+    } else {
+      return true;
+    }
+  },
+
   userSiblingDetailsValidation: function(siblingsDetails) {
     // console.log(expectations);
-    var check=true;
+    var check = true;
     if (siblingsDetails.length > 0) {
       for (i = 0; i < siblingsDetails.length; i++) {
         if (siblingsDetails[i].type == null || siblingsDetails[i].age == null || siblingsDetails[i].maritalStatus == null) {

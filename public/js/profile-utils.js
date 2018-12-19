@@ -108,8 +108,9 @@ var profileUtils = (function() {
 
       } else {
 
-        $jathagamDownload.removeAttr('target');
-        $jathagamDownload.html('No Jathagam Available');
+        // $jathagamDownload.removeAttr('target');
+        // $jathagamDownload.html('No Jathagam Available');
+        $jathagamDownload.attr('href',"javascript:alert('No Jathagam Available')");
       }
 
       $tob.val(data.horoscopeData[0].time_of_birth);

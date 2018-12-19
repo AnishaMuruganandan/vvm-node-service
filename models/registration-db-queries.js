@@ -13,7 +13,9 @@ var registrationQueries = {
 
   findByPhoneNumber: function(findByPhoneNoQuery, verifyPhoneNoObj) {
     return new Promise((resolve, reject) => {
+        let dbconnectionObj = dbconnectionConst.connectDatabase();
       return dbconnectionObj.query(findByPhoneNoQuery, [verifyPhoneNoObj.phoneNo], (err, rows) => {
+                dbconnectionConst.disconnectDatabase();
         if (err)
            reject(err);
         resolve(rows);

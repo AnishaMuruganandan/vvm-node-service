@@ -41,10 +41,8 @@ let registrationFunc = (function() {
      */
     $generateandSendOTP.click(function(e) {
       if (validationFunction.userName() && validationFunction.userEmailId() && validationFunction.userPhoneNo()) {
-      generateandSendOTPService();
-      $OtpGeneration.hide();
-      $OtpVerification.show();
-    }
+        generateandSendOTPService();
+      }
     });
 
     $resendOTP.click(function(e) {
@@ -58,12 +56,14 @@ let registrationFunc = (function() {
     });
 
     $register.click(function(e) {
+      if (validationFunction.userPassword()){
       saveAllDetailsService();
       $registrationUsingEmailPwd.hide();
       $registrationForm.hide();
       $LoginForm.show();
       $loginBtn.hide();
       $registerBn.show();
+    }
     });
 
     $loginBtn.click(function(e) {
@@ -98,9 +98,17 @@ let registrationFunc = (function() {
 
     var data = {};
     data.phoneNo = $phoneNo.val();
-    var result = await registrationServiceDeclaration.generateandSendOTPService(data);
-    generatedOTP = result;
-    console.log("generatedOTP client" + generatedOTP);
+    var result = await registrationServiceDeclaration.phoneNoValidation(data);
+
+    if (result == true) {
+      $OtpGeneration.hide();
+      $OtpVerification.show();
+      var result = await registrationServiceDeclaration.generateandSendOTPService(data);
+      generatedOTP = result;
+      console.log("generatedOTP client" + generatedOTP);
+    } else {
+      alert('User Already registered with this Phone Number or Email ID. Please Call us for Assistance');
+    }
 
   };
 
