@@ -36,9 +36,12 @@ app.use('/profile', profileRoutes);
 //   console.error('hey!');
 //   res.sendFile(errorPg);
 // });
+app.get("*", function(req, res) {
+  res.redirect('/');
+});
 
-app.get("*", function(req,res){
-  res.sendFile(errorPg);
+app.get("*/", function(req, res) {
+  res.redirect('/');
 });
 
 app.listen(port, "0.0.0.0", function() {
