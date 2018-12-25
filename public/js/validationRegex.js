@@ -2,7 +2,7 @@ var regexCheckJS = {
 
   userNameValidation: function(name) {
     // console.log(name);
-    if (name == 'NULL' || name.length == 0 || (!(/^[a-z A-Z]*$/g).test(name))) {
+    if (name == 'NULL' || name.length == 0 || (!(/^[a-z A-Z \.]*$/g).test(name))) {
       regexCheckJS.snackBar("Enter Valid Display Name");
       return false;
     } else {
