@@ -56,14 +56,14 @@ let registrationFunc = (function() {
     });
 
     $register.click(function(e) {
-      if (validationFunction.userPassword()){
-      saveAllDetailsService();
-      $registrationUsingEmailPwd.hide();
-      $registrationForm.hide();
-      $LoginForm.show();
-      $loginBtn.hide();
-      $registerBn.show();
-    }
+      if (validationFunction.userPassword()) {
+        saveAllDetailsService();
+        $registrationUsingEmailPwd.hide();
+        $registrationForm.hide();
+        $LoginForm.show();
+        $loginBtn.hide();
+        $registerBn.show();
+      }
     });
 
     $loginBtn.click(function(e) {
@@ -105,6 +105,7 @@ let registrationFunc = (function() {
       $OtpVerification.show();
       var result = await registrationServiceDeclaration.generateandSendOTPService(data);
       generatedOTP = result;
+      alert("OTP Deactivated Use this code: " + generatedOTP);
       console.log("generatedOTP client" + generatedOTP);
     } else {
       alert('User Already registered with this Phone Number or Email ID. Please Call us for Assistance');

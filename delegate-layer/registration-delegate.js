@@ -83,8 +83,8 @@ var registrationDelegate = (function() {
       console.log("del try");
       var generatedOTP = otpObj.OTPGeneration();
       console.log(generatedOTP + "generatedOTP");
-      var messageStatus = otpObj.SendingOTP(generatedOTP, contactDetails.phoneNo);
-      console.log(messageStatus + "messageStatus");
+    //  var messageStatus = otpObj.SendingOTP(generatedOTP, contactDetails.phoneNo);
+    //  console.log(messageStatus + "messageStatus");
 
       return generatedOTP;
 
