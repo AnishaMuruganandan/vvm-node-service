@@ -44,6 +44,9 @@ var profileUtils = (function() {
   $lagna = $('#lagna');
   $paagam = $('#paagam');
 
+  $alternatephone1 = $('#alternatephone1');
+  $alternatephone2 = $('#alternatephone2');
+
 
   $jathagamDownload = $('#jathagamDownload');
 
@@ -62,6 +65,9 @@ var profileUtils = (function() {
     $education.val(data.profileBasicData[0].education_id);
     $religion.val(data.profileBasicData[0].religion_id);
     $caste.val(data.profileBasicData[0].caste_id);
+
+    $alternatephone1.val(data.profileAdditionalData[0].alternatephone1);
+    $alternatephone2.val(data.profileAdditionalData[0].alternatephone2);
 
 
 

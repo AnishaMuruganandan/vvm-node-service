@@ -42,6 +42,8 @@ let profileFunc = (function() {
     $aboutMe = $('#aboutMe');
     $expectations = $('#expectations');
     $paagam = $('#paagam');
+    $alternatephone1 = $('#alternatephone1');
+    $alternatephone2 = $('#alternatephone2');
 
   };
 
@@ -211,6 +213,8 @@ let profileFunc = (function() {
         "languageKnown": $languageKnown.select2().val().toString() || "",
         "aboutMe": $aboutMe.val() || "",
         "expectations": $expectations.val() || "",
+        "alternatephone1": $alternatephone1.val() || "",
+        "alternatephone2": $alternatephone2.val() || "",
       },
       "profileBasicData": {
         "profileBasicId": securityJS.getCookie('PROFILE_BASIC_ID') || 0,

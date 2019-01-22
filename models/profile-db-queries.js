@@ -37,7 +37,9 @@ var profileQueries = {
         saveProfileDetailsObj.languageKnown,
         saveProfileDetailsObj.aboutMe,
         saveProfileDetailsObj.expectations,
-        saveProfileDetailsObj.dummy
+        saveProfileDetailsObj.dummy,
+        saveProfileDetailsObj.alternatephone1,
+        saveProfileDetailsObj.alternatephone2
 
       ], (err, rows) => {
         dbconnectionConst.disconnectDatabase();
@@ -66,7 +68,7 @@ var profileQueries = {
   getProfileDetails: function(getProfileDetailsQuery, profileId) {
     return new Promise((resolve, reject) => {
       let dbconnection = dbconnectionConst.connectDatabase();
-      return dbconnection.query(getProfileDetailsQuery,[profileId], (err, rows) => {
+      return dbconnection.query(getProfileDetailsQuery, [profileId], (err, rows) => {
         dbconnectionConst.disconnectDatabase();
         if (err)
           reject(err);

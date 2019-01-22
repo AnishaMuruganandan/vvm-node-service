@@ -36,7 +36,7 @@ var profileObj = {
   //   this.languageKnown = languageKnown || '';
   // },
 
-  saveProfileDetailsObj: function(gender, salary, complexion, address, physicallyDisabled, languageKnown,aboutMe,expectations,dummy) {
+  saveProfileDetailsObj: function(gender, salary, complexion, address, physicallyDisabled, languageKnown,aboutMe,expectations,dummy,alternatephone1,alternatephone2) {
     this.gender = gender || '';
     this.salary = salary || '';
     this.complexion = complexion || '';
@@ -46,6 +46,9 @@ var profileObj = {
     this.aboutMe = aboutMe || '';
     this.expectations = expectations || '';
     this.dummy = dummy || '';
+    this.alternatephone1 = alternatephone1 || '';
+    this.alternatephone2 = alternatephone2 || '';
+
   },
 
   saveProfilePicObj: function(picURL, profileBasicId) {

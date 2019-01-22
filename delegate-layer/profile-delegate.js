@@ -62,7 +62,10 @@ var profileDelegate = (function() {
         profileDetails.profileAdditionalData.languageKnown,
         profileDetails.profileAdditionalData.aboutMe,
         profileDetails.profileAdditionalData.expectations,
-        profileDetails.profileAdditionalData.dummy);
+        profileDetails.profileAdditionalData.dummy,
+        profileDetails.profileAdditionalData.alternatephone1,
+        profileDetails.profileAdditionalData.alternatephone2
+      );
       console.log("del try");
       profileInsertion = await profileServiceObj.saveProfileDetails(saveProfileDetailsObj);
       console.log(profileInsertion.insertId + "profileInsertion");

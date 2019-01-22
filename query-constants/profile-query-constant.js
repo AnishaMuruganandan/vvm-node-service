@@ -1,7 +1,7 @@
 var profileQueryConst = {
 
   saveBasicDetailsQuery: "INSERT INTO profile_basic_details (name, dob, height, city_id, education_id, profession_id, religion_id, caste_id, profile_picture) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
-  saveProfileDetailsQuery: "INSERT INTO profile_details (gender, salary_id, complexion, address, physical_disablity, language_known, about_me, expectations, dummy) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+  saveProfileDetailsQuery: "INSERT INTO profile_details (gender, salary_id, complexion, address, physical_disablity, language_known, about_me, expectations, dummy, alternatephone1, alternatephone2) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
   getProfileDetailsQuery: "select * from profile_details where profile_id=?",
   getProfileBasicDetailsQuery: "select * from profile_basic_details where profile_basic_id in (select profile_basic_id FROM login_details) order by profile_basic_id desc",
   getProfileBasicDetailsByProfileIdQuery: "select * from profile_basic_details where profile_basic_id=? and profile_basic_id in (select profile_basic_id FROM login_details)",
