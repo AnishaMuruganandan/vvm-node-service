@@ -288,7 +288,7 @@ $password = $('#password');
 
   function userCityLiving() {
     // console.log($cityLiving.select2().val() + "$cityLiving");
-    var userCityLivingValidationVal = regexCheckJS.userCityLivingValidation($cityLiving.select2().val());
+    var userCityLivingValidationVal = regexCheckJS.userCityLivingValidation($cityLiving.val());
     if (userCityLivingValidationVal == false) {
       $cityLiving.focus();
       return false;

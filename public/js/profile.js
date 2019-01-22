@@ -214,7 +214,7 @@ let profileFunc = (function() {
       },
       "profileBasicData": {
         "profileBasicId": securityJS.getCookie('PROFILE_BASIC_ID') || 0,
-        "city": $cityLiving.select2().val() || "",
+        "city": $cityLiving.val() || "",
         "education": $education.select2().val() || "",
         "profession": $profession.select2().val() || "",
         "name": $name.val() || "",

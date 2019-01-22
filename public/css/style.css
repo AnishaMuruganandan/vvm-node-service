@@ -543,3 +543,7 @@ body{
     opacity: 0;
   }
 }
+a {
+  cursor: pointer;
+  margin-right: 10px;
+}

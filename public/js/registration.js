@@ -133,7 +133,7 @@ let registrationFunc = (function() {
       "password": $password.val(),
       "dob": $dob.val(),
       "height": $height.val(),
-      "cityId": $city.select2().val(),
+      "cityId": $city.val(),
       "educationId": $educationalQualification.select2().val(),
       "professionId": $profession.select2().val(),
       "religionId": $religion.select2().val(),
