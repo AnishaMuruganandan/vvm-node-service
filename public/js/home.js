@@ -76,6 +76,7 @@ var homeObj = {
     homeJS.finalise();
     securityJS.validateLogin();
 
+    $('#loader').fadeOut();
   }
 
 };

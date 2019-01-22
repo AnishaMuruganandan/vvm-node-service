@@ -313,7 +313,6 @@ var profileJS = {
 
     profileObj.finalise();
     securityJS.validateLogin();
-    $('#loader').fadeOut();
 
     if (securityJS.getCookie('PROFILE_ID') == '0') {
 
@@ -323,6 +322,8 @@ var profileJS = {
       }, 1000);
     }
 
+
+    $('#loader').fadeOut();
   }
 
 };
